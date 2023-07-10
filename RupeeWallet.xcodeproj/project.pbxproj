@@ -1,0 +1,769 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2201769C2A55548D002C718D /* RWProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2201769B2A55548D002C718D /* RWProgressHUD.m */; };
+		2201769F2A555651002C718D /* RWNetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 2201769E2A555651002C718D /* RWNetworkService.m */; };
+		220176A52A556AA9002C718D /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 220176A42A556AA9002C718D /* UIView+Extension.m */; };
+		220176AC2A5583BB002C718D /* UIDevice+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 220176AB2A5583BB002C718D /* UIDevice+Extension.m */; };
+		220176B32A566A25002C718D /* RWBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 220176B22A566A25002C718D /* RWBaseModel.m */; };
+		220176B62A566AC6002C718D /* RWProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 220176B52A566AC6002C718D /* RWProductModel.m */; };
+		220176B92A566C72002C718D /* RWContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 220176B82A566C72002C718D /* RWContentModel.m */; };
+		220176BC2A567027002C718D /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 220176BB2A567027002C718D /* NSString+Extension.m */; };
+		220176BF2A56882E002C718D /* RWSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 220176BE2A56882E002C718D /* RWSectionHeaderView.m */; };
+		220176C32A5697E3002C718D /* NSDictionary+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 220176C22A5697E3002C718D /* NSDictionary+Log.m */; };
+		220176EF2A56AFDC002C718D /* RWProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 220176EE2A56AFDC002C718D /* RWProductCell.m */; };
+		2227174A2A56D46C00F865FD /* RWLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 222717492A56D46C00F865FD /* RWLoginViewController.m */; };
+		2227174D2A57AE5200F865FD /* RWGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = 2227174C2A57AE5200F865FD /* RWGlobal.m */; };
+		222717502A57B87A00F865FD /* RWLoginContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2227174F2A57B87A00F865FD /* RWLoginContentView.m */; };
+		222717532A58004A00F865FD /* RWNetworkResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 222717522A58004A00F865FD /* RWNetworkResponseModel.m */; };
+		2244DEDD2A53C3E40093F903 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2244DEDC2A53C3E40093F903 /* AppDelegate.m */; };
+		2244DEE82A53C3E60093F903 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2244DEE72A53C3E60093F903 /* Assets.xcassets */; };
+		2244DEEB2A53C3E60093F903 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2244DEE92A53C3E60093F903 /* LaunchScreen.storyboard */; };
+		2244DEEE2A53C3E60093F903 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2244DEED2A53C3E60093F903 /* main.m */; };
+		227FD5632A59C32C00AC718A /* RWOrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227FD5622A59C32C00AC718A /* RWOrderDetailViewController.m */; };
+		227FD5662A59C77A00AC718A /* RWOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 227FD5652A59C77A00AC718A /* RWOrderModel.m */; };
+		227FD5692A59C98E00AC718A /* RWProductDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 227FD5682A59C98E00AC718A /* RWProductDetailModel.m */; };
+		227FD56C2A59D0E400AC718A /* RWProductDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227FD56B2A59D0E400AC718A /* RWProductDetailController.m */; };
+		22A0BEB22A53D88A00B8C360 /* RWMainTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A0BEB12A53D88A00B8C360 /* RWMainTabbarController.m */; };
+		22A0BEB52A53D8E900B8C360 /* RWBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A0BEB42A53D8E900B8C360 /* RWBaseViewController.m */; };
+		22A0BEB82A53D92A00B8C360 /* RWBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A0BEB72A53D92A00B8C360 /* RWBaseTableViewController.m */; };
+		22A0BEBB2A53D93E00B8C360 /* RWBaseScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A0BEBA2A53D93E00B8C360 /* RWBaseScrollViewController.m */; };
+		22A0BEBE2A53D96200B8C360 /* RWMainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A0BEBD2A53D96200B8C360 /* RWMainNavigationController.m */; };
+		22A0BEC12A53DB0700B8C360 /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A0BEC02A53DB0700B8C360 /* UIColor+Extension.m */; };
+		22A0BECD2A53ED7200B8C360 /* RWHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A0BECC2A53ED7200B8C360 /* RWHomeController.m */; };
+		22A0BED02A53ED8B00B8C360 /* RWPersonalCenterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A0BECF2A53ED8B00B8C360 /* RWPersonalCenterController.m */; };
+		22A0BED32A53F2BB00B8C360 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A0BED22A53F2BB00B8C360 /* UIImage+Extension.m */; };
+		22C78A4B2A58AE6E00F4B563 /* RWKYCInfoContrroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C78A4A2A58AE6E00F4B563 /* RWKYCInfoContrroller.m */; };
+		F295F65F2B8FEAE85A790458 /* libPods-RupeeWallet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE5ACEB6E5765A1C3C71A808 /* libPods-RupeeWallet.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2201769A2A55548D002C718D /* RWProgressHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWProgressHUD.h; sourceTree = "<group>"; };
+		2201769B2A55548D002C718D /* RWProgressHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWProgressHUD.m; sourceTree = "<group>"; };
+		2201769D2A555651002C718D /* RWNetworkService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWNetworkService.h; sourceTree = "<group>"; };
+		2201769E2A555651002C718D /* RWNetworkService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWNetworkService.m; sourceTree = "<group>"; };
+		220176A32A556AA9002C718D /* UIView+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		220176A42A556AA9002C718D /* UIView+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		220176AA2A5583BB002C718D /* UIDevice+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Extension.h"; sourceTree = "<group>"; };
+		220176AB2A5583BB002C718D /* UIDevice+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Extension.m"; sourceTree = "<group>"; };
+		220176B12A566A25002C718D /* RWBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWBaseModel.h; sourceTree = "<group>"; };
+		220176B22A566A25002C718D /* RWBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWBaseModel.m; sourceTree = "<group>"; };
+		220176B42A566AC6002C718D /* RWProductModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWProductModel.h; sourceTree = "<group>"; };
+		220176B52A566AC6002C718D /* RWProductModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWProductModel.m; sourceTree = "<group>"; };
+		220176B72A566C72002C718D /* RWContentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWContentModel.h; sourceTree = "<group>"; };
+		220176B82A566C72002C718D /* RWContentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWContentModel.m; sourceTree = "<group>"; };
+		220176BA2A567027002C718D /* NSString+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
+		220176BB2A567027002C718D /* NSString+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
+		220176BD2A56882E002C718D /* RWSectionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWSectionHeaderView.h; sourceTree = "<group>"; };
+		220176BE2A56882E002C718D /* RWSectionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWSectionHeaderView.m; sourceTree = "<group>"; };
+		220176C12A5697E3002C718D /* NSDictionary+Log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Log.h"; sourceTree = "<group>"; };
+		220176C22A5697E3002C718D /* NSDictionary+Log.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Log.m"; sourceTree = "<group>"; };
+		220176ED2A56AFDC002C718D /* RWProductCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWProductCell.h; sourceTree = "<group>"; };
+		220176EE2A56AFDC002C718D /* RWProductCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWProductCell.m; sourceTree = "<group>"; };
+		222717482A56D46C00F865FD /* RWLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWLoginViewController.h; sourceTree = "<group>"; };
+		222717492A56D46C00F865FD /* RWLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWLoginViewController.m; sourceTree = "<group>"; };
+		2227174B2A57AE5200F865FD /* RWGlobal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWGlobal.h; sourceTree = "<group>"; };
+		2227174C2A57AE5200F865FD /* RWGlobal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWGlobal.m; sourceTree = "<group>"; };
+		2227174E2A57B87A00F865FD /* RWLoginContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWLoginContentView.h; sourceTree = "<group>"; };
+		2227174F2A57B87A00F865FD /* RWLoginContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWLoginContentView.m; sourceTree = "<group>"; };
+		222717512A58004A00F865FD /* RWNetworkResponseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWNetworkResponseModel.h; sourceTree = "<group>"; };
+		222717522A58004A00F865FD /* RWNetworkResponseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWNetworkResponseModel.m; sourceTree = "<group>"; };
+		2244DED82A53C3E40093F903 /* RupeeWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RupeeWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2244DEDB2A53C3E40093F903 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2244DEDC2A53C3E40093F903 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2244DEE72A53C3E60093F903 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2244DEEA2A53C3E60093F903 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2244DEEC2A53C3E60093F903 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2244DEED2A53C3E60093F903 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		227FD5612A59C32C00AC718A /* RWOrderDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWOrderDetailViewController.h; sourceTree = "<group>"; };
+		227FD5622A59C32C00AC718A /* RWOrderDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWOrderDetailViewController.m; sourceTree = "<group>"; };
+		227FD5642A59C77A00AC718A /* RWOrderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWOrderModel.h; sourceTree = "<group>"; };
+		227FD5652A59C77A00AC718A /* RWOrderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWOrderModel.m; sourceTree = "<group>"; };
+		227FD5672A59C98E00AC718A /* RWProductDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWProductDetailModel.h; sourceTree = "<group>"; };
+		227FD5682A59C98E00AC718A /* RWProductDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWProductDetailModel.m; sourceTree = "<group>"; };
+		227FD56A2A59D0E400AC718A /* RWProductDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWProductDetailController.h; sourceTree = "<group>"; };
+		227FD56B2A59D0E400AC718A /* RWProductDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWProductDetailController.m; sourceTree = "<group>"; };
+		22A0BEB02A53D88A00B8C360 /* RWMainTabbarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWMainTabbarController.h; sourceTree = "<group>"; };
+		22A0BEB12A53D88A00B8C360 /* RWMainTabbarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWMainTabbarController.m; sourceTree = "<group>"; };
+		22A0BEB32A53D8E900B8C360 /* RWBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWBaseViewController.h; sourceTree = "<group>"; };
+		22A0BEB42A53D8E900B8C360 /* RWBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWBaseViewController.m; sourceTree = "<group>"; };
+		22A0BEB62A53D92A00B8C360 /* RWBaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWBaseTableViewController.h; sourceTree = "<group>"; };
+		22A0BEB72A53D92A00B8C360 /* RWBaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWBaseTableViewController.m; sourceTree = "<group>"; };
+		22A0BEB92A53D93E00B8C360 /* RWBaseScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWBaseScrollViewController.h; sourceTree = "<group>"; };
+		22A0BEBA2A53D93E00B8C360 /* RWBaseScrollViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWBaseScrollViewController.m; sourceTree = "<group>"; };
+		22A0BEBC2A53D96200B8C360 /* RWMainNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWMainNavigationController.h; sourceTree = "<group>"; };
+		22A0BEBD2A53D96200B8C360 /* RWMainNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWMainNavigationController.m; sourceTree = "<group>"; };
+		22A0BEBF2A53DB0700B8C360 /* UIColor+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extension.h"; sourceTree = "<group>"; };
+		22A0BEC02A53DB0700B8C360 /* UIColor+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extension.m"; sourceTree = "<group>"; };
+		22A0BEC42A53DC3700B8C360 /* RWPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPrefixHeader.pch; sourceTree = "<group>"; };
+		22A0BECB2A53ED7200B8C360 /* RWHomeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWHomeController.h; sourceTree = "<group>"; };
+		22A0BECC2A53ED7200B8C360 /* RWHomeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWHomeController.m; sourceTree = "<group>"; };
+		22A0BECE2A53ED8B00B8C360 /* RWPersonalCenterController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPersonalCenterController.h; sourceTree = "<group>"; };
+		22A0BECF2A53ED8B00B8C360 /* RWPersonalCenterController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPersonalCenterController.m; sourceTree = "<group>"; };
+		22A0BED12A53F2BB00B8C360 /* UIImage+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
+		22A0BED22A53F2BB00B8C360 /* UIImage+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
+		22C78A492A58AE6E00F4B563 /* RWKYCInfoContrroller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWKYCInfoContrroller.h; sourceTree = "<group>"; };
+		22C78A4A2A58AE6E00F4B563 /* RWKYCInfoContrroller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWKYCInfoContrroller.m; sourceTree = "<group>"; };
+		2A09065F25C66B610BF666CA /* Pods-RupeeWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RupeeWallet.release.xcconfig"; path = "Target Support Files/Pods-RupeeWallet/Pods-RupeeWallet.release.xcconfig"; sourceTree = "<group>"; };
+		55EC3C89BD6EA5FB3FAFB3A4 /* Pods-RupeeWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RupeeWallet.debug.xcconfig"; path = "Target Support Files/Pods-RupeeWallet/Pods-RupeeWallet.debug.xcconfig"; sourceTree = "<group>"; };
+		CE5ACEB6E5765A1C3C71A808 /* libPods-RupeeWallet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RupeeWallet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2244DED52A53C3E40093F903 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F295F65F2B8FEAE85A790458 /* libPods-RupeeWallet.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2201761C2A54118D002C718D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2201769D2A555651002C718D /* RWNetworkService.h */,
+				2201769E2A555651002C718D /* RWNetworkService.m */,
+				222717512A58004A00F865FD /* RWNetworkResponseModel.h */,
+				222717522A58004A00F865FD /* RWNetworkResponseModel.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		220176982A555446002C718D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				22A0BEBF2A53DB0700B8C360 /* UIColor+Extension.h */,
+				22A0BEC02A53DB0700B8C360 /* UIColor+Extension.m */,
+				22A0BED12A53F2BB00B8C360 /* UIImage+Extension.h */,
+				22A0BED22A53F2BB00B8C360 /* UIImage+Extension.m */,
+				220176A32A556AA9002C718D /* UIView+Extension.h */,
+				220176A42A556AA9002C718D /* UIView+Extension.m */,
+				220176AA2A5583BB002C718D /* UIDevice+Extension.h */,
+				220176AB2A5583BB002C718D /* UIDevice+Extension.m */,
+				220176BA2A567027002C718D /* NSString+Extension.h */,
+				220176BB2A567027002C718D /* NSString+Extension.m */,
+				220176C12A5697E3002C718D /* NSDictionary+Log.h */,
+				220176C22A5697E3002C718D /* NSDictionary+Log.m */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		220176992A555455002C718D /* ProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				2201769A2A55548D002C718D /* RWProgressHUD.h */,
+				2201769B2A55548D002C718D /* RWProgressHUD.m */,
+			);
+			path = ProgressHUD;
+			sourceTree = "<group>";
+		};
+		220176B02A5669C8002C718D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				220176B12A566A25002C718D /* RWBaseModel.h */,
+				220176B22A566A25002C718D /* RWBaseModel.m */,
+				220176B72A566C72002C718D /* RWContentModel.h */,
+				220176B82A566C72002C718D /* RWContentModel.m */,
+				220176B42A566AC6002C718D /* RWProductModel.h */,
+				220176B52A566AC6002C718D /* RWProductModel.m */,
+				227FD5672A59C98E00AC718A /* RWProductDetailModel.h */,
+				227FD5682A59C98E00AC718A /* RWProductDetailModel.m */,
+				227FD5642A59C77A00AC718A /* RWOrderModel.h */,
+				227FD5652A59C77A00AC718A /* RWOrderModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		220176EC2A56AE9B002C718D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				220176BD2A56882E002C718D /* RWSectionHeaderView.h */,
+				220176BE2A56882E002C718D /* RWSectionHeaderView.m */,
+				220176ED2A56AFDC002C718D /* RWProductCell.h */,
+				220176EE2A56AFDC002C718D /* RWProductCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2244DECF2A53C3E30093F903 = {
+			isa = PBXGroup;
+			children = (
+				2244DEDA2A53C3E40093F903 /* RupeeWallet */,
+				2244DED92A53C3E40093F903 /* Products */,
+				EDE82824FB0BDBCE93E6B98F /* Pods */,
+				5E8D96E3B39CC6CC20082A10 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2244DED92A53C3E40093F903 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2244DED82A53C3E40093F903 /* RupeeWallet.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2244DEDA2A53C3E40093F903 /* RupeeWallet */ = {
+			isa = PBXGroup;
+			children = (
+				2244DEF42A53C4260093F903 /* App */,
+				22A0BE8E2A53C7C900B8C360 /* Main */,
+				2201761C2A54118D002C718D /* Network */,
+				22A0BE952A53C8A500B8C360 /* Common */,
+				22A0BE8A2A53C4E800B8C360 /* Resources */,
+				22A0BE9F2A53CD8400B8C360 /* Components */,
+			);
+			path = RupeeWallet;
+			sourceTree = "<group>";
+		};
+		2244DEF42A53C4260093F903 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				2244DEEC2A53C3E60093F903 /* Info.plist */,
+				2244DEED2A53C3E60093F903 /* main.m */,
+				2244DEDB2A53C3E40093F903 /* AppDelegate.h */,
+				2244DEDC2A53C3E40093F903 /* AppDelegate.m */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		227FD55F2A59C17600AC718A /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+				227FD5602A59C18800AC718A /* Controller */,
+			);
+			path = Orders;
+			sourceTree = "<group>";
+		};
+		227FD5602A59C18800AC718A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				227FD5612A59C32C00AC718A /* RWOrderDetailViewController.h */,
+				227FD5622A59C32C00AC718A /* RWOrderDetailViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		22A0BE8A2A53C4E800B8C360 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2244DEE72A53C3E60093F903 /* Assets.xcassets */,
+				2244DEE92A53C3E60093F903 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		22A0BE8B2A53C79A00B8C360 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				22A0BE8C2A53C7A800B8C360 /* View */,
+				22A0BE8D2A53C7BA00B8C360 /* Controller */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		22A0BE8C2A53C7A800B8C360 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2227174E2A57B87A00F865FD /* RWLoginContentView.h */,
+				2227174F2A57B87A00F865FD /* RWLoginContentView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		22A0BE8D2A53C7BA00B8C360 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				222717482A56D46C00F865FD /* RWLoginViewController.h */,
+				222717492A56D46C00F865FD /* RWLoginViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		22A0BE8E2A53C7C900B8C360 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				22A0BEB02A53D88A00B8C360 /* RWMainTabbarController.h */,
+				22A0BEB12A53D88A00B8C360 /* RWMainTabbarController.m */,
+				22A0BEBC2A53D96200B8C360 /* RWMainNavigationController.h */,
+				22A0BEBD2A53D96200B8C360 /* RWMainNavigationController.m */,
+				22A0BEB32A53D8E900B8C360 /* RWBaseViewController.h */,
+				22A0BEB42A53D8E900B8C360 /* RWBaseViewController.m */,
+				22A0BEB62A53D92A00B8C360 /* RWBaseTableViewController.h */,
+				22A0BEB72A53D92A00B8C360 /* RWBaseTableViewController.m */,
+				22A0BEB92A53D93E00B8C360 /* RWBaseScrollViewController.h */,
+				22A0BEBA2A53D93E00B8C360 /* RWBaseScrollViewController.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		22A0BE952A53C8A500B8C360 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				22A0BEC42A53DC3700B8C360 /* RWPrefixHeader.pch */,
+				2227174B2A57AE5200F865FD /* RWGlobal.h */,
+				2227174C2A57AE5200F865FD /* RWGlobal.m */,
+				220176982A555446002C718D /* Extension */,
+				220176992A555455002C718D /* ProgressHUD */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		22A0BE9F2A53CD8400B8C360 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				22A0BEA12A53CE9E00B8C360 /* Me */,
+				22A0BE8B2A53C79A00B8C360 /* Login */,
+				22A0BEA02A53CDA700B8C360 /* Home */,
+				220176B02A5669C8002C718D /* Model */,
+				227FD55F2A59C17600AC718A /* Orders */,
+				22C78A472A58ADD600F4B563 /* Authenfication */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		22A0BEA02A53CDA700B8C360 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				220176EC2A56AE9B002C718D /* View */,
+				22A0BEA22A53CEA600B8C360 /* Controller */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		22A0BEA12A53CE9E00B8C360 /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				22A0BEA32A53CEAE00B8C360 /* Controller */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
+		22A0BEA22A53CEA600B8C360 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				22A0BECB2A53ED7200B8C360 /* RWHomeController.h */,
+				22A0BECC2A53ED7200B8C360 /* RWHomeController.m */,
+				227FD56A2A59D0E400AC718A /* RWProductDetailController.h */,
+				227FD56B2A59D0E400AC718A /* RWProductDetailController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		22A0BEA32A53CEAE00B8C360 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				22A0BECE2A53ED8B00B8C360 /* RWPersonalCenterController.h */,
+				22A0BECF2A53ED8B00B8C360 /* RWPersonalCenterController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		22C78A472A58ADD600F4B563 /* Authenfication */ = {
+			isa = PBXGroup;
+			children = (
+				22C78A482A58ADF900F4B563 /* Controller */,
+			);
+			path = Authenfication;
+			sourceTree = "<group>";
+		};
+		22C78A482A58ADF900F4B563 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				22C78A492A58AE6E00F4B563 /* RWKYCInfoContrroller.h */,
+				22C78A4A2A58AE6E00F4B563 /* RWKYCInfoContrroller.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5E8D96E3B39CC6CC20082A10 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE5ACEB6E5765A1C3C71A808 /* libPods-RupeeWallet.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EDE82824FB0BDBCE93E6B98F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				55EC3C89BD6EA5FB3FAFB3A4 /* Pods-RupeeWallet.debug.xcconfig */,
+				2A09065F25C66B610BF666CA /* Pods-RupeeWallet.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2244DED72A53C3E40093F903 /* RupeeWallet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2244DEF12A53C3E60093F903 /* Build configuration list for PBXNativeTarget "RupeeWallet" */;
+			buildPhases = (
+				C2FD191E6E4B1872FA06146F /* [CP] Check Pods Manifest.lock */,
+				2244DED42A53C3E40093F903 /* Sources */,
+				2244DED52A53C3E40093F903 /* Frameworks */,
+				2244DED62A53C3E40093F903 /* Resources */,
+				54E0F41BA897B772E298C5A4 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RupeeWallet;
+			productName = RupeeWallet;
+			productReference = 2244DED82A53C3E40093F903 /* RupeeWallet.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2244DED02A53C3E30093F903 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				CLASSPREFIX = RW;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					2244DED72A53C3E40093F903 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 2244DED32A53C3E30093F903 /* Build configuration list for PBXProject "RupeeWallet" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2244DECF2A53C3E30093F903;
+			productRefGroup = 2244DED92A53C3E40093F903 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2244DED72A53C3E40093F903 /* RupeeWallet */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2244DED62A53C3E40093F903 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2244DEEB2A53C3E60093F903 /* LaunchScreen.storyboard in Resources */,
+				2244DEE82A53C3E60093F903 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		54E0F41BA897B772E298C5A4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RupeeWallet/Pods-RupeeWallet-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RupeeWallet/Pods-RupeeWallet-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RupeeWallet/Pods-RupeeWallet-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2FD191E6E4B1872FA06146F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RupeeWallet-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2244DED42A53C3E40093F903 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				220176B32A566A25002C718D /* RWBaseModel.m in Sources */,
+				2244DEDD2A53C3E40093F903 /* AppDelegate.m in Sources */,
+				222717502A57B87A00F865FD /* RWLoginContentView.m in Sources */,
+				2244DEEE2A53C3E60093F903 /* main.m in Sources */,
+				22A0BEBE2A53D96200B8C360 /* RWMainNavigationController.m in Sources */,
+				227FD5692A59C98E00AC718A /* RWProductDetailModel.m in Sources */,
+				22A0BED32A53F2BB00B8C360 /* UIImage+Extension.m in Sources */,
+				2201769C2A55548D002C718D /* RWProgressHUD.m in Sources */,
+				22A0BED02A53ED8B00B8C360 /* RWPersonalCenterController.m in Sources */,
+				22A0BEBB2A53D93E00B8C360 /* RWBaseScrollViewController.m in Sources */,
+				220176A52A556AA9002C718D /* UIView+Extension.m in Sources */,
+				22C78A4B2A58AE6E00F4B563 /* RWKYCInfoContrroller.m in Sources */,
+				22A0BEB52A53D8E900B8C360 /* RWBaseViewController.m in Sources */,
+				222717532A58004A00F865FD /* RWNetworkResponseModel.m in Sources */,
+				22A0BECD2A53ED7200B8C360 /* RWHomeController.m in Sources */,
+				227FD5662A59C77A00AC718A /* RWOrderModel.m in Sources */,
+				220176C32A5697E3002C718D /* NSDictionary+Log.m in Sources */,
+				227FD5632A59C32C00AC718A /* RWOrderDetailViewController.m in Sources */,
+				220176B92A566C72002C718D /* RWContentModel.m in Sources */,
+				220176BF2A56882E002C718D /* RWSectionHeaderView.m in Sources */,
+				22A0BEB22A53D88A00B8C360 /* RWMainTabbarController.m in Sources */,
+				2227174D2A57AE5200F865FD /* RWGlobal.m in Sources */,
+				22A0BEC12A53DB0700B8C360 /* UIColor+Extension.m in Sources */,
+				220176BC2A567027002C718D /* NSString+Extension.m in Sources */,
+				220176AC2A5583BB002C718D /* UIDevice+Extension.m in Sources */,
+				2227174A2A56D46C00F865FD /* RWLoginViewController.m in Sources */,
+				22A0BEB82A53D92A00B8C360 /* RWBaseTableViewController.m in Sources */,
+				2201769F2A555651002C718D /* RWNetworkService.m in Sources */,
+				220176EF2A56AFDC002C718D /* RWProductCell.m in Sources */,
+				227FD56C2A59D0E400AC718A /* RWProductDetailController.m in Sources */,
+				220176B62A566AC6002C718D /* RWProductModel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2244DEE92A53C3E60093F903 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2244DEEA2A53C3E60093F903 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2244DEEF2A53C3E60093F903 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2244DEF02A53C3E60093F903 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2244DEF22A53C3E60093F903 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55EC3C89BD6EA5FB3FAFB3A4 /* Pods-RupeeWallet.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7R9X78KKXW;
+				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/Common/RWPrefixHeader.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = RupeeWallet/App/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Rupee Wallet";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.cocoapods.RupeeWallet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		2244DEF32A53C3E60093F903 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A09065F25C66B610BF666CA /* Pods-RupeeWallet.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7R9X78KKXW;
+				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/Common/RWPrefixHeader.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = RupeeWallet/App/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Rupee Wallet";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.cocoapods.RupeeWallet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2244DED32A53C3E30093F903 /* Build configuration list for PBXProject "RupeeWallet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2244DEEF2A53C3E60093F903 /* Debug */,
+				2244DEF02A53C3E60093F903 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2244DEF12A53C3E60093F903 /* Build configuration list for PBXNativeTarget "RupeeWallet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2244DEF22A53C3E60093F903 /* Debug */,
+				2244DEF32A53C3E60093F903 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2244DED02A53C3E30093F903 /* Project object */;
+}

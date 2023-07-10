@@ -1,0 +1,35 @@
+//
+//  RWPrefixHeader.pch
+//  RupeeWallet
+//
+//  Created by Tim on 2023/7/4.
+//
+
+// MARK: - Constraints
+
+#define SCREEN_WIDTH  [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+#define TOP_SAFE_AREA [UIApplication sharedApplication].windows.firstObject.safeAreaInsets.top
+#define BOTTOM_SAFE_AREA [UIApplication sharedApplication].windows.firstObject.safeAreaInsets.bottom
+#define TAB_BAR_HEIGHT BOTTOM_SAFE_AREA + 49
+
+// MARK: - Methods
+
+#ifdef DEBUG
+#define RWLog(...) NSLog(@"%s line number:%d \n %@\n\n",__func__,__LINE__,[NSString stringWithFormat:__VA_ARGS__])
+#else
+#define RWLog(...)
+#endif
+
+// MARK: - Global Headers
+
+#import "RWMainNavigationController.h"
+#import <Masonry/Masonry.h>
+#import <SDWebImage/SDWebImage.h>
+#import <MJExtension/MJExtension.h>
+#import "UIColor+Extension.h"
+#import "UIImage+Extension.h"
+#import "UIView+Extension.h"
+#import "NSString+Extension.h"
+#import "RWNetworkService.h"
+#import "RWGlobal.h"

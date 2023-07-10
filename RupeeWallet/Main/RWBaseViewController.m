@@ -52,6 +52,7 @@
     }
     return _backButton;
 }
+
 - (UILabel *)titleLabel {
     if(!_titleLabel) {
         _titleLabel = [[UILabel alloc] init];
@@ -83,11 +84,21 @@
 }
 
 - (void)backAction {
-    if (self.modalPresentationStyle == RWModalStylePresent) {
+    if (self.modalStyle == RWModalStylePresent) {
         [self dismissViewControllerAnimated:true completion:nil];
     } else {
         [self.navigationController popViewControllerAnimated:true];
     }
+}
+
+
+- (void)setupStepViewWithCurrenStep:(NSString *)currentStep totalStep:(NSString *)totalStep {
+    UILabel *stepLabel = [[RWGlobal sharedGlobal] createAttributedStringLabelWithKey:currentStep keyColor:THEME_COLOR keyFont:[UIFont systemFontOfSize:20] value:totalStep valueColor:INDICATOR_TEXT_COLOR valueFont:[UIFont systemFontOfSize:16]];
+    [self.view addSubview:stepLabel];
+    [stepLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.mas_equalTo(-12);
+        make.centerY.mas_equalTo(self.backButton);
+    }];
 }
 
 @end

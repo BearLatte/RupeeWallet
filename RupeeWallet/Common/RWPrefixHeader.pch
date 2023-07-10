@@ -11,6 +11,7 @@
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 #define TOP_SAFE_AREA [UIApplication sharedApplication].windows.firstObject.safeAreaInsets.top
 #define BOTTOM_SAFE_AREA [UIApplication sharedApplication].windows.firstObject.safeAreaInsets.bottom
+#define NAVIGATION_BAR_HEIGHT TOP_SAFE_AREA + 44
 #define TAB_BAR_HEIGHT BOTTOM_SAFE_AREA + 49
 
 // MARK: - Methods

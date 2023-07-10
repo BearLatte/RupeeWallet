@@ -22,7 +22,14 @@ extern NSString * const INDICATOR_TEXT_COLOR;
 extern NSString * const NORMAL_BORDER_COLOR;
 extern NSString * const THEME_BACKGROUND_COLOR;
 extern NSString * const TAB_BAR_NORMAL_FOREGROUND_COLOR;
+extern NSString * const FORM_TITLE_TEXT_COLOR;
 
+// MARK: - Enums
+typedef NS_ENUM(NSUInteger, RWOCRType) {
+    RWOCRTypeAadhaarCardFront,
+    RWOCRTypeAadhaarCardBack,
+    RWOCRTypePanCardFront
+};
 
 @interface RWGlobal : NSObject
 @property(nonatomic, assign) BOOL isLogin;
@@ -30,7 +37,7 @@ extern NSString * const TAB_BAR_NORMAL_FOREGROUND_COLOR;
 - (void)go2login;
 - (UIButton *)createThemeButtonWithTitle: (NSString *_Nullable)title cornerRadius: (CGFloat)radius;
 - (UILabel *)createLabelWithText: (NSString *_Nullable)text font:(UIFont *)font textColor: (NSString *)color;
-- (UILabel *)createAttributedStringLabelWithKey:(NSString *_Nonnull)key keyColor:(NSString *_Nullable)keyColor value:(NSString *_Nonnull)value valueColor:(NSString *_Nullable)valueColor;
+- (UILabel *)createAttributedStringLabelWithKey:(NSString *_Nonnull)key keyColor:(NSString *_Nullable)keyColor keyFont:(UIFont *)keyFont value:(NSString *_Nonnull)value valueColor:(NSString *_Nullable)valueColor valueFont:(UIFont *)valueFont;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -54,7 +54,7 @@
     self.scrollView.scrollEnabled = NO;
     
     
-    [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.contentView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.top.left.mas_equalTo(0);
         make.height.mas_equalTo(SCREEN_HEIGHT);
         make.bottom.mas_equalTo(0).priority(MASLayoutPriorityDefaultHigh);
@@ -74,12 +74,6 @@
         make.left.mas_equalTo(self.loginPhoneNumberContentView.mas_right);
         make.right.mas_equalTo(self.contentView).priority(MASLayoutPriorityDefaultHigh);
     }];
-    
-//    UIButton *testButton = [UIButton buttonWithType:UIButtonTypeCustom];
-//    testButton.frame = CGRectMake(100, 100, 100, 100);
-//    testButton.backgroundColor = [UIColor random];
-//    [self.view addSubview:testButton];
-//    [testButton addTarget:self action:@selector(testBtnClicked) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)backAction {
@@ -89,12 +83,6 @@
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
-
-//- (void)testBtnClicked {
-//    self.step = 2;
-//    [self.loginOPTContentView loadCodeInputView];
-//}
-
 
 // MARK: - RWLoginContentViewDelegate
 - (void)contentViewTermsConditionAction:(RWLoginContentView *)contentView {

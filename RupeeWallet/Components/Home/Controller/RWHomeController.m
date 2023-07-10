@@ -94,8 +94,8 @@
         } else {
             RWKYCInfoContrroller *kycController = [[RWKYCInfoContrroller alloc] init];
             kycController.authStatus = authenficationInfo;
-            kycController.modalStyle = RWModalStylePresent;
             RWMainNavigationController *nav = [[RWMainNavigationController alloc] initWithRootViewController:kycController];
+            nav.modalPresentationStyle = UIModalPresentationFullScreen;
             [self presentViewController:nav animated:YES completion:nil];
         }
     }];

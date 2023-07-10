@@ -18,7 +18,7 @@
         _scrollView = [[UIScrollView alloc] init];
         _scrollView.showsVerticalScrollIndicator = NO;
         _scrollView.showsHorizontalScrollIndicator = NO;
-        _scrollView.backgroundColor = [UIColor clearColor];
+        _scrollView.backgroundColor = [UIColor whiteColor];
     }
     return _scrollView;
 }
@@ -38,6 +38,11 @@
     }];
     
     [self.scrollView addSubview:self.contentView];
+    [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.right.mas_equalTo(0);
+        make.width.mas_equalTo(SCREEN_WIDTH);
+        make.bottom.mas_equalTo(0).priority(MASLayoutPriorityDefaultHigh);
+    }];
 }
 
 @end

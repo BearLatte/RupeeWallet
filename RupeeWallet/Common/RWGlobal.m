@@ -17,6 +17,7 @@ NSString * const THEME_TEXT_COLOR = @"#333333";
 NSString * const INDICATOR_TEXT_COLOR = @"#999999";
 NSString * const NORMAL_BORDER_COLOR = @"#D4D3D8";
 NSString * const THEME_BACKGROUND_COLOR = @"#EBF0EF";
+NSString * const FORM_TITLE_TEXT_COLOR  = @"#5E6078";
 NSString * const TAB_BAR_NORMAL_FOREGROUND_COLOR = @"#BDBDBD";
 
 @implementation RWGlobal
@@ -65,18 +66,22 @@ NSString * const TAB_BAR_NORMAL_FOREGROUND_COLOR = @"#BDBDBD";
     return label;
 }
 
-- (UILabel *)createAttributedStringLabelWithKey:(NSString *)key keyColor:(NSString *)keyColor value:(NSString *)value valueColor:(NSString *)valueColor {
+- (UILabel *)createAttributedStringLabelWithKey:(NSString *)key keyColor:(NSString *)keyColor keyFont:(UIFont *)keyFont value:(NSString *)value valueColor:(NSString *)valueColor valueFont:(UIFont *)valueFont {
     keyColor = keyColor == nil ? INDICATOR_TEXT_COLOR : keyColor;
     valueColor = valueColor == nil ? THEME_TEXT_COLOR : valueColor;
-    NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@%@", key, value]];
-    [attStr addAttributes:@{
-        NSFontAttributeName : [UIFont systemFontOfSize:16],
-        NSForegroundColorAttributeName : [UIColor colorWithHexString:keyColor]
-    } range:NSRangeFromString(key)];
-    [attStr addAttributes:@{
-        NSFontAttributeName : [UIFont systemFontOfSize:16],
-        NSForegroundColorAttributeName : [UIColor colorWithHexString:valueColor]
-    } range:NSRangeFromString(value)];
+    keyFont = keyFont == nil ? [UIFont systemFontOfSize:16] : keyFont;
+    valueFont = valueFont == nil ? [UIFont systemFontOfSize:16] : valueFont;
+    NSAttributedString *keyAttributedString = [[NSAttributedString alloc] initWithString:key attributes:@{
+        NSForegroundColorAttributeName : [UIColor colorWithHexString:keyColor],
+        NSFontAttributeName : keyFont
+    }];
+    NSAttributedString *valueAttributedString = [[NSAttributedString alloc] initWithString:value attributes:@{
+        NSForegroundColorAttributeName : [UIColor colorWithHexString:valueColor],
+        NSFontAttributeName : valueFont
+    }];
+    
+    NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc] initWithAttributedString:keyAttributedString];
+    [attStr appendAttributedString:valueAttributedString];
     UILabel *label = [[UILabel alloc] init];
     label.attributedText = attStr;
     return label;

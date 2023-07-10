@@ -196,7 +196,12 @@
         self.smsCodeView.textDidChangeblock = ^(NSString * _Nullable text, BOOL isFinished) {
             if (isFinished) {
                 weakSelf.actionButton.enabled = YES;
+#ifdef DEBUG
+                self->_smsCode = @"821350";
+#else
                 self->_smsCode = text;
+#endif
+                
             }
         };
         

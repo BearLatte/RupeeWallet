@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setupUI;
 - (void)loadData;
 - (void)backAction;
+- (void)setupStepViewWithCurrenStep:(NSString *)currentStep totalStep:(NSString *)totalStep;
 @end
 
 NS_ASSUME_NONNULL_END

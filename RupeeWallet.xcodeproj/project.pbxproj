@@ -22,6 +22,10 @@
 		2227174D2A57AE5200F865FD /* RWGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = 2227174C2A57AE5200F865FD /* RWGlobal.m */; };
 		222717502A57B87A00F865FD /* RWLoginContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2227174F2A57B87A00F865FD /* RWLoginContentView.m */; };
 		222717532A58004A00F865FD /* RWNetworkResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 222717522A58004A00F865FD /* RWNetworkResponseModel.m */; };
+		222717672A5BD2A800F865FD /* RWOCRCameraPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 222717662A5BD2A800F865FD /* RWOCRCameraPanel.m */; };
+		2227176A2A5BEDB300F865FD /* RWFormInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 222717692A5BEDB300F865FD /* RWFormInputView.m */; };
+		2227176D2A5BFE3000F865FD /* RWGenderSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2227176C2A5BFE3000F865FD /* RWGenderSelectView.m */; };
+		222717702A5C12DB00F865FD /* RWAddressInpuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2227176F2A5C12DB00F865FD /* RWAddressInpuView.m */; };
 		2244DEDD2A53C3E40093F903 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2244DEDC2A53C3E40093F903 /* AppDelegate.m */; };
 		2244DEE82A53C3E60093F903 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2244DEE72A53C3E60093F903 /* Assets.xcassets */; };
 		2244DEEB2A53C3E60093F903 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2244DEE92A53C3E60093F903 /* LaunchScreen.storyboard */; };
@@ -74,6 +78,14 @@
 		2227174F2A57B87A00F865FD /* RWLoginContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWLoginContentView.m; sourceTree = "<group>"; };
 		222717512A58004A00F865FD /* RWNetworkResponseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWNetworkResponseModel.h; sourceTree = "<group>"; };
 		222717522A58004A00F865FD /* RWNetworkResponseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWNetworkResponseModel.m; sourceTree = "<group>"; };
+		222717652A5BD2A800F865FD /* RWOCRCameraPanel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWOCRCameraPanel.h; sourceTree = "<group>"; };
+		222717662A5BD2A800F865FD /* RWOCRCameraPanel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWOCRCameraPanel.m; sourceTree = "<group>"; };
+		222717682A5BEDB300F865FD /* RWFormInputView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWFormInputView.h; sourceTree = "<group>"; };
+		222717692A5BEDB300F865FD /* RWFormInputView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWFormInputView.m; sourceTree = "<group>"; };
+		2227176B2A5BFE3000F865FD /* RWGenderSelectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWGenderSelectView.h; sourceTree = "<group>"; };
+		2227176C2A5BFE3000F865FD /* RWGenderSelectView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWGenderSelectView.m; sourceTree = "<group>"; };
+		2227176E2A5C12DB00F865FD /* RWAddressInpuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWAddressInpuView.h; sourceTree = "<group>"; };
+		2227176F2A5C12DB00F865FD /* RWAddressInpuView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWAddressInpuView.m; sourceTree = "<group>"; };
 		2244DED82A53C3E40093F903 /* RupeeWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RupeeWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2244DEDB2A53C3E40093F903 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2244DEDC2A53C3E40093F903 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -190,6 +202,21 @@
 				220176BE2A56882E002C718D /* RWSectionHeaderView.m */,
 				220176ED2A56AFDC002C718D /* RWProductCell.h */,
 				220176EE2A56AFDC002C718D /* RWProductCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		222717642A5BD06700F865FD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				222717682A5BEDB300F865FD /* RWFormInputView.h */,
+				222717692A5BEDB300F865FD /* RWFormInputView.m */,
+				222717652A5BD2A800F865FD /* RWOCRCameraPanel.h */,
+				222717662A5BD2A800F865FD /* RWOCRCameraPanel.m */,
+				2227176B2A5BFE3000F865FD /* RWGenderSelectView.h */,
+				2227176C2A5BFE3000F865FD /* RWGenderSelectView.m */,
+				2227176E2A5C12DB00F865FD /* RWAddressInpuView.h */,
+				2227176F2A5C12DB00F865FD /* RWAddressInpuView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -371,6 +398,7 @@
 		22C78A472A58ADD600F4B563 /* Authenfication */ = {
 			isa = PBXGroup;
 			children = (
+				222717642A5BD06700F865FD /* View */,
 				22C78A482A58ADF900F4B563 /* Controller */,
 			);
 			path = Authenfication;
@@ -534,16 +562,20 @@
 				227FD5662A59C77A00AC718A /* RWOrderModel.m in Sources */,
 				220176C32A5697E3002C718D /* NSDictionary+Log.m in Sources */,
 				227FD5632A59C32C00AC718A /* RWOrderDetailViewController.m in Sources */,
+				222717702A5C12DB00F865FD /* RWAddressInpuView.m in Sources */,
 				220176B92A566C72002C718D /* RWContentModel.m in Sources */,
+				222717672A5BD2A800F865FD /* RWOCRCameraPanel.m in Sources */,
 				220176BF2A56882E002C718D /* RWSectionHeaderView.m in Sources */,
 				22A0BEB22A53D88A00B8C360 /* RWMainTabbarController.m in Sources */,
 				2227174D2A57AE5200F865FD /* RWGlobal.m in Sources */,
 				22A0BEC12A53DB0700B8C360 /* UIColor+Extension.m in Sources */,
 				220176BC2A567027002C718D /* NSString+Extension.m in Sources */,
 				220176AC2A5583BB002C718D /* UIDevice+Extension.m in Sources */,
+				2227176D2A5BFE3000F865FD /* RWGenderSelectView.m in Sources */,
 				2227174A2A56D46C00F865FD /* RWLoginViewController.m in Sources */,
 				22A0BEB82A53D92A00B8C360 /* RWBaseTableViewController.m in Sources */,
 				2201769F2A555651002C718D /* RWNetworkService.m in Sources */,
+				2227176A2A5BEDB300F865FD /* RWFormInputView.m in Sources */,
 				220176EF2A56AFDC002C718D /* RWProductCell.m in Sources */,
 				227FD56C2A59D0E400AC718A /* RWProductDetailController.m in Sources */,
 				220176B62A566AC6002C718D /* RWProductModel.m in Sources */,

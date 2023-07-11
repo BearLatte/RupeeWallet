@@ -9,6 +9,14 @@
 
 @implementation RWContentModel
 + (NSDictionary *)mj_objectClassInArray {
-    return @{@"loanProductList" : [RWProductModel class]};
+    return @{
+        @"loanProductList" : [RWProductModel class],
+        @"eduList" : [NSString class],
+        @"marryList" : [NSString class],
+        @"jobList" : [NSString class],
+        @"moneyList" : [NSString class],
+        @"monthSalaryList" : [NSString class],
+        @"industryList" : [NSString class]
+    };
 }
 @end

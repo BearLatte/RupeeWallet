@@ -27,6 +27,12 @@
     [self chengeContentLabelColor:0];
 }
 
+- (void)setAddress:(NSString *)address {
+    _address = address;
+    self.contentLabel.text = address;
+    [self chengeContentLabelColor:1];
+}
+
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if(self) {

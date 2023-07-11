@@ -9,8 +9,22 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class RWOCRCameraPanel;
+
+@protocol RWOCRCameraPanelDelegate <NSObject>
+@optional
+- (void)camerapPanelDidTappedFrontView:(RWOCRCameraPanel *)panelView;
+- (void)camerapPanelDidTappedBackView:(RWOCRCameraPanel *)panelView;
+@end
+
 @interface RWOCRCameraPanel : UIView
+@property(nonatomic, weak) id<RWOCRCameraPanelDelegate> delegate;
 @property(nonatomic, assign) RWOCRType ocrType;
+
+- (void)setImage:(UIImage *)image ocrType:(RWOCRType)type;
+- (void)setImageUrl:(NSString *)imageUrl ocrType:(RWOCRType)type;
+- (BOOL)isFrontViewHaveBackgroundImage;
+- (BOOL)isBackViewHaveBackgroundImage;
 @end
 
 NS_ASSUME_NONNULL_END

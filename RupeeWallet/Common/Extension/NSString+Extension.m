@@ -66,5 +66,4 @@
     RWLog(@"MD5 %@", output);
     return output;
 }
-
 @end

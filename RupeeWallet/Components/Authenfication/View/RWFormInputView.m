@@ -7,15 +7,16 @@
 
 #import "RWFormInputView.h"
 
-@interface RWFormInputView()
+@interface RWFormInputView()<UITextFieldDelegate>
 @property(nonatomic, assign) RWFormInputViewType inputType;
 @property(nonatomic, weak) UILabel *titleLabel;
 @property(nonatomic, weak) UITextField *contentInputField;
 @property(nonatomic, weak) UIImageView *rightIconView;
+@property(nonatomic, copy) textfieldTapAction tapAction;
 @end
 
 @implementation RWFormInputView
-+ (instancetype)inputViewWithInputType:(RWFormInputViewType)inputType title:(NSString *)title placeholder:(NSString *)placeholder {
++ (instancetype)inputViewWithInputType:(RWFormInputViewType)inputType title:(NSString *)title placeholder:(NSString *)placeholder keyboardType:(UIKeyboardType)keyboardType tapAction:(textfieldTapAction)tapAction {
     RWFormInputView *inputView = [[RWFormInputView alloc] init];
     inputView.inputType = inputType;
     inputView.titleLabel.text = title;
@@ -33,7 +34,14 @@
             inputView.rightIconView.image = [UIImage imageNamed:@"down_arrow"];
             break;
     }
+    inputView.contentInputField.keyboardType = keyboardType;
+    inputView.tapAction = tapAction;
     return inputView;
+}
+
+- (void)setInputedText:(NSString *)inputedText {
+    _inputedText = inputedText;
+    self.contentInputField.text = inputedText;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -60,6 +68,7 @@
         [rightView addSubview:rightIconView];
         self.rightIconView = rightIconView;
         field.rightView = rightView;
+        field.delegate = self;
         [self addSubview:field];
         self.contentInputField = field;
     }
@@ -83,4 +92,18 @@
     }];
 }
 
+
+// MARK: - UITextFieldDelegate
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    if(self.tapAction) {
+        self.tapAction();
+        return NO;
+    } else {
+        return YES;
+    }
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    _inputedText = textField.text;
+}
 @end

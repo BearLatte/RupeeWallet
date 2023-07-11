@@ -11,6 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIImage (Extension)
 + (UIImage *)createImageWithColor:(UIColor *)color;
+- (NSData *)compressImageToMaxLength:(NSInteger)maxLength;
 @end
 
 NS_ASSUME_NONNULL_END

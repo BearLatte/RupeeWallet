@@ -10,8 +10,8 @@
 @interface RWOCRCameraPanel()
 @property(nonatomic, weak) UIImageView *dashedView;
 @property(nonatomic, weak) UILabel *titleLabel;
-@property(nonatomic, weak) UIImageView *frontButtonView;
-@property(nonatomic, weak) UIImageView *backButtonView;
+@property(nonatomic, weak) UIButton *frontButtonView;
+@property(nonatomic, weak) UIButton *backButtonView;
 @property(nonatomic, weak) UILabel *frontIndicatorView;
 @property(nonatomic, weak) UILabel *backIndicatorView;
 @end
@@ -45,15 +45,26 @@
         [self addSubview:titleLabel];
         self.titleLabel = titleLabel;
         
-        UIImageView *fronView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"camera_panel"]];
-        fronView.contentMode = UIViewContentModeScaleAspectFit;
-        [self addSubview:fronView];
-        self.frontButtonView = fronView;
+        UIButton *frontView = [UIButton buttonWithType:UIButtonTypeCustom];
+        [frontView setImage:[UIImage imageNamed:@"camera_icon"] forState:UIControlStateNormal];
+        frontView.backgroundColor = [UIColor colorWithHexString:THEME_COLOR];
+        frontView.contentMode = UIViewContentModeScaleAspectFill;
+        frontView.layer.cornerRadius = 10;
+        frontView.layer.masksToBounds = YES;
+        [self addSubview:frontView];
+        self.frontButtonView = frontView;
+        [self.frontButtonView addTarget:self action:@selector(frontViewDidTapped) forControlEvents:UIControlEventTouchUpInside];
         
-        UIImageView *backView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"camera_panel"]];
-        fronView.contentMode = UIViewContentModeScaleAspectFit;
+        UIButton *backView = [UIButton buttonWithType:UIButtonTypeCustom];
+        [backView setImage:[UIImage imageNamed:@"camera_icon"] forState:UIControlStateNormal];
+        backView.backgroundColor = [UIColor colorWithHexString:THEME_COLOR];
+        backView.contentMode = UIViewContentModeScaleAspectFill;
+        backView.layer.cornerRadius = 10;
+        backView.layer.masksToBounds = YES;
         [self addSubview:backView];
         self.backButtonView = backView;
+        [self.backButtonView addTarget:self action:@selector(backViewDidTapped) forControlEvents:UIControlEventTouchUpInside];
+        
         
         UILabel *frontIndicator = [[UILabel alloc] init];
         frontIndicator.textColor = [UIColor colorWithHexString:THEME_TEXT_COLOR];
@@ -116,6 +127,60 @@
         make.top.height.equalTo(self.frontIndicatorView);
         make.centerX.equalTo(self.backButtonView);
     }];
+}
+
+
+- (void)frontViewDidTapped {
+    if([self.delegate respondsToSelector:@selector(camerapPanelDidTappedFrontView:)]) {
+        [self.delegate camerapPanelDidTappedFrontView:self];
+    }
+}
+
+- (void)backViewDidTapped {
+    if([self.delegate respondsToSelector:@selector(camerapPanelDidTappedBackView:)]) {
+        [self.delegate camerapPanelDidTappedBackView:self];
+    }
+}
+
+- (void)setImage:(UIImage *)image ocrType:(RWOCRType)type {
+    switch (type) {
+        case RWOCRTypeAadhaarCardFront:
+            [self.frontButtonView setBackgroundImage:image forState:UIControlStateNormal];
+            break;
+        case RWOCRTypeAadhaarCardBack:
+            [self.backButtonView setBackgroundImage:image forState:UIControlStateNormal];
+            break;
+        case RWOCRTypePanCardFront:
+            [self.frontButtonView setBackgroundImage:image forState:UIControlStateNormal];
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)setImageUrl:(NSString *)imageUrl ocrType:(RWOCRType)type {
+    switch (type) {
+        case RWOCRTypeAadhaarCardFront:
+            [self.frontButtonView sd_setBackgroundImageWithURL:[NSURL URLWithString:imageUrl] forState:UIControlStateNormal];
+            break;
+        case RWOCRTypeAadhaarCardBack:
+            [self.backButtonView sd_setBackgroundImageWithURL:[NSURL URLWithString:imageUrl] forState:UIControlStateNormal];
+            break;
+        case RWOCRTypePanCardFront:
+            [self.frontButtonView sd_setBackgroundImageWithURL:[NSURL URLWithString:imageUrl] forState:UIControlStateNormal];
+            break;
+        default:
+            break;
+    }
+}
+
+- (BOOL)isFrontViewHaveBackgroundImage {
+    return !(self.frontButtonView.currentBackgroundImage == nil);
+}
+
+
+- (BOOL)isBackViewHaveBackgroundImage {
+    return !(self.backButtonView.currentBackgroundImage == nil);
 }
 
 @end

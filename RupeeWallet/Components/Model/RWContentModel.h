@@ -9,6 +9,7 @@
 #import "RWProductModel.h"
 #import "RWOrderModel.h"
 #import "RWProductDetailModel.h"
+#import "RWOSSCredentialModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -41,6 +42,34 @@ NS_ASSUME_NONNULL_BEGIN
 
 // MARK: - Product
 @property(nonatomic, strong) NSArray<RWProductModel*> *_Nullable loanProductList;
+
+// MARK: - 下拉列表项
+@property(nonatomic, strong) NSArray<NSString *> *eduList;
+@property(nonatomic, strong) NSArray<NSString *> *marryList;
+@property(nonatomic, strong) NSArray<NSString *> *jobList;
+@property(nonatomic, strong) NSArray<NSString *> *moneyList;
+@property(nonatomic, strong) NSArray<NSString *> *monthSalaryList;
+@property(nonatomic, strong) NSArray<NSString *> *industryList;
+
+// MARK: - OSS Parameters
+@property(nonatomic, copy) NSString *url;
+@property(nonatomic, copy) NSString *bucket;
+@property(nonatomic, strong) RWOSSCredentialModel *credentials;
+
+// MARK: - OCR
+
+// aadhar card front
+@property(nonatomic, copy) NSString *aadharNumber;
+@property(nonatomic, copy) NSString *aadharName;
+@property(nonatomic, copy) NSString *dateOfBirth;
+@property(nonatomic, copy) NSString *gender;
+
+// aadhar card back
+@property(nonatomic, copy) NSString *addressAll;
+
+// pan card front
+@property(nonatomic, copy) NSString *panNumber;
+
 @end
 
 NS_ASSUME_NONNULL_END

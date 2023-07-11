@@ -10,6 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RWAddressInpuView : UIView
+@property(nonatomic, copy) NSString *_Nullable address;
 + (instancetype)addressViewWithTitle:(NSString *)title placeholder:(NSString *)placeholder;
 @end
 

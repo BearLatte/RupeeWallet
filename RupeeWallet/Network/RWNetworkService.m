@@ -11,6 +11,7 @@
 #import "RWBaseModel.h"
 #import "RWProgressHUD.h"
 #import "RWNetworkResponseModel.h"
+#import <AliyunOSSiOS/AliyunOSSiOS.h>
 
 @interface RWNetworkService()
 @property(nonatomic, strong) AFHTTPSessionManager *_Nullable networkManager;
@@ -132,6 +133,49 @@ static NSString * const baseURL = @"";
     }];
 }
 
+- (void)fetchDropMenuListSuccess:(void (^)(RWContentModel * _Nonnull))success {
+    [RWProgressHUD showWithStatus:@"loading..."];
+    [self requestWithPath:@"/uzYONRY/Yuulyz/OizltM" parameters:nil success:^(RWBaseModel *response) {
+        success(response.cont);
+    } failure:^{
+        
+    }];
+}
+
+// MARK: - OCR Image upload
+- (void)ocrRequestWithImage:(UIImage *)image ocrType:(RWOCRType)type success:(void (^)(RWContentModel * _Nonnull))success {
+    dispatch_queue_t dispatchQueue = dispatch_queue_create("background.queue", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    
+    __block RWContentModel *ossParams = nil;
+    __block NSString *imageUrl = nil;
+    
+    dispatch_async(dispatchQueue, ^{
+        [self fetchOSSParametersSuccess:^(RWContentModel *content) {
+            ossParams = content;
+            dispatch_semaphore_signal(semaphore);
+        } failure:^{
+            dispatch_semaphore_signal(semaphore);
+        }];
+        
+        
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+        [self uploadImageWithOSSParameters:ossParams image:image success:^(NSString *imgUrl) {
+            imageUrl = imgUrl;
+            dispatch_semaphore_signal(semaphore);
+        } failure:^{
+            dispatch_semaphore_signal(semaphore);
+        }];
+        
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+        [self ocrServiceWithType:type imageUrl:imageUrl success:^(RWContentModel *content) {
+            success(content);
+            dispatch_semaphore_signal(semaphore);
+        } failure:^{
+            dispatch_semaphore_signal(semaphore);
+        }];
+    });
+}
 
 
 // MARK: - Private method
@@ -191,5 +235,68 @@ static NSString * const baseURL = @"";
     }];
 }
 
+- (void)fetchOSSParametersSuccess:(void(^)(RWContentModel *content))success failure:(void(^)(void))failure {
+    [RWProgressHUD showWithStatus:@"loading..."];
+    [self requestWithPath:@"/uzYONRY/Yuulyz/JjXaQYJ" parameters:nil success:^(RWBaseModel *response) {
+        success(response.cont);
+    } failure:^{
+        failure();
+    }];
+}
 
+- (void)uploadImageWithOSSParameters:(RWContentModel *)parameters image:(UIImage *)image success:(void(^)(NSString *imgUrl))success failure:(void(^)(void))failure {
+    [RWProgressHUD showWithStatus:@"uploading..."];
+    OSSFederationCredentialProvider *provider = [[OSSFederationCredentialProvider alloc] initWithFederationTokenGetter:^OSSFederationToken * _Nullable{
+        OSSFederationToken *token = [OSSFederationToken new];
+        token.tAccessKey = parameters.credentials.accessKeyId;
+        token.tSecretKey = parameters.credentials.accessKeySecret;
+        token.tToken     = parameters.credentials.securityToken;
+        token.expirationTimeInGMTFormat = parameters.credentials.expiration;
+        return token;
+    }];
+    
+    OSSClient *client = [[OSSClient alloc] initWithEndpoint:parameters.url credentialProvider:provider];
+    OSSPutObjectRequest *put = [OSSPutObjectRequest new];
+    put.bucketName = parameters.bucket;
+    NSString *fullPath = [NSString stringWithFormat:@"india/img/%@/%@.jpg", [[[NSDate alloc] init] date2stringWithFormatter:@"yyyy-MM-dd"], [NSString generateRandomStringWithLength:32]];
+    put.objectKey = fullPath;
+    put.uploadingData = [image compressImageToMaxLength: 1024 * 200];
+    OSSTask *task = [client putObject:put];
+    [[task continueWithBlock:^id _Nullable(OSSTask * _Nonnull task) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [RWProgressHUD dismiss];
+        });
+        
+        if(task.error != nil) {
+            [RWProgressHUD showErrorWithStatus:@"Upload Failed"];
+        }
+        
+        success(fullPath);
+        return nil;
+    }] waitUntilFinished];
+}
+
+- (void)ocrServiceWithType:(RWOCRType)type imageUrl:(NSString *)imageUrl success:(void(^)(RWContentModel *content))success failure:(void(^)(void))failure {
+    [RWProgressHUD showWithStatus:@"identifying..."];
+    NSString *typeStr = nil;
+    switch (type) {
+        case RWOCRTypeAadhaarCardFront:
+            typeStr = @"AADHAAR_FRONT";
+            break;
+        case RWOCRTypeAadhaarCardBack:
+            typeStr = @"AADHAAR_BACK";
+            break;
+        case RWOCRTypePanCardFront:
+            typeStr = @"PAN_FRONT";
+            break;
+        default:
+            break;
+    }
+    
+    [self requestWithPath:@"/uzYONRY/Yuulyz/RCyYWTbj" parameters:@{@"type" : typeStr, @"imgUrl" : imageUrl} success:^(RWBaseModel *response) {
+        success(response.cont);
+    } failure:^{
+        failure();
+    }];
+}
 @end

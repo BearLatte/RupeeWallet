@@ -26,6 +26,9 @@
 		2227176A2A5BEDB300F865FD /* RWFormInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 222717692A5BEDB300F865FD /* RWFormInputView.m */; };
 		2227176D2A5BFE3000F865FD /* RWGenderSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2227176C2A5BFE3000F865FD /* RWGenderSelectView.m */; };
 		222717702A5C12DB00F865FD /* RWAddressInpuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2227176F2A5C12DB00F865FD /* RWAddressInpuView.m */; };
+		222717732A5CFFC800F865FD /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 222717722A5CFFC800F865FD /* NSDate+Extension.m */; };
+		222717762A5D272F00F865FD /* RWOSSCredentialModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 222717752A5D272F00F865FD /* RWOSSCredentialModel.m */; };
+		222717792A5D563100F865FD /* RWLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 222717782A5D563100F865FD /* RWLocationManager.m */; };
 		2244DEDD2A53C3E40093F903 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2244DEDC2A53C3E40093F903 /* AppDelegate.m */; };
 		2244DEE82A53C3E60093F903 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2244DEE72A53C3E60093F903 /* Assets.xcassets */; };
 		2244DEEB2A53C3E60093F903 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2244DEE92A53C3E60093F903 /* LaunchScreen.storyboard */; };
@@ -86,6 +89,12 @@
 		2227176C2A5BFE3000F865FD /* RWGenderSelectView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWGenderSelectView.m; sourceTree = "<group>"; };
 		2227176E2A5C12DB00F865FD /* RWAddressInpuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWAddressInpuView.h; sourceTree = "<group>"; };
 		2227176F2A5C12DB00F865FD /* RWAddressInpuView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWAddressInpuView.m; sourceTree = "<group>"; };
+		222717712A5CFFC800F865FD /* NSDate+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
+		222717722A5CFFC800F865FD /* NSDate+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
+		222717742A5D272F00F865FD /* RWOSSCredentialModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWOSSCredentialModel.h; sourceTree = "<group>"; };
+		222717752A5D272F00F865FD /* RWOSSCredentialModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWOSSCredentialModel.m; sourceTree = "<group>"; };
+		222717772A5D563100F865FD /* RWLocationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWLocationManager.h; sourceTree = "<group>"; };
+		222717782A5D563100F865FD /* RWLocationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWLocationManager.m; sourceTree = "<group>"; };
 		2244DED82A53C3E40093F903 /* RupeeWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RupeeWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2244DEDB2A53C3E40093F903 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2244DEDC2A53C3E40093F903 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -163,6 +172,8 @@
 				220176AB2A5583BB002C718D /* UIDevice+Extension.m */,
 				220176BA2A567027002C718D /* NSString+Extension.h */,
 				220176BB2A567027002C718D /* NSString+Extension.m */,
+				222717712A5CFFC800F865FD /* NSDate+Extension.h */,
+				222717722A5CFFC800F865FD /* NSDate+Extension.m */,
 				220176C12A5697E3002C718D /* NSDictionary+Log.h */,
 				220176C22A5697E3002C718D /* NSDictionary+Log.m */,
 			);
@@ -191,6 +202,8 @@
 				227FD5682A59C98E00AC718A /* RWProductDetailModel.m */,
 				227FD5642A59C77A00AC718A /* RWOrderModel.h */,
 				227FD5652A59C77A00AC718A /* RWOrderModel.m */,
+				222717742A5D272F00F865FD /* RWOSSCredentialModel.h */,
+				222717752A5D272F00F865FD /* RWOSSCredentialModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -339,6 +352,8 @@
 				22A0BEC42A53DC3700B8C360 /* RWPrefixHeader.pch */,
 				2227174B2A57AE5200F865FD /* RWGlobal.h */,
 				2227174C2A57AE5200F865FD /* RWGlobal.m */,
+				222717772A5D563100F865FD /* RWLocationManager.h */,
+				222717782A5D563100F865FD /* RWLocationManager.m */,
 				220176982A555446002C718D /* Extension */,
 				220176992A555455002C718D /* ProgressHUD */,
 			);
@@ -552,12 +567,14 @@
 				227FD5692A59C98E00AC718A /* RWProductDetailModel.m in Sources */,
 				22A0BED32A53F2BB00B8C360 /* UIImage+Extension.m in Sources */,
 				2201769C2A55548D002C718D /* RWProgressHUD.m in Sources */,
+				222717732A5CFFC800F865FD /* NSDate+Extension.m in Sources */,
 				22A0BED02A53ED8B00B8C360 /* RWPersonalCenterController.m in Sources */,
 				22A0BEBB2A53D93E00B8C360 /* RWBaseScrollViewController.m in Sources */,
 				220176A52A556AA9002C718D /* UIView+Extension.m in Sources */,
 				22C78A4B2A58AE6E00F4B563 /* RWKYCInfoContrroller.m in Sources */,
 				22A0BEB52A53D8E900B8C360 /* RWBaseViewController.m in Sources */,
 				222717532A58004A00F865FD /* RWNetworkResponseModel.m in Sources */,
+				222717792A5D563100F865FD /* RWLocationManager.m in Sources */,
 				22A0BECD2A53ED7200B8C360 /* RWHomeController.m in Sources */,
 				227FD5662A59C77A00AC718A /* RWOrderModel.m in Sources */,
 				220176C32A5697E3002C718D /* NSDictionary+Log.m in Sources */,
@@ -579,6 +596,7 @@
 				220176EF2A56AFDC002C718D /* RWProductCell.m in Sources */,
 				227FD56C2A59D0E400AC718A /* RWProductDetailController.m in Sources */,
 				220176B62A566AC6002C718D /* RWProductModel.m in Sources */,
+				222717762A5D272F00F865FD /* RWOSSCredentialModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -712,9 +730,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7R9X78KKXW;
+				DEVELOPMENT_TEAM = 7MC978XNU9;
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/Common/RWPrefixHeader.pch";
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = RupeeWallet/App/Info.plist;
@@ -732,6 +751,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.cocoapods.RupeeWallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -746,9 +766,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7R9X78KKXW;
+				DEVELOPMENT_TEAM = 7MC978XNU9;
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/Common/RWPrefixHeader.pch";
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = RupeeWallet/App/Info.plist;
@@ -766,6 +787,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.cocoapods.RupeeWallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -38,6 +39,11 @@ typedef NS_ENUM(NSUInteger, RWOCRType) {
 - (UIButton *)createThemeButtonWithTitle: (NSString *_Nullable)title cornerRadius: (CGFloat)radius;
 - (UILabel *)createLabelWithText: (NSString *_Nullable)text font:(UIFont *)font textColor: (NSString *)color;
 - (UILabel *)createAttributedStringLabelWithKey:(NSString *_Nonnull)key keyColor:(NSString *_Nullable)keyColor keyFont:(UIFont *)keyFont value:(NSString *_Nonnull)value valueColor:(NSString *_Nullable)valueColor valueFont:(UIFont *)valueFont;
+
+
+- (void)checkCameraAuthorityWithTarget:(UIViewController *)target;
+
+- (UIViewController *)getCurrentViewController;
 @end
 
 NS_ASSUME_NONNULL_END

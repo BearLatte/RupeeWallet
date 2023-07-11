@@ -44,6 +44,11 @@
     [super setupUI];
     self.step = 1;
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    [self.scrollView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(UIEdgeInsetsZero);
+    }];
+    
     UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"top_header_icon"]];
     [self.view insertSubview:imgView atIndex:0];
     [imgView mas_makeConstraints:^(MASConstraintMaker *make) {

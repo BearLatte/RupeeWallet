@@ -55,11 +55,12 @@
     } else {
         self.headerImageView.image = [UIImage imageNamed:@"header_img"];
     }
-    [[RWNetworkService sharedInstance] fetchPerductListWithSuccess:^(NSArray * _Nonnull products) {
+    
+    [[RWNetworkService sharedInstance] fetchProductWithIsRecommend:NO success:^(NSArray * _Nullable products, RWProductDetailModel * _Nullable recommendProduct) {
         self.products = products;
         [self.tableView reloadData];
         [self.tableView.pullToRefreshView stopAnimating];
-    } failure:^() {
+    } failure:^{
         [self.tableView.pullToRefreshView stopAnimating];
     }];
 }

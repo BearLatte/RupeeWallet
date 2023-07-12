@@ -21,7 +21,7 @@ typedef NS_ENUM(NSUInteger, RWAuthType) {
 
 @interface RWNetworkService : NSObject
 + (instancetype)sharedInstance;
-- (void)fetchPerductListWithSuccess: (void(^)(NSArray *products))successClosure failure: (void(^)(void))failureClosure;
+- (void)fetchProductWithIsRecommend:(BOOL)isRecommend success:(void(^)(NSArray *_Nullable products, RWProductDetailModel *_Nullable recommendProduct))successClosure failure: (void(^)(void))failureClosure;
 - (void)sendSMSWithPhoneNumber:(NSString *)phoneNumber success:(void (^)(void))success;
 - (void)loginWithPhone:(NSString *)phone code:(NSString *)code success: (void(^)(void))success;
 - (void)fetchUserAuthInfoWithType:(RWAuthType)type success:(void(^)(RWContentModel *authenficationInfo))success;

@@ -13,10 +13,11 @@
 @property(nonatomic, weak) UITextField *contentInputField;
 @property(nonatomic, weak) UIImageView *rightIconView;
 @property(nonatomic, copy) textfieldTapAction tapAction;
+@property(nonatomic, copy) didEndEditingAction endEditingAction;
 @end
 
 @implementation RWFormInputView
-+ (instancetype)inputViewWithInputType:(RWFormInputViewType)inputType title:(NSString *)title placeholder:(NSString *)placeholder keyboardType:(UIKeyboardType)keyboardType tapAction:(textfieldTapAction)tapAction {
++ (instancetype)inputViewWithInputType:(RWFormInputViewType)inputType title:(NSString *)title placeholder:(NSString *)placeholder keyboardType:(UIKeyboardType)keyboardType tapAction:(textfieldTapAction)tapAction didEndEditingAction:(didEndEditingAction)didEndEditingAction {
     RWFormInputView *inputView = [[RWFormInputView alloc] init];
     inputView.inputType = inputType;
     inputView.titleLabel.text = title;
@@ -36,6 +37,7 @@
     }
     inputView.contentInputField.keyboardType = keyboardType;
     inputView.tapAction = tapAction;
+    inputView.endEditingAction = didEndEditingAction;
     return inputView;
 }
 
@@ -105,5 +107,6 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     _inputedText = textField.text;
+    self.endEditingAction();
 }
 @end

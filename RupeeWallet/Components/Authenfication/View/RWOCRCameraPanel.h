@@ -23,8 +23,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)setImage:(UIImage *)image ocrType:(RWOCRType)type;
 - (void)setImageUrl:(NSString *)imageUrl ocrType:(RWOCRType)type;
-- (BOOL)isFrontViewHaveBackgroundImage;
-- (BOOL)isBackViewHaveBackgroundImage;
 @end
 
 NS_ASSUME_NONNULL_END

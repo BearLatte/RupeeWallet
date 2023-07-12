@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString *)generateRandomStringWithLength:(NSUInteger)length;
 + (NSString *)sortedDictionary:(NSDictionary *)dict;
 - (NSString *)MD5;
+- (BOOL)isNum;
 @end
 
 NS_ASSUME_NONNULL_END

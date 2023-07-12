@@ -63,12 +63,33 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, copy) NSString *aadharName;
 @property(nonatomic, copy) NSString *dateOfBirth;
 @property(nonatomic, copy) NSString *gender;
+@property(nonatomic, copy) NSString *education;
+@property(nonatomic, copy) NSString *frontImg;
+@property(nonatomic, copy) NSString *backImg;
+@property(nonatomic, copy) NSString *marriageStatus;
+@property(nonatomic, copy) NSString *residenceDetailAddress;
+@property(nonatomic, copy) NSString *firstName;
 
 // aadhar card back
 @property(nonatomic, copy) NSString *addressAll;
 
 // pan card front
 @property(nonatomic, copy) NSString *panNumber;
+@property(nonatomic, copy) NSString *panCardImg;
+@property(nonatomic, copy) NSString *monthlySalary;
+@property(nonatomic, copy) NSString *industry;
+@property(nonatomic, copy) NSString *job;
+@property(nonatomic, copy) NSString *email;
+@property(nonatomic, copy) NSString *paytmAccount;
+@property(nonatomic, copy) NSString *bodyImg;
+
+// MARK: - Contact Info
+@property(nonatomic, copy) NSString *_Nullable colleagueName;
+@property(nonatomic, copy) NSString *_Nullable colleagueNumber;
+@property(nonatomic, copy) NSString *_Nullable familyName;
+@property(nonatomic, copy) NSString *_Nullable familyNumber;
+@property(nonatomic, copy) NSString *_Nullable brotherOrSisterName;
+@property(nonatomic, copy) NSString *_Nullable brotherOrSisterNumber;
 
 @end
 

@@ -75,6 +75,7 @@ static NSString * const baseURL = @"";
     [RWProgressHUD showWithStatus:@"loading..."];
     if ([RWGlobal sharedGlobal].isLogin) {
         [self requestWithPath:@"/uzYONRY/Yuulyz/kluBMGy" parameters:nil success:^(RWBaseModel *response) {
+            [[NSUserDefaults standardUserDefaults] setValue:response.cont.phone forKey:LOGIN_PHONE_NUMBER_KEY];
             successClosure(response.cont.loanProductList);
         } failure:^{
             failureClosure();
@@ -111,16 +112,36 @@ static NSString * const baseURL = @"";
     }];
 }
 
-- (void)fetchUserAuthInfoWithType:(NSInteger)type step:(NSString *)step success:(void (^)(RWContentModel * _Nonnull))success {
+- (void)fetchUserAuthInfoWithType:(RWAuthType)type success:(void (^)(RWContentModel * _Nonnull))success {
     [RWProgressHUD showWithStatus:@"loading..."];
-    NSMutableDictionary *params = @{@"type": @(type)}.mutableCopy;
-    if(step != nil) {
-        params[@"step"] = step;
+    NSMutableDictionary *params = @{}.mutableCopy;
+    switch (type) {
+        case RWAuthTypeAllInfo:
+            params[@"type"] = @"1";
+            break;
+        case RWAuthTypeKYCInfo:
+            params[@"type"] = @"2";
+            params[@"step"] = @"loanapiUserIdentity";
+            break;
+        case RWAuthTypePersonalInfo:
+            params[@"type"] = @"2";
+            params[@"step"] = @"loanapiUserBasic";
+            break;
+        case RWAuthTypeContactInfo:
+            params[@"type"] = @"2";
+            params[@"step"] = @"loanapiUserLinkMan";
+            break;
+        case RWAuthTypeBankCardInfo:
+            params[@"type"] = @"2";
+            params[@"step"] = @"loanapiUserBankCard";
+            break;
+        default:
+            break;
     }
-    [self requestWithPath:@"/uzYONRY/Yuulyz/cFDJWnU" parameters:params success:^(RWBaseModel *response) {
+    [self requestWithPath:@"/uzYONRY/Yuulyz/cFDJWnU" parameters:[params copy] success:^(RWBaseModel *response) {
         success(response.cont);
     } failure:^{
-        
+
     }];
 }
 
@@ -143,7 +164,7 @@ static NSString * const baseURL = @"";
 }
 
 // MARK: - OCR Image upload
-- (void)ocrRequestWithImage:(UIImage *)image ocrType:(RWOCRType)type success:(void (^)(RWContentModel * _Nonnull))success {
+- (void)ocrRequestWithImage:(UIImage *)image ocrType:(RWOCRType)type success:(void (^)(RWContentModel * _Nonnull, NSString *))success {
     dispatch_queue_t dispatchQueue = dispatch_queue_create("background.queue", DISPATCH_QUEUE_CONCURRENT);
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     
@@ -169,12 +190,39 @@ static NSString * const baseURL = @"";
         
         dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
         [self ocrServiceWithType:type imageUrl:imageUrl success:^(RWContentModel *content) {
-            success(content);
+            success(content, imageUrl);
             dispatch_semaphore_signal(semaphore);
         } failure:^{
             dispatch_semaphore_signal(semaphore);
         }];
     });
+}
+
+- (void)authInfoWithType:(RWAuthType)type parameters:(NSDictionary *)parameters success:(void (^)(void))success {
+    [RWProgressHUD showWithStatus:@"verifying..."];
+    NSString *path = nil;
+    switch (type) {
+        case RWAuthTypeKYCInfo:
+            path = @"/uzYONRY/Yuulyz/dDOjZz";
+            break;
+        case RWAuthTypePersonalInfo:
+            path = @"/uzYONRY/Yuulyz/uWEGwa";
+            break;
+        case RWAuthTypeContactInfo:
+            path = @"/uzYONRY/Yuulyz/nOONCuy";
+            break;
+        case RWAuthTypeBankCardInfo:
+            path = @"/uzYONRY/Yuulyz/iskepOc";
+            break;
+        default:
+            break;
+    }
+    
+    [self requestWithPath:path parameters:parameters success:^(RWBaseModel *response) {
+        success();
+    } failure:^{
+        
+    }];
 }
 
 

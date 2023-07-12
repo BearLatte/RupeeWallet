@@ -11,6 +11,7 @@
 #import "RWGenderSelectView.h"
 #import "RWAddressInpuView.h"
 #import "RWLocationManager.h"
+#import "RWPersonalInfoController.h"
 
 @interface RWKYCInfoContrroller ()<RWOCRCameraPanelDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
 @property(nonatomic, strong) RWOCRCameraPanel *_Nullable cameraPanel;
@@ -31,6 +32,11 @@
 
 @property(nonatomic, copy) NSString *selectedMarriageState;
 @property(nonatomic, copy) NSString *selectedEdu;
+
+@property(nonatomic, copy) NSString *frontImg;
+@property(nonatomic, copy) NSString *backImg;
+
+@property(nonatomic, strong) RWContentModel *kycInfo;
 @end
 
 @implementation RWKYCInfoContrroller
@@ -68,7 +74,9 @@
         make.right.equalTo(@-12);
     }];
     
-    RWFormInputView *name = [RWFormInputView inputViewWithInputType:RWFormInputViewTypeNormal title:@"Aadhaar Name" placeholder:@"Aadhaar Name" keyboardType:UIKeyboardTypeDefault tapAction:nil];
+    RWFormInputView *name = [RWFormInputView inputViewWithInputType:RWFormInputViewTypeNormal title:@"Aadhaar Name" placeholder:@"Aadhaar Name" keyboardType:UIKeyboardTypeDefault tapAction:nil didEndEditingAction:^{
+        [self checkNextButtonEnabel];
+    }];
     [self.contentView addSubview:name];
     [name mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.cameraPanel.mas_bottom).offset(20);
@@ -77,7 +85,9 @@
     }];
     self.nameInput = name;
     
-    RWFormInputView *number = [RWFormInputView inputViewWithInputType:RWFormInputViewTypeNormal title:@"Aadhaar Number" placeholder:@"Aadhaar Number" keyboardType:UIKeyboardTypeNumberPad tapAction:nil];
+    RWFormInputView *number = [RWFormInputView inputViewWithInputType:RWFormInputViewTypeNormal title:@"Aadhaar Number" placeholder:@"Aadhaar Number" keyboardType:UIKeyboardTypeNumberPad tapAction:nil didEndEditingAction:^{
+        [self checkNextButtonEnabel];
+    }];
     [self.contentView addSubview:number];
     [number mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.nameInput.mas_bottom);
@@ -87,7 +97,7 @@
     
     RWFormInputView *birth = [RWFormInputView inputViewWithInputType:RWFormInputViewTypeDate title:@"Date of Birth" placeholder:@"Date of Birth" keyboardType:UIKeyboardTypeDefault tapAction:^{
         [self showDatePicker];
-    }];
+    } didEndEditingAction: nil];
     [self.contentView addSubview:birth];
     [birth mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.numberInput.mas_bottom);
@@ -114,7 +124,7 @@
     RWFormInputView *marriage = [RWFormInputView inputViewWithInputType:RWFormInputViewTypeDate title:@"Marriage Status" placeholder:@"Marriage Status" keyboardType:UIKeyboardTypeDefault tapAction:^{
         self.isMarriagePicker = YES;
         [self showListPickerWithTitle:@"Marriage Status"];
-    }];
+    } didEndEditingAction: nil];
     [self.contentView addSubview:marriage];
     [marriage mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.addressView.mas_bottom);
@@ -125,7 +135,7 @@
     RWFormInputView *education = [RWFormInputView inputViewWithInputType:RWFormInputViewTypeDate title:@"Education" placeholder:@"Education" keyboardType:UIKeyboardTypeDefault tapAction:^{
         self.isMarriagePicker = NO;
         [self showListPickerWithTitle:@"Education"];
-    }];
+    } didEndEditingAction:nil];
     [self.contentView addSubview:education];
     [education mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.marriageView.mas_bottom);
@@ -147,6 +157,22 @@
     self.nextBtn = next;
 }
 
+- (void)setKycInfo:(RWContentModel *)kycInfo {
+    _kycInfo = kycInfo;
+    self.frontImg = kycInfo.frontImg;
+    self.backImg = kycInfo.backImg;
+    [self.cameraPanel setImageUrl:kycInfo.frontImg ocrType:RWOCRTypeAadhaarCardFront];
+    [self.cameraPanel setImageUrl:kycInfo.backImg ocrType:RWOCRTypeAadhaarCardBack];
+    self.nameInput.inputedText = kycInfo.firstName;
+    self.numberInput.inputedText = kycInfo.aadharNumber;
+    self.birthInput.inputedText = kycInfo.dateOfBirth;
+    self.genderView.gender = [kycInfo.gender isEqual:@"male"] ? RWGenderMale : RWGenderFemale;
+    self.addressView.address = kycInfo.residenceDetailAddress;
+    self.marriageView.inputedText = kycInfo.marriageStatus;
+    self.educationView.inputedText = kycInfo.education;
+    [self checkNextButtonEnabel];
+}
+
 - (void)checkNextButtonEnabel {
     BOOL isName = self.nameInput.inputedText.length > 0;
     BOOL isNumber = self.numberInput.inputedText.length > 0;
@@ -154,9 +180,11 @@
     BOOL isAddress = self.addressView.address.length > 0;
     BOOL isMarriageEnable = self.marriageView.inputedText.length > 0;
     BOOL isEduEnabel = self.educationView.inputedText.length > 0;
+    BOOL isFrontImg  = self.frontImg.length > 0;
+    BOOL isBackImg = self.backImg.length > 0;
     
     
-    if((isName && isNumber && isBirth && isAddress && isMarriageEnable && isEduEnabel && [self.cameraPanel isFrontViewHaveBackgroundImage] && [self.cameraPanel isBackViewHaveBackgroundImage])) {
+    if((isName && isNumber && isBirth && isAddress && isMarriageEnable && isEduEnabel && isFrontImg && isBackImg)) {
         self.nextBtn.enabled = YES;
     } else {
         self.nextBtn.enabled = NO;
@@ -184,8 +212,8 @@
 }
 
 - (void)showListPickerWithTitle:(NSString *)title {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:@"\n\n\n" preferredStyle:UIAlertControllerStyleActionSheet];
-    UIPickerView *picker = [[UIPickerView alloc] initWithFrame:CGRectMake(20, 40, SCREEN_WIDTH - 60, 80)];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:@"\n\n\n\n\n\n" preferredStyle:UIAlertControllerStyleActionSheet];
+    UIPickerView *picker = [[UIPickerView alloc] initWithFrame:CGRectMake(20, 40, SCREEN_WIDTH - 60, 130)];
     picker.dataSource = self;
     picker.delegate   = self;
     [alert.view addSubview:picker];
@@ -213,8 +241,8 @@
     }];
     
     if(self.authStatus.loanapiUserIdentity) {
-        [[RWNetworkService sharedInstance] fetchUserAuthInfoWithType:2 step:@"loanapiUserIdentity" success:^(RWContentModel * _Nonnull authenficationInfo) {
-                    
+        [[RWNetworkService sharedInstance] fetchUserAuthInfoWithType:RWAuthTypeKYCInfo success:^(RWContentModel * _Nonnull authenficationInfo) {
+            self.kycInfo = authenficationInfo;
         }];
     }
 }
@@ -230,6 +258,25 @@
         [[RWLocationManager sharedManager] requestLocationAuthorizaiton];
         return;
     }
+    
+    NSMutableDictionary *params = @{}.mutableCopy;
+    params[@"frontImg"] = self.frontImg;
+    params[@"backImg"] = self.backImg;
+    params[@"firstName"] = self.nameInput.inputedText;
+    params[@"aadharNumber"] = self.numberInput.inputedText;
+    params[@"adNumberPaste"] = @"0";
+    params[@"gender"] = self.genderView.gender == RWGenderMale ? @"male" : @"female";
+    params[@"dateOfBirth"] = self.birthInput.inputedText;
+    params[@"education"] = self.educationView.inputedText;
+    params[@"marriageStatus"] = self.marriageView.inputedText;
+    params[@"residenceDetailAddress"] = self.addressView.address;
+    params[@"residenceDetailAddressPaste"] = @"0";
+    
+    [[RWNetworkService sharedInstance] authInfoWithType:RWAuthTypeKYCInfo parameters:params success:^{
+        RWPersonalInfoController *personalControlelr = [[RWPersonalInfoController alloc] init];
+        personalControlelr.authStatus = self.authStatus;
+        [self.navigationController pushViewController:personalControlelr animated:YES];
+    }];
 }
 
 // MARK: - RWOCRCameraPanelDelegate
@@ -253,18 +300,18 @@
         return;
     }
     
-    [[RWNetworkService sharedInstance] ocrRequestWithImage:image ocrType:self.isFront ? RWOCRTypeAadhaarCardFront : RWOCRTypeAadhaarCardBack success:^(RWContentModel *content) {
+    [[RWNetworkService sharedInstance] ocrRequestWithImage:image ocrType:self.isFront ? RWOCRTypeAadhaarCardFront : RWOCRTypeAadhaarCardBack success:^(RWContentModel *content, NSString *imageUrl) {
         if (self.isFront) {
+            self.frontImg = imageUrl;
             self.nameInput.inputedText = content.aadharName;
             self.numberInput.inputedText = content.aadharNumber;
             self.genderView.gender = [content.gender.uppercaseString isEqual: @"MALE"] ? RWGenderMale : RWGenderFemale;
             self.birthInput.inputedText = content.dateOfBirth;
         } else {
+            self.backImg = imageUrl;
             self.addressView.address = content.addressAll;
         }
         [self.cameraPanel setImage:image ocrType:self.isFront ? RWOCRTypeAadhaarCardFront : RWOCRTypeAadhaarCardBack];
-        
-        
     }];
 }
 

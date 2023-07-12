@@ -66,4 +66,11 @@
     RWLog(@"MD5 %@", output);
     return output;
 }
+
+- (BOOL)isNum {
+    NSCharacterSet *str=[[NSCharacterSet characterSetWithCharactersInString:@"1234567890"] invertedSet];
+    NSString *filter=[[self componentsSeparatedByCharactersInSet:str] componentsJoinedByString:@""];
+    BOOL isNum = [self isEqualToString:filter];
+    return isNum;
+}
 @end

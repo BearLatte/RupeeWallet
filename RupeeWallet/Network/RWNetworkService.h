@@ -11,15 +11,24 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSUInteger, RWAuthType) {
+    RWAuthTypeAllInfo,
+    RWAuthTypeKYCInfo,
+    RWAuthTypePersonalInfo,
+    RWAuthTypeContactInfo,
+    RWAuthTypeBankCardInfo
+};
+
 @interface RWNetworkService : NSObject
 + (instancetype)sharedInstance;
 - (void)fetchPerductListWithSuccess: (void(^)(NSArray *products))successClosure failure: (void(^)(void))failureClosure;
 - (void)sendSMSWithPhoneNumber:(NSString *)phoneNumber success:(void (^)(void))success;
 - (void)loginWithPhone:(NSString *)phone code:(NSString *)code success: (void(^)(void))success;
-- (void)fetchUserAuthInfoWithType:(NSInteger)type step:(NSString *_Nullable)step success:(void(^)(RWContentModel *authenficationInfo))success;
+- (void)fetchUserAuthInfoWithType:(RWAuthType)type success:(void(^)(RWContentModel *authenficationInfo))success;
 - (void)checkUserStatusWithProductId:(NSString *)productId success:(void(^)(NSInteger userStatus, NSString *orderNumber, RWProductDetailModel *productDetail))success;
 - (void)fetchDropMenuListSuccess:(void(^)(RWContentModel *content))success;
-- (void)ocrRequestWithImage:(UIImage *)image ocrType:(RWOCRType)ocrType success:(void(^)(RWContentModel *content))success;
+- (void)ocrRequestWithImage:(UIImage *)image ocrType:(RWOCRType)ocrType success:(void(^)(RWContentModel *content, NSString *imageUrl))success;
+- (void)authInfoWithType:(RWAuthType)type parameters:(NSDictionary *)parameters success:(void(^)(void))success;
 @end
 
 NS_ASSUME_NONNULL_END

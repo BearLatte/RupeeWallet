@@ -88,7 +88,7 @@
     }
     
     RWProductModel *product = self.products[indexPath.row];
-    [[RWNetworkService sharedInstance] fetchUserAuthInfoWithType:1 step:nil success:^(RWContentModel * _Nonnull authenficationInfo) {
+    [[RWNetworkService sharedInstance] fetchUserAuthInfoWithType:RWAuthTypeAllInfo success:^(RWContentModel * _Nonnull authenficationInfo) {
         if (authenficationInfo.authStatus) {
             [self checkUserStatusWithProduct:product.productId];
         } else {

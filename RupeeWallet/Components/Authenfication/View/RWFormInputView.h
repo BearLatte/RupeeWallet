@@ -15,11 +15,12 @@ typedef NS_ENUM(NSUInteger, RWFormInputViewType) {
 };
 
 typedef void(^textfieldTapAction) (void);
+typedef void(^didEndEditingAction) (void);
 @interface RWFormInputView : UIView
 
 @property(nonatomic, copy) NSString *inputedText;
 
-+ (instancetype)inputViewWithInputType:(RWFormInputViewType)inputType title:(NSString *)title placeholder:(NSString *)placeholder keyboardType:(UIKeyboardType)keyboardType tapAction:(textfieldTapAction _Nullable)tapAction;
++ (instancetype)inputViewWithInputType:(RWFormInputViewType)inputType title:(NSString *)title placeholder:(NSString *)placeholder keyboardType:(UIKeyboardType)keyboardType tapAction:(textfieldTapAction _Nullable)tapAction didEndEditingAction:(didEndEditingAction _Nullable)didEndEditingAction;
 @end
 
 NS_ASSUME_NONNULL_END

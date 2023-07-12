@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 extern NSString * const IS_LOGIN_KEY;
 extern NSString * const ACCESS_TOKEN_KEY;
 extern NSString * const IDFA_KEY;
-
+extern NSString * const LOGIN_PHONE_NUMBER_KEY;
 
 // MARK: - Color value
 extern NSString * const THEME_COLOR;
@@ -25,6 +25,10 @@ extern NSString * const THEME_BACKGROUND_COLOR;
 extern NSString * const TAB_BAR_NORMAL_FOREGROUND_COLOR;
 extern NSString * const FORM_TITLE_TEXT_COLOR;
 
+// MARK: - Constants
+extern NSString * const APP_STORE_TEST_ACCOUNT;
+
+
 // MARK: - Enums
 typedef NS_ENUM(NSUInteger, RWOCRType) {
     RWOCRTypeAadhaarCardFront,
@@ -34,6 +38,7 @@ typedef NS_ENUM(NSUInteger, RWOCRType) {
 
 @interface RWGlobal : NSObject
 @property(nonatomic, assign) BOOL isLogin;
+@property(nonatomic, copy, readonly) NSString *_Nullable currentLoginPhoneNumber;
 + (RWGlobal *)sharedGlobal;
 - (void)go2login;
 - (UIButton *)createThemeButtonWithTitle: (NSString *_Nullable)title cornerRadius: (CGFloat)radius;
@@ -44,6 +49,8 @@ typedef NS_ENUM(NSUInteger, RWOCRType) {
 - (void)checkCameraAuthorityWithTarget:(UIViewController *)target;
 
 - (UIViewController *)getCurrentViewController;
+
+- (NSArray *)getContactList;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -8,10 +8,12 @@
 #import "RWGlobal.h"
 #import "RWLoginViewController.h"
 #import <AVFoundation/AVFoundation.h>
+#import <Contacts/Contacts.h>
 
 NSString * const IS_LOGIN_KEY = @"kIS_LOGIN_KEY";
 NSString * const ACCESS_TOKEN_KEY = @"kACCESS_TOKEN_KEY";
 NSString * const IDFA_KEY = @"kIDFA_KEY";
+NSString * const LOGIN_PHONE_NUMBER_KEY = @"kLOGIN_PHONE_NUMBER_KEY";
 
 NSString * const THEME_COLOR = @"#4BB7AC";
 NSString * const THEME_TEXT_COLOR = @"#333333";
@@ -20,6 +22,13 @@ NSString * const NORMAL_BORDER_COLOR = @"#D4D3D8";
 NSString * const THEME_BACKGROUND_COLOR = @"#EBF0EF";
 NSString * const FORM_TITLE_TEXT_COLOR  = @"#5E6078";
 NSString * const TAB_BAR_NORMAL_FOREGROUND_COLOR = @"#BDBDBD";
+
+// TODO: 上线前需要添上
+NSString * const APP_STORE_TEST_ACCOUNT = @"";
+
+@interface RWGlobal()
+@property(nonatomic, strong) CNContactStore *contactStore;
+@end
 
 @implementation RWGlobal
 + (RWGlobal *)sharedGlobal {
@@ -32,13 +41,26 @@ NSString * const TAB_BAR_NORMAL_FOREGROUND_COLOR = @"#BDBDBD";
     return global;
 }
 
+- (CNContactStore *)contactStore {
+    if(!_contactStore) {
+        _contactStore = [[CNContactStore alloc] init];
+    }
+    return _contactStore;
+}
+
+
 - (BOOL)isLogin {
     return [[NSUserDefaults standardUserDefaults] boolForKey:IS_LOGIN_KEY];
+}
+
+- (NSString *)currentLoginPhoneNumber {
+    return [[NSUserDefaults standardUserDefaults] valueForKey:LOGIN_PHONE_NUMBER_KEY];
 }
 
 - (void)go2login {
     [[NSUserDefaults standardUserDefaults] setValue:nil forKey:ACCESS_TOKEN_KEY];
     [[NSUserDefaults standardUserDefaults] setValue:@(NO) forKey:IS_LOGIN_KEY];
+    [[NSUserDefaults standardUserDefaults] setValue:nil forKey:LOGIN_PHONE_NUMBER_KEY];
     
     RWLoginViewController *loginVC = [[RWLoginViewController alloc] init];
     loginVC.modalStyle = RWModalStylePresent;
@@ -139,4 +161,83 @@ NSString * const TAB_BAR_NORMAL_FOREGROUND_COLOR = @"#BDBDBD";
     
     return currentVC;
 }
+
+- (NSArray *)getContactList {
+    CNAuthorizationStatus status = [CNContactStore authorizationStatusForEntityType:CNEntityTypeContacts];
+    switch (status) {
+        case CNAuthorizationStatusNotDetermined:
+            return [self requestContactStoreAuthorizationWithContactStore:self.contactStore];
+        case CNAuthorizationStatusAuthorized:
+            return [self readContactsFromContactStore:self.contactStore];
+        default:
+            [RWProgressHUD showInfoWithStatus:@"You did not allow us to access the contacts. Allowing it will help you obtain a loan. Do you want to set up authorization."];
+            return nil;
+    }
+}
+
+
+- (NSArray *)requestContactStoreAuthorizationWithContactStore:(CNContactStore *)store {
+    __block NSArray *contacts = nil;
+    [store requestAccessForEntityType:CNEntityTypeContacts completionHandler:^(BOOL granted, NSError * _Nullable error) {
+        if(error) {
+            [RWProgressHUD showErrorWithStatus:error.description];
+            return;
+        }
+        
+        if(granted) {
+            contacts = [self readContactsFromContactStore:store];
+        }
+    }];
+    
+    return contacts;
+}
+
+- (NSArray *)readContactsFromContactStore:(CNContactStore *)store {
+    CNAuthorizationStatus status = [CNContactStore authorizationStatusForEntityType:CNEntityTypeContacts];
+    if(status != CNAuthorizationStatusAuthorized) {
+        [RWProgressHUD showInfoWithStatus:@"You did not allow us to access the contacts. Allowing it will help you obtain a loan. Do you want to set up authorization."];
+        return nil;
+    }
+    
+    NSArray *keys = @[CNContactFamilyNameKey, CNContactGivenNameKey, CNContactPhoneNumbersKey];
+    CNContactFetchRequest *request = [[CNContactFetchRequest alloc] initWithKeysToFetch:keys];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [RWProgressHUD showWithStatus:@"reading contacts ..."];
+    });
+    
+    __block NSMutableArray *contactList = @[].mutableCopy;
+    
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSError *error;
+        [store enumerateContactsWithFetchRequest:request error:&error usingBlock:^(CNContact * _Nonnull contact, BOOL * _Nonnull stop) {
+            NSString *name = [NSString stringWithFormat:@"%@%@", contact.familyName, contact.givenName];
+            for (CNLabeledValue *labeledValue in contact.phoneNumbers) {
+                NSString *number = ((CNPhoneNumber *)labeledValue.value).stringValue;
+                [contactList addObject:@{@"name" : name, @"number" : number}];
+            }
+            
+        }];
+        
+        if(error != nil) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [RWProgressHUD showErrorWithStatus:error.description];
+                contactList = nil;
+            });
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [RWProgressHUD dismiss];
+        });
+        
+        dispatch_semaphore_signal(semaphore);
+    });
+    
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    
+    return [contactList copy];
+}
+
 @end

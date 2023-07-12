@@ -21,6 +21,7 @@
     _ocrType = ocrType;
     if(ocrType == RWOCRTypePanCardFront) {
         self.frontIndicatorView.text = @"Pan card Front";
+        [self.dashedView removeFromSuperview];
         [self.backButtonView removeFromSuperview];
         [self.backIndicatorView removeFromSuperview];
     } else {
@@ -92,13 +93,14 @@
     }
     
     [self.titleLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.dashedView.mas_bottom).offset(13);
+        make.top.mas_equalTo(self.ocrType == RWOCRTypePanCardFront ? self.mas_top : self.dashedView.mas_bottom).offset(13);
         make.centerX.mas_equalTo(self);
     }];
     
     if(self.ocrType == RWOCRTypePanCardFront) {
         [self.frontButtonView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.titleLabel.mas_bottom).offset(2);
+            make.size.mas_equalTo(CGSizeMake(170, 95));
             make.centerX.equalTo(self);
         }];
     } else {
@@ -123,10 +125,12 @@
         make.bottom.equalTo(@0).priority(MASLayoutPriorityDefaultHigh);
     }];
     
-    [self.backIndicatorView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.top.height.equalTo(self.frontIndicatorView);
-        make.centerX.equalTo(self.backButtonView);
-    }];
+    if (self.ocrType != RWOCRTypePanCardFront) {
+        [self.backIndicatorView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.height.equalTo(self.frontIndicatorView);
+            make.centerX.equalTo(self.backButtonView);
+        }];
+    }
 }
 
 
@@ -172,15 +176,6 @@
         default:
             break;
     }
-}
-
-- (BOOL)isFrontViewHaveBackgroundImage {
-    return !(self.frontButtonView.currentBackgroundImage == nil);
-}
-
-
-- (BOOL)isBackViewHaveBackgroundImage {
-    return !(self.backButtonView.currentBackgroundImage == nil);
 }
 
 @end

@@ -33,6 +33,7 @@
 		2227177F2A5E7DC400F865FD /* RWContactInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2227177E2A5E7DC400F865FD /* RWContactInfoController.m */; };
 		222717822A5E852A00F865FD /* RWContactInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 222717812A5E852A00F865FD /* RWContactInputView.m */; };
 		222717882A5EBE4C00F865FD /* RWBankCardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 222717872A5EBE4C00F865FD /* RWBankCardController.m */; };
+		2240267F2A5EF40600BA9A02 /* UIViewController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2240267E2A5EF40600BA9A02 /* UIViewController+Extension.m */; };
 		2244DEDD2A53C3E40093F903 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2244DEDC2A53C3E40093F903 /* AppDelegate.m */; };
 		2244DEE82A53C3E60093F903 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2244DEE72A53C3E60093F903 /* Assets.xcassets */; };
 		2244DEEB2A53C3E60093F903 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2244DEE92A53C3E60093F903 /* LaunchScreen.storyboard */; };
@@ -107,6 +108,8 @@
 		222717812A5E852A00F865FD /* RWContactInputView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWContactInputView.m; sourceTree = "<group>"; };
 		222717862A5EBE4C00F865FD /* RWBankCardController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWBankCardController.h; sourceTree = "<group>"; };
 		222717872A5EBE4C00F865FD /* RWBankCardController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWBankCardController.m; sourceTree = "<group>"; };
+		2240267D2A5EF40600BA9A02 /* UIViewController+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extension.h"; sourceTree = "<group>"; };
+		2240267E2A5EF40600BA9A02 /* UIViewController+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Extension.m"; sourceTree = "<group>"; };
 		2244DED82A53C3E40093F903 /* RupeeWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RupeeWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2244DEDB2A53C3E40093F903 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2244DEDC2A53C3E40093F903 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -188,6 +191,8 @@
 				222717722A5CFFC800F865FD /* NSDate+Extension.m */,
 				220176C12A5697E3002C718D /* NSDictionary+Log.h */,
 				220176C22A5697E3002C718D /* NSDictionary+Log.m */,
+				2240267D2A5EF40600BA9A02 /* UIViewController+Extension.h */,
+				2240267E2A5EF40600BA9A02 /* UIViewController+Extension.m */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -605,6 +610,7 @@
 				222717702A5C12DB00F865FD /* RWAddressInpuView.m in Sources */,
 				220176B92A566C72002C718D /* RWContentModel.m in Sources */,
 				222717672A5BD2A800F865FD /* RWOCRCameraPanel.m in Sources */,
+				2240267F2A5EF40600BA9A02 /* UIViewController+Extension.m in Sources */,
 				220176BF2A56882E002C718D /* RWSectionHeaderView.m in Sources */,
 				22A0BEB22A53D88A00B8C360 /* RWMainTabbarController.m in Sources */,
 				2227174D2A57AE5200F865FD /* RWGlobal.m in Sources */,

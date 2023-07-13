@@ -13,6 +13,17 @@
 @end
 
 @implementation RWProductDetailController
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if(self.isRecommend) {
+        [self closeGesturePop];
+    }
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [self openGesturePop];
+}
 
 - (void)setProductDetail:(RWProductDetailModel *)productDetail {
     _productDetail = productDetail;
@@ -33,5 +44,13 @@
     [[RWNetworkService sharedInstance] checkUserStatusWithProductId:self.productId success:^(NSInteger userStatus, NSString * _Nonnull orderNumber, RWProductDetailModel * _Nonnull productDetail) {
         
     }];
+}
+
+- (void)backAction {
+    if(self.isRecommend) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } else {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 @end

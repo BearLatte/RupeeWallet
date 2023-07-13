@@ -71,18 +71,23 @@ static NSString * const baseURL = @"";
     return [header copy];
 }
 
-- (void)fetchPerductListWithSuccess:(void (^)(NSArray * _Nonnull))successClosure failure:(void (^)(void))failureClosure {
+- (void)fetchProductWithIsRecommend:(BOOL)isRecommend success:(void (^)(NSArray * _Nullable, RWProductDetailModel * _Nullable))successClosure failure:(void (^)(void))failureClosure {
     [RWProgressHUD showWithStatus:@"loading..."];
+    NSMutableDictionary *params = @{}.mutableCopy;
+    if(isRecommend) {
+        params[@"isRecommend"] = @"1";
+    }
+    
     if ([RWGlobal sharedGlobal].isLogin) {
-        [self requestWithPath:@"/uzYONRY/Yuulyz/kluBMGy" parameters:nil success:^(RWBaseModel *response) {
+        [self requestWithPath:@"/uzYONRY/Yuulyz/kluBMGy" parameters:params success:^(RWBaseModel *response) {
             [[NSUserDefaults standardUserDefaults] setValue:response.cont.phone forKey:LOGIN_PHONE_NUMBER_KEY];
-            successClosure(response.cont.loanProductList);
+            successClosure(response.cont.loanProductList, response.cont.loanProductVo);
         } failure:^{
             failureClosure();
         }];
     } else {
         [self requestWithPath:@"/uzYONRY/ihaEGZs" parameters:nil success:^(RWBaseModel *response) {
-            successClosure(response.cont.loanProductList);
+            successClosure(response.cont.loanProductList, nil);
         } failure:^{
             failureClosure();
         }];

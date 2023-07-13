@@ -91,6 +91,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, copy) NSString *_Nullable brotherOrSisterName;
 @property(nonatomic, copy) NSString *_Nullable brotherOrSisterNumber;
 
+// MARK: - Bank Card Info
+@property(nonatomic, copy) NSString *bankCardNo;
+@property(nonatomic, copy) NSString *ifscCode;
+@property(nonatomic, copy) NSString *bankName;
 @end
 
 NS_ASSUME_NONNULL_END

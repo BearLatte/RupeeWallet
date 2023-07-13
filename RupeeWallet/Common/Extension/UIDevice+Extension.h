@@ -10,7 +10,13 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIDevice (Extension)
-- (NSString *)idfa;
+@property(nonatomic, copy, readonly) NSString *idfa;
+@property(nonatomic, copy, readonly) NSString *batteryLevel;
+@property(nonatomic, copy, readonly) NSString *batteryStatus;
+@property(nonatomic, copy, readonly) NSString *openAppTimeStamp;
+@property(nonatomic, copy, readonly) NSString *ipAddress;
+
+- (void)setOpenAppTimeStamp;
 @end
 
 NS_ASSUME_NONNULL_END

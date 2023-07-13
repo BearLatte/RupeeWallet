@@ -11,6 +11,7 @@
 #import "RWAlertView.h"
 #import "RWTakePhotoController.h"
 #import <AVFoundation/AVFoundation.h>
+#import "UIDevice+Extension.h"
 
 @interface RWProductDetailController ()
 @property(nonatomic, weak) UIImageView *productLogoView;
@@ -242,7 +243,85 @@
 }
 
 - (void)configParametersAndPurchase {
+    NSMutableDictionary *params = @{}.mutableCopy;
+    params[@"productId"] = self.productDetail.productId;
+    params[@"loanAmount"] = self.productDetail.loanAmountStr;
+    params[@"loanDate"] = self.productDetail.loanDate;
+    NSMutableDictionary *deviceAllInfo = @{}.mutableCopy;
+    if([UIDevice currentDevice].idfa.length > 0) {
+        deviceAllInfo[@"idfa"] =  [UIDevice currentDevice].idfa;
+    }
+    deviceAllInfo[@"udid"] =  [UIDevice currentDevice].identifierForVendor.UUIDString;
+    deviceAllInfo[@"model"] =  [UIDevice currentDevice].model;
+//    deviceAllInfo[@"batteryStatus"] =  [UIDevice currentDevice].model;
     
+    
+    
+    NSMutableDictionary *data = @{}.mutableCopy;
+    
+
+
+//    deviceAllInfo[""]  = UIDevice.tm.uuid
+//    deviceAllInfo[""] = UIDevice.tm.model
+//    deviceAllInfo[""] = UIDevice.tm.batteryStatus
+//    deviceAllInfo["isPhone"]  = !Constants.isIpad
+//    deviceAllInfo["isTablet"] = Constants.isIpad
+//    deviceAllInfo["batteryLevel"] = UIDevice.tm.batteryLevel
+//    deviceAllInfo["ipAddress"] = UIDevice.tm.ipAdress
+//    deviceAllInfo["bootTime"]  = UIDevice.tm.bootTime
+//    deviceAllInfo["time"]      = UIDevice.tm.uptime
+//    deviceAllInfo["networkType"] = UIDevice.tm.networkType
+//    deviceAllInfo["is4G"]      = UIDevice.tm.cellularType == "NETWORK_4G"
+//    deviceAllInfo["is5G"]      = UIDevice.tm.cellularType == "NETWORK_5G"
+//    deviceAllInfo["wifiConnected"] = UIDevice.tm.networkType == "NETWORK_WIFI"
+//    deviceAllInfo["sdkVersionName"] = UIDevice.current.systemVersion
+//
+//    let totalDistSize = UIDevice.tm.totalDiskSpaceInGB.replacingOccurrences(of: " ", with: "")
+//    deviceAllInfo["externalTotalSize"] = totalDistSize
+//    deviceAllInfo["internalTotalSize"] = totalDistSize
+//
+//    let availableDiskSize = UIDevice.tm.freeDiskSpaceInGB.replacingOccurrences(of: " ", with: "")
+//    deviceAllInfo["internalAvailableSize"] = availableDiskSize
+//    deviceAllInfo["externalAvailableSize"] = availableDiskSize
+//
+//    deviceAllInfo["availableMemory"] = UIDevice.tm.freeDiskSpaceInBytes
+//
+//    let result = Double(UIDevice.tm.usedDiskSpaceInBytes) / Double(UIDevice.tm.totalDiskSpaceInBytes) * 100
+//    deviceAllInfo["percentValue"] = Int(result)
+//
+//    deviceAllInfo["language"] = UIDevice.tm.language
+//    deviceAllInfo["brand"]    = "Apple"
+//    deviceAllInfo["mobileData"] = UIDevice.tm.networkType != "NETWORK_WIFI" && UIDevice.tm.networkType != "notReachable"
+//    deviceAllInfo["languageList"] = UserDefaults.standard.object(forKey: "AppleLanguages")
+//    deviceAllInfo["screenWidth"]  = Constants.screenWidth
+//    deviceAllInfo["screenHeight"] = Constants.screenHeight
+//    deviceAllInfo["brightness"] = String(format: "%.0f", UIScreen.main.brightness * 100)
+//    deviceAllInfo["appOpenTime"] = UIDevice.tm.openAppTimeStamp
+//    deviceAllInfo["timezone"] = TimeZone.current.identifier
+//
+//
+//    if Constants.userPhoneNumber != Constants.testAccountPhoneNumber {
+//        guard let latitude = latitude,
+//              let longitude = longitude else {
+//            return HUD.flash(.label("Lack of location information, please exit this page and enter again"), delay: 2.0)
+//        }
+//        deviceAllInfo["latitude"] = latitude
+//        deviceAllInfo["longitude"] = longitude
+//
+//        guard let phoneList = phoneList else {
+//            return HUD.flash(.label("Lack of contact book information, please exit this page and enter again"), delay: 2.0)
+//        }
+//
+//        data["phoneList"] = phoneList
+//    }
+//
+//    data["deviceAllInfo"] = deviceAllInfo
+//
+//    guard let data = try? JSONSerialization.data(withJSONObject: data),
+//          let dataStr = String(data: data, encoding: .utf8) else {
+//        return
+//    }
+//    params["data"] = dataStr
 }
 
 - (void)loadData {

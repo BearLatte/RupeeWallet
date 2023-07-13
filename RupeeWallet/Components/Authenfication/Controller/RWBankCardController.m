@@ -17,6 +17,7 @@
     [super setupUI];
     self.title = @"Bank info";
     self.isDarkBackMode = YES;
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 @end

@@ -8,19 +8,36 @@
 #import "RWAlertView.h"
 @interface RWAlertView()
 @property(nonatomic, weak) UIView *containerView;
+@property(nonatomic, weak) UIImageView *errorIconView;
 @property(nonatomic, weak) UILabel *_Nullable titleLabel;
 @property(nonatomic, weak) UILabel *_Nullable messageLabel;
 @property(nonatomic, weak) UIButton *cancelButton;
 @property(nonatomic, weak) UIButton *sureButton;
 @property(nonatomic, copy) ConfirmButtonAction confirmAction;
+
+@property(nonatomic, assign) RWAlertStyle alertStyle;
 @end
 @implementation RWAlertView
-+ (void)showAlertViewWithTitle:(NSString *)title message:(NSString *)message confirmAction:(ConfirmButtonAction)action {
++ (void)showAlertViewWithStyle:(RWAlertStyle)alertStyle title:(NSString *)title message:(NSString *)message confirmAction:(ConfirmButtonAction)action {
     RWAlertView *alertView = [[RWAlertView alloc] init];
     if(title) {
         alertView.titleLabel.text = title;
     } else {
-        alertView.hidden = YES;
+        alertView.titleLabel.hidden = YES;
+    }
+    
+    alertView.alertStyle = alertStyle;
+    switch (alertStyle) {
+        case RWAlertStyleTips:
+            alertView.errorIconView.hidden = YES;
+            alertView.titleLabel.hidden = NO;
+            break;
+        case RWAlertStyleError:
+            alertView.errorIconView.hidden = NO;
+            alertView.titleLabel.hidden = YES;
+            break;
+        default:
+            break;
     }
     alertView.messageLabel.text = message;
     alertView.confirmAction = action;
@@ -36,6 +53,11 @@
         containerView.backgroundColor = [UIColor whiteColor];
         [self addSubview:containerView];
         self.containerView = containerView;
+        
+        UIImageView *errorIcon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"error_icon"]];
+        errorIcon.contentMode = UIViewContentModeCenter;
+        [self.containerView addSubview:errorIcon];
+        self.errorIconView = errorIcon;
         
         UILabel *titleLabel = [[RWGlobal sharedGlobal] createLabelWithText:nil font:[UIFont systemFontOfSize:20 weight:UIFontWeightMedium] textColor:THEME_COLOR];
         titleLabel.textAlignment = NSTextAlignmentCenter;
@@ -74,17 +96,31 @@
     }];
     
     
-    [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(NAVIGATION_BAR_HEIGHT);
-        make.left.right.equalTo(@0);
-        make.height.equalTo(@55);
-    }];
+    if(self.alertStyle == RWAlertStyleTips) {
+        [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(TOP_SAFE_AREA);
+            make.left.right.equalTo(@0);
+            make.height.equalTo(@55);
+        }];
+    } else {
+        [self.errorIconView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(TOP_SAFE_AREA);
+            make.size.mas_equalTo(CGSizeMake(44, 44));
+            make.centerX.mas_equalTo(self.containerView);
+        }];
+    }
+    
     
     [self.messageLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        if(self.titleLabel.isHidden) {
-            make.top.mas_equalTo(TOP_SAFE_AREA);
+        
+        if(self.alertStyle == RWAlertStyleTips) {
+            if(self.titleLabel.isHidden) {
+                make.top.mas_equalTo(TOP_SAFE_AREA);
+            } else {
+                make.top.mas_equalTo(self.titleLabel.mas_bottom);
+            }
         } else {
-            make.top.mas_equalTo(self.titleLabel.mas_bottom);
+            make.top.mas_equalTo(self.errorIconView.mas_bottom).offset(4);
         }
         
         make.left.mas_equalTo(12);

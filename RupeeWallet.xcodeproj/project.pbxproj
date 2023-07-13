@@ -35,6 +35,8 @@
 		222717882A5EBE4C00F865FD /* RWBankCardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 222717872A5EBE4C00F865FD /* RWBankCardController.m */; };
 		2227178B2A5F96DA00F865FD /* RWAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2227178A2A5F96DA00F865FD /* RWAlertView.m */; };
 		222717952A5FBA9C00F865FD /* RWAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 222717942A5FBA9C00F865FD /* RWAttributedLabel.m */; };
+		222717982A5FE8C800F865FD /* RWPurchaseSuccessController.m in Sources */ = {isa = PBXBuildFile; fileRef = 222717972A5FE8C800F865FD /* RWPurchaseSuccessController.m */; };
+		2227179B2A5FE9E200F865FD /* RWTakePhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2227179A2A5FE9E200F865FD /* RWTakePhotoController.m */; };
 		2240267F2A5EF40600BA9A02 /* UIViewController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2240267E2A5EF40600BA9A02 /* UIViewController+Extension.m */; };
 		2244DEDD2A53C3E40093F903 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2244DEDC2A53C3E40093F903 /* AppDelegate.m */; };
 		2244DEE82A53C3E60093F903 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2244DEE72A53C3E60093F903 /* Assets.xcassets */; };
@@ -114,6 +116,10 @@
 		2227178A2A5F96DA00F865FD /* RWAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWAlertView.m; sourceTree = "<group>"; };
 		222717932A5FBA9C00F865FD /* RWAttributedLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWAttributedLabel.h; sourceTree = "<group>"; };
 		222717942A5FBA9C00F865FD /* RWAttributedLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWAttributedLabel.m; sourceTree = "<group>"; };
+		222717962A5FE8C800F865FD /* RWPurchaseSuccessController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPurchaseSuccessController.h; sourceTree = "<group>"; };
+		222717972A5FE8C800F865FD /* RWPurchaseSuccessController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPurchaseSuccessController.m; sourceTree = "<group>"; };
+		222717992A5FE9E200F865FD /* RWTakePhotoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWTakePhotoController.h; sourceTree = "<group>"; };
+		2227179A2A5FE9E200F865FD /* RWTakePhotoController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWTakePhotoController.m; sourceTree = "<group>"; };
 		2240267D2A5EF40600BA9A02 /* UIViewController+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extension.h"; sourceTree = "<group>"; };
 		2240267E2A5EF40600BA9A02 /* UIViewController+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Extension.m"; sourceTree = "<group>"; };
 		2244DED82A53C3E40093F903 /* RupeeWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RupeeWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -255,8 +261,6 @@
 				2227176F2A5C12DB00F865FD /* RWAddressInpuView.m */,
 				222717802A5E852A00F865FD /* RWContactInputView.h */,
 				222717812A5E852A00F865FD /* RWContactInputView.m */,
-				222717892A5F96DA00F865FD /* RWAlertView.h */,
-				2227178A2A5F96DA00F865FD /* RWAlertView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -266,6 +270,8 @@
 			children = (
 				222717932A5FBA9C00F865FD /* RWAttributedLabel.h */,
 				222717942A5FBA9C00F865FD /* RWAttributedLabel.m */,
+				222717892A5F96DA00F865FD /* RWAlertView.h */,
+				2227178A2A5F96DA00F865FD /* RWAlertView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -434,6 +440,10 @@
 				22A0BECC2A53ED7200B8C360 /* RWHomeController.m */,
 				227FD56A2A59D0E400AC718A /* RWProductDetailController.h */,
 				227FD56B2A59D0E400AC718A /* RWProductDetailController.m */,
+				222717962A5FE8C800F865FD /* RWPurchaseSuccessController.h */,
+				222717972A5FE8C800F865FD /* RWPurchaseSuccessController.m */,
+				222717992A5FE9E200F865FD /* RWTakePhotoController.h */,
+				2227179A2A5FE9E200F865FD /* RWTakePhotoController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -637,6 +647,7 @@
 				22A0BEC12A53DB0700B8C360 /* UIColor+Extension.m in Sources */,
 				220176BC2A567027002C718D /* NSString+Extension.m in Sources */,
 				220176AC2A5583BB002C718D /* UIDevice+Extension.m in Sources */,
+				2227179B2A5FE9E200F865FD /* RWTakePhotoController.m in Sources */,
 				2227176D2A5BFE3000F865FD /* RWGenderSelectView.m in Sources */,
 				2227174A2A56D46C00F865FD /* RWLoginViewController.m in Sources */,
 				22A0BEB82A53D92A00B8C360 /* RWBaseTableViewController.m in Sources */,
@@ -645,6 +656,7 @@
 				220176EF2A56AFDC002C718D /* RWProductCell.m in Sources */,
 				222717882A5EBE4C00F865FD /* RWBankCardController.m in Sources */,
 				227FD56C2A59D0E400AC718A /* RWProductDetailController.m in Sources */,
+				222717982A5FE8C800F865FD /* RWPurchaseSuccessController.m in Sources */,
 				220176B62A566AC6002C718D /* RWProductModel.m in Sources */,
 				222717762A5D272F00F865FD /* RWOSSCredentialModel.m in Sources */,
 			);

@@ -71,7 +71,7 @@ static NSString * const baseURL = @"";
     return [header copy];
 }
 
-- (void)fetchProductWithIsRecommend:(BOOL)isRecommend success:(void (^)(NSArray * _Nullable, RWProductDetailModel * _Nullable))successClosure failure:(void (^)(void))failureClosure {
+- (void)fetchProductWithIsRecommend:(BOOL)isRecommend success:(void (^)(RWContentModel *, NSArray * _Nullable, RWProductDetailModel * _Nullable))successClosure failure:(void (^)(void))failureClosure {
     [RWProgressHUD showWithStatus:@"loading..."];
     NSMutableDictionary *params = @{}.mutableCopy;
     if(isRecommend) {
@@ -81,13 +81,13 @@ static NSString * const baseURL = @"";
     if ([RWGlobal sharedGlobal].isLogin) {
         [self requestWithPath:@"/uzYONRY/Yuulyz/kluBMGy" parameters:params success:^(RWBaseModel *response) {
             [[NSUserDefaults standardUserDefaults] setValue:response.cont.phone forKey:LOGIN_PHONE_NUMBER_KEY];
-            successClosure(response.cont.loanProductList, response.cont.loanProductVo);
+            successClosure(response.cont, response.cont.loanProductList, response.cont.loanProductVo);
         } failure:^{
             failureClosure();
         }];
     } else {
         [self requestWithPath:@"/uzYONRY/ihaEGZs" parameters:nil success:^(RWBaseModel *response) {
-            successClosure(response.cont.loanProductList, nil);
+            successClosure(nil, response.cont.loanProductList, nil);
         } failure:^{
             failureClosure();
         }];
@@ -146,7 +146,7 @@ static NSString * const baseURL = @"";
     [self requestWithPath:@"/uzYONRY/Yuulyz/cFDJWnU" parameters:[params copy] success:^(RWBaseModel *response) {
         success(response.cont);
     } failure:^{
-
+        
     }];
 }
 
@@ -228,6 +228,49 @@ static NSString * const baseURL = @"";
     } failure:^{
         
     }];
+}
+
+- (void)userFaceAuthWithImage:(UIImage *)image success:(void (^)(void))success failure:(nonnull void (^)(void))failure {
+    dispatch_queue_t dispatchQueue = dispatch_queue_create("background.queue", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    dispatch_async(dispatchQueue, ^{
+        __block RWContentModel *ossParams = nil;
+        __block NSString *imageUrl = nil;
+        
+        [self fetchOSSParametersSuccess:^(RWContentModel *content) {
+            ossParams = content;
+            dispatch_semaphore_signal(semaphore);
+        } failure:^{
+            dispatch_semaphore_signal(semaphore);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                failure();
+            });
+        }];
+        
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+        [self uploadImageWithOSSParameters:ossParams image:image success:^(NSString *imgUrl) {
+            imageUrl = imgUrl;
+            dispatch_semaphore_signal(semaphore);
+        } failure:^{
+            dispatch_semaphore_signal(semaphore);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                failure();
+            });
+        }];
+        
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+        [self requestWithPath:@"/uzYONRY/Yuulyz/RlcfcSD" parameters:@{@"livenessImg" : imageUrl} success:^(RWBaseModel *response) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                success();
+            });
+            dispatch_semaphore_signal(semaphore);
+        } failure:^{
+            dispatch_async(dispatch_get_main_queue(), ^{
+                failure();
+            });
+            dispatch_semaphore_signal(semaphore);
+        }];
+    });
 }
 
 

@@ -21,7 +21,7 @@ typedef NS_ENUM(NSUInteger, RWAuthType) {
 
 @interface RWNetworkService : NSObject
 + (instancetype)sharedInstance;
-- (void)fetchProductWithIsRecommend:(BOOL)isRecommend success:(void(^)(NSArray *_Nullable products, RWProductDetailModel *_Nullable recommendProduct))successClosure failure: (void(^)(void))failureClosure;
+- (void)fetchProductWithIsRecommend:(BOOL)isRecommend success:(void(^)(RWContentModel *_Nullable userInfo, NSArray *_Nullable products, RWProductDetailModel *_Nullable recommendProduct))successClosure failure: (void(^)(void))failureClosure;
 - (void)sendSMSWithPhoneNumber:(NSString *)phoneNumber success:(void (^)(void))success;
 - (void)loginWithPhone:(NSString *)phone code:(NSString *)code success: (void(^)(void))success;
 - (void)fetchUserAuthInfoWithType:(RWAuthType)type success:(void(^)(RWContentModel *authenficationInfo))success;
@@ -29,6 +29,7 @@ typedef NS_ENUM(NSUInteger, RWAuthType) {
 - (void)fetchDropMenuListSuccess:(void(^)(RWContentModel *content))success;
 - (void)ocrRequestWithImage:(UIImage *)image ocrType:(RWOCRType)ocrType success:(void(^)(RWContentModel *content, NSString *imageUrl))success;
 - (void)authInfoWithType:(RWAuthType)type parameters:(NSDictionary *)parameters success:(void(^)(void))success;
+- (void)userFaceAuthWithImage:(UIImage *)image success:(void(^)(void))success failure:(void(^)(void))failure;
 @end
 
 NS_ASSUME_NONNULL_END

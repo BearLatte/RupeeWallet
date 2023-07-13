@@ -8,6 +8,9 @@
 #import "RWProductDetailController.h"
 #import "RWProductDetailModel.h"
 #import "RWAttributedLabel.h"
+#import "RWAlertView.h"
+#import "RWTakePhotoController.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface RWProductDetailController ()
 @property(nonatomic, weak) UIImageView *productLogoView;
@@ -106,6 +109,7 @@
     self.repaymentAmountLabel = repaymentAmount;
     
     UIButton *loanBtn = [[RWGlobal sharedGlobal] createThemeButtonWithTitle:@"Loan now" cornerRadius:30];
+    [loanBtn addTarget:self action:@selector(loanNowBtnClicked) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:loanBtn];
     self.loanBtn = loanBtn;
     
@@ -177,6 +181,67 @@
         make.centerX.mas_equalTo(self.view);
         make.bottom.mas_equalTo(-BOTTOM_SAFE_AREA);
     }];
+    
+}
+
+- (void)loanNowBtnClicked {
+    [[RWNetworkService sharedInstance] fetchProductWithIsRecommend:NO success:^(RWContentModel * _Nullable userInfo, NSArray * _Nullable products, RWProductDetailModel * _Nullable recommendProduct) {
+        if(userInfo.userLiveness) {
+            [self configParametersAndPurchase];
+        } else {
+            [RWAlertView showAlertViewWithStyle:RWAlertStyleTips title:@"TIPS" message:@"Please upload a selfie photo before continuing." confirmAction:^{
+                [self go2takePhoto];
+            }];
+        }
+    } failure:^{
+    }];
+}
+
+
+- (void)go2takePhoto {
+    BOOL isPermission = [self checkCameraPermission];
+    if (isPermission) {
+        RWTakePhotoController *takePhotoVC = [[RWTakePhotoController alloc] init];
+        takePhotoVC.submitAction = ^(UIImage *selectedImage) {
+            [self selectedImageAction:selectedImage];
+        };
+        [self.navigationController pushViewController:takePhotoVC animated:YES];
+    } else {
+        [RWProgressHUD showInfoWithStatus:@"You did not allow us to access the camera, which will help you obtain a loan. Would you like to set up authorization."];
+    }
+    
+}
+
+- (void)selectedImageAction:(UIImage *)selectedImage {
+    [[RWNetworkService sharedInstance] userFaceAuthWithImage:selectedImage success:^{
+        [RWProgressHUD showSuccessWithStatus:@"upload success"];
+    } failure:^{
+        [RWAlertView showAlertViewWithStyle:RWAlertStyleError title:nil message:@"Upload failed, please try again." confirmAction:nil];
+    }];
+}
+
+- (BOOL)checkCameraPermission {
+    __block BOOL isPermission = NO;
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+    if (status == AVAuthorizationStatusNotDetermined) {
+        [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
+            isPermission = granted;
+            dispatch_semaphore_signal(semaphore);
+        }];
+    } else if(status == AVAuthorizationStatusAuthorized) {
+        isPermission = YES;
+        dispatch_semaphore_signal(semaphore);
+    } else {
+        dispatch_semaphore_signal(semaphore);
+        isPermission = NO;
+    }
+    
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    return isPermission;
+}
+
+- (void)configParametersAndPurchase {
     
 }
 

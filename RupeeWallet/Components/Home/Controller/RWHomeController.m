@@ -56,7 +56,7 @@
         self.headerImageView.image = [UIImage imageNamed:@"header_img"];
     }
     
-    [[RWNetworkService sharedInstance] fetchProductWithIsRecommend:NO success:^(NSArray * _Nullable products, RWProductDetailModel * _Nullable recommendProduct) {
+    [[RWNetworkService sharedInstance] fetchProductWithIsRecommend:NO success:^(RWContentModel *userInfo, NSArray * _Nullable products, RWProductDetailModel * _Nullable recommendProduct) {
         self.products = products;
         [self.tableView reloadData];
         [self.tableView.pullToRefreshView stopAnimating];

@@ -15,6 +15,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RWContentModel : NSObject
 
+/// 调用哪家三方做活体 (枚举 ： accuauth)
+@property(nonatomic, copy) NSString *_Nullable thirdLiveness;
+/// 用户是否做完活体  0否 1是  (0的时候下单前需要做活体)
+@property(nonatomic, assign) BOOL userLiveness;
+/// 用户是否放款失败  0否 1是 (1的时候 需要弹放款失败的弹窗)
+@property(nonatomic, assign) BOOL userPayFail;
+
 // MARK: - Login
 @property(nonatomic, copy) NSString *_Nullable uid;
 @property(nonatomic, copy) NSString *_Nullable token;

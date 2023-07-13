@@ -11,6 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RWProductDetailModel : NSObject
 @property(nonatomic, copy) NSString *productId;
+@property(nonatomic, copy) NSString *logo;
+@property(nonatomic, copy) NSString *loanName;
 @property(nonatomic, copy) NSString *spaceName;
 /// 到账金额
 @property(nonatomic, copy) NSString *receiveAmountStr;

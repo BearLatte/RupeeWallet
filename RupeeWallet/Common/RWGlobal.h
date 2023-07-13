@@ -24,6 +24,7 @@ extern NSString * const NORMAL_BORDER_COLOR;
 extern NSString * const THEME_BACKGROUND_COLOR;
 extern NSString * const TAB_BAR_NORMAL_FOREGROUND_COLOR;
 extern NSString * const FORM_TITLE_TEXT_COLOR;
+extern NSString * const PLACEHOLDER_IMAGE_COLOR;
 
 // MARK: - Constants
 extern NSString * const APP_STORE_TEST_ACCOUNT;

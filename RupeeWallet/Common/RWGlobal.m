@@ -22,6 +22,7 @@ NSString * const NORMAL_BORDER_COLOR = @"#D4D3D8";
 NSString * const THEME_BACKGROUND_COLOR = @"#EBF0EF";
 NSString * const FORM_TITLE_TEXT_COLOR  = @"#5E6078";
 NSString * const TAB_BAR_NORMAL_FOREGROUND_COLOR = @"#BDBDBD";
+NSString * const PLACEHOLDER_IMAGE_COLOR = @"#D8D8D8";
 
 // TODO: 上线前需要添上
 NSString * const APP_STORE_TEST_ACCOUNT = @"";

@@ -9,6 +9,7 @@
 #import "RWFormInputView.h"
 #import "RWProductDetailController.h"
 #import "RWContentModel.h"
+#import "RWAlertView.h"
 
 @interface RWBankCardController ()
 @property(nonatomic, weak) RWFormInputView *bankNameInput;
@@ -100,13 +101,17 @@
 }
 
 - (void)submitBtnClicked {
+    
     NSMutableDictionary *params = @{}.mutableCopy;
     params[@"bankName"] = self.bankNameInput.inputedText;
     params[@"bankCardNo"] = self.bankNumberInput.inputedText;
     params[@"bankCardNoPaste"] = @"0";
     params[@"ifscCode"] = self.ifscCodeInput.inputedText;
-    [[RWNetworkService sharedInstance] authInfoWithType:RWAuthTypeBankCardInfo parameters:[params copy] success:^{
-        [self fetchRecommendProduct];
+    
+    [RWAlertView showAlertViewWithTitle:@"TIPS" message:@"The information cannot be changed in step 1-3 after submission. Please fill in the correct information." confirmAction:^{
+        [[RWNetworkService sharedInstance] authInfoWithType:RWAuthTypeBankCardInfo parameters:[params copy] success:^{
+            [self fetchRecommendProduct];
+        }];
     }];
 }
 

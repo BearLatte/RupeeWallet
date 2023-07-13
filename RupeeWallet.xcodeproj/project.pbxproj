@@ -33,6 +33,8 @@
 		2227177F2A5E7DC400F865FD /* RWContactInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2227177E2A5E7DC400F865FD /* RWContactInfoController.m */; };
 		222717822A5E852A00F865FD /* RWContactInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 222717812A5E852A00F865FD /* RWContactInputView.m */; };
 		222717882A5EBE4C00F865FD /* RWBankCardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 222717872A5EBE4C00F865FD /* RWBankCardController.m */; };
+		2227178B2A5F96DA00F865FD /* RWAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2227178A2A5F96DA00F865FD /* RWAlertView.m */; };
+		222717952A5FBA9C00F865FD /* RWAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 222717942A5FBA9C00F865FD /* RWAttributedLabel.m */; };
 		2240267F2A5EF40600BA9A02 /* UIViewController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2240267E2A5EF40600BA9A02 /* UIViewController+Extension.m */; };
 		2244DEDD2A53C3E40093F903 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2244DEDC2A53C3E40093F903 /* AppDelegate.m */; };
 		2244DEE82A53C3E60093F903 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2244DEE72A53C3E60093F903 /* Assets.xcassets */; };
@@ -108,6 +110,10 @@
 		222717812A5E852A00F865FD /* RWContactInputView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWContactInputView.m; sourceTree = "<group>"; };
 		222717862A5EBE4C00F865FD /* RWBankCardController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWBankCardController.h; sourceTree = "<group>"; };
 		222717872A5EBE4C00F865FD /* RWBankCardController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWBankCardController.m; sourceTree = "<group>"; };
+		222717892A5F96DA00F865FD /* RWAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWAlertView.h; sourceTree = "<group>"; };
+		2227178A2A5F96DA00F865FD /* RWAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWAlertView.m; sourceTree = "<group>"; };
+		222717932A5FBA9C00F865FD /* RWAttributedLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWAttributedLabel.h; sourceTree = "<group>"; };
+		222717942A5FBA9C00F865FD /* RWAttributedLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWAttributedLabel.m; sourceTree = "<group>"; };
 		2240267D2A5EF40600BA9A02 /* UIViewController+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extension.h"; sourceTree = "<group>"; };
 		2240267E2A5EF40600BA9A02 /* UIViewController+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Extension.m"; sourceTree = "<group>"; };
 		2244DED82A53C3E40093F903 /* RupeeWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RupeeWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -249,8 +255,19 @@
 				2227176F2A5C12DB00F865FD /* RWAddressInpuView.m */,
 				222717802A5E852A00F865FD /* RWContactInputView.h */,
 				222717812A5E852A00F865FD /* RWContactInputView.m */,
+				222717892A5F96DA00F865FD /* RWAlertView.h */,
+				2227178A2A5F96DA00F865FD /* RWAlertView.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		2227178F2A5FBA2700F865FD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				222717932A5FBA9C00F865FD /* RWAttributedLabel.h */,
+				222717942A5FBA9C00F865FD /* RWAttributedLabel.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		2244DECF2A53C3E30093F903 = {
@@ -373,6 +390,7 @@
 				2227174C2A57AE5200F865FD /* RWGlobal.m */,
 				222717772A5D563100F865FD /* RWLocationManager.h */,
 				222717782A5D563100F865FD /* RWLocationManager.m */,
+				2227178F2A5FBA2700F865FD /* Views */,
 				220176982A555446002C718D /* Extension */,
 				220176992A555455002C718D /* ProgressHUD */,
 			);
@@ -586,6 +604,7 @@
 			files = (
 				220176B32A566A25002C718D /* RWBaseModel.m in Sources */,
 				2244DEDD2A53C3E40093F903 /* AppDelegate.m in Sources */,
+				222717952A5FBA9C00F865FD /* RWAttributedLabel.m in Sources */,
 				222717502A57B87A00F865FD /* RWLoginContentView.m in Sources */,
 				2227177C2A5D6E1400F865FD /* RWPersonalInfoController.m in Sources */,
 				2244DEEE2A53C3E60093F903 /* main.m in Sources */,
@@ -608,6 +627,7 @@
 				220176C32A5697E3002C718D /* NSDictionary+Log.m in Sources */,
 				227FD5632A59C32C00AC718A /* RWOrderDetailViewController.m in Sources */,
 				222717702A5C12DB00F865FD /* RWAddressInpuView.m in Sources */,
+				2227178B2A5F96DA00F865FD /* RWAlertView.m in Sources */,
 				220176B92A566C72002C718D /* RWContentModel.m in Sources */,
 				222717672A5BD2A800F865FD /* RWOCRCameraPanel.m in Sources */,
 				2240267F2A5EF40600BA9A02 /* UIViewController+Extension.m in Sources */,

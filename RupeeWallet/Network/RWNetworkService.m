@@ -274,6 +274,15 @@ static NSString * const baseURL = @"";
 }
 
 
+- (void)purchaseProductWithParameters:(NSDictionary *)parameters success:(void (^)(NSArray * _Nullable, BOOL))success {
+    [self requestWithPath:@"/uzYONRY/Yuulyz/fXdLNe" parameters:parameters success:^(RWBaseModel *response) {
+        success([RWProductModel mj_objectArrayWithKeyValuesArray:response.list], response.cont.isFirstApply);
+    } failure:^{
+        
+    }];
+}
+
+
 // MARK: - Private method
 - (NSDictionary *)configParametersWithOldParameters: (NSDictionary *)oldParams {
     NSMutableDictionary *body = oldParams.mutableCopy;

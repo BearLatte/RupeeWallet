@@ -8,5 +8,7 @@
 #import "RWBaseModel.h"
 
 @implementation RWBaseModel
-
++ (NSDictionary *)mj_objectClassInArray {
+    return @{@"list" : [NSDictionary class]};
+}
 @end

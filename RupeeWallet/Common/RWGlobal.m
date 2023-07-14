@@ -54,8 +54,9 @@ NSString * const APP_STORE_TEST_ACCOUNT = @"";
     return [[NSUserDefaults standardUserDefaults] boolForKey:IS_LOGIN_KEY];
 }
 
-- (NSString *)currentLoginPhoneNumber {
-    return [[NSUserDefaults standardUserDefaults] valueForKey:LOGIN_PHONE_NUMBER_KEY];
+- (BOOL)isAppleTestAccount {
+    NSString *loginPhoneNumber = [[NSUserDefaults standardUserDefaults] valueForKey:LOGIN_PHONE_NUMBER_KEY];
+    return [loginPhoneNumber isEqualToString:APP_STORE_TEST_ACCOUNT];
 }
 
 - (void)go2login {

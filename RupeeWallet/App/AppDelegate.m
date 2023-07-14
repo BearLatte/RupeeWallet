@@ -6,6 +6,7 @@
 //
 
 #import "AppDelegate.h"
+#import "UIDevice+Extension.h"
 #import "RWMainTabbarController.h"
 #import <IQKeyboardManager.h>
 #import <AdSupport/AdSupport.h>
@@ -21,6 +22,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [[IQKeyboardManager sharedManager] setEnable:YES];
+    [[UIDevice currentDevice] setOpenAppTimeStamp];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [[RWMainTabbarController alloc] init];
     [self.window makeKeyAndVisible];

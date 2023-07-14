@@ -102,6 +102,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, copy) NSString *bankCardNo;
 @property(nonatomic, copy) NSString *ifscCode;
 @property(nonatomic, copy) NSString *bankName;
+
+/// 是否是第一次下单
+@property(nonatomic, assign) BOOL isFirstApply;
 @end
 
 NS_ASSUME_NONNULL_END

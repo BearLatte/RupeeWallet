@@ -17,7 +17,7 @@
     [super setupUI];
     [self.view insertSubview:self.tableView atIndex:0];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(UIEdgeInsetsZero);
+        make.edges.mas_equalTo(UIEdgeInsetsMake(NAVIGATION_BAR_HEIGHT, 0, 0, 0));
     }];
 }
 

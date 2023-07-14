@@ -159,15 +159,6 @@ typedef NS_ENUM(NSUInteger, RWContactType) {
 }
 
 - (void)nextBtnClicked {
-    NSArray *contacts = nil;
-    if(![[RWGlobal sharedGlobal].currentLoginPhoneNumber isEqualToString:APP_STORE_TEST_ACCOUNT]) {
-        contacts = [[RWGlobal sharedGlobal] getContactList];
-    }
-    
-    if(contacts == nil) {
-        return;
-    }
-    
     NSMutableDictionary *params = @{}.mutableCopy;
     params[@"brotherOrSisterName"] = self.parentsContactInputView.contactName;
     params[@"brotherOrSisterNumber"] = self.parentsContactInputView.contactNumber;

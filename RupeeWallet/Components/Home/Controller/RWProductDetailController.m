@@ -12,6 +12,8 @@
 #import "RWTakePhotoController.h"
 #import <AVFoundation/AVFoundation.h>
 #import "UIDevice+Extension.h"
+#import "RWLocationManager.h"
+#import "RWPurchaseSuccessController.h"
 
 @interface RWProductDetailController ()
 @property(nonatomic, weak) UIImageView *productLogoView;
@@ -188,7 +190,7 @@
 - (void)loanNowBtnClicked {
     [[RWNetworkService sharedInstance] fetchProductWithIsRecommend:NO success:^(RWContentModel * _Nullable userInfo, NSArray * _Nullable products, RWProductDetailModel * _Nullable recommendProduct) {
         if(userInfo.userLiveness) {
-            [self configParametersAndPurchase];
+            [self configParameters];
         } else {
             [RWAlertView showAlertViewWithStyle:RWAlertStyleTips title:@"TIPS" message:@"Please upload a selfie photo before continuing." confirmAction:^{
                 [self go2takePhoto];
@@ -242,7 +244,7 @@
     return isPermission;
 }
 
-- (void)configParametersAndPurchase {
+- (void)configParameters {
     NSMutableDictionary *params = @{}.mutableCopy;
     params[@"productId"] = self.productDetail.productId;
     params[@"loanAmount"] = self.productDetail.loanAmountStr;
@@ -253,75 +255,82 @@
     }
     deviceAllInfo[@"udid"] =  [UIDevice currentDevice].identifierForVendor.UUIDString;
     deviceAllInfo[@"model"] =  [UIDevice currentDevice].model;
-//    deviceAllInfo[@"batteryStatus"] =  [UIDevice currentDevice].model;
-    
-    
-    
+    deviceAllInfo[@"batteryStatus"] =  [UIDevice currentDevice].batteryStatus;
+    BOOL isIpad = [[UIDevice currentDevice].model isEqualToString:@"iPad"];
+    deviceAllInfo[@"isPhone"] = isIpad ? @"false" : @"true";
+    deviceAllInfo[@"isTablet"] = isIpad ? @"true" : @"false";
+    deviceAllInfo[@"batteryLevel"] = [UIDevice currentDevice].batteryLevelString;
+    deviceAllInfo[@"ipAddress"] = [UIDevice currentDevice].ipAddress;
+    deviceAllInfo[@"bootTime"] = [UIDevice currentDevice].bootTime;
+    deviceAllInfo[@"time"] = [UIDevice currentDevice].uptime;
+    deviceAllInfo[@"networkType"] = [UIDevice currentDevice].networkType;
+    deviceAllInfo[@"is4G"] = @([[UIDevice currentDevice].networkType isEqualToString: @"NETWORK_4G"]);
+    deviceAllInfo[@"is5G"] = @([[UIDevice currentDevice].networkType isEqualToString: @"NETWORK_5G"]);
+    deviceAllInfo[@"wifiConnected"] = @([[UIDevice currentDevice].networkType isEqualToString: @"NETWORK_WIFI"]);
+    deviceAllInfo[@"sdkVersionName"] = [[UIDevice currentDevice] systemVersion];
+    deviceAllInfo[@"externalTotalSize"] = [UIDevice currentDevice].totalDiskSpaceInGB;
+    deviceAllInfo[@"internalTotalSize"] = [UIDevice currentDevice].totalDiskSpaceInGB;
+    deviceAllInfo[@"internalAvailableSize"] = [UIDevice currentDevice].freeDiskSpaceInGB;
+    deviceAllInfo[@"externalAvailableSize"] = [UIDevice currentDevice].freeDiskSpaceInGB;
+    deviceAllInfo[@"availableMemory"] = @([UIDevice currentDevice].freeDiskSpaceInBytes);
+    CGFloat percent = (CGFloat)[UIDevice currentDevice].usedDiskSpaceInBytes / (CGFloat)[UIDevice currentDevice].totalDiskSpaceInBytes * 100.0;
+    deviceAllInfo[@"percentValue"] = [NSString stringWithFormat:@"%.0f", percent];
+    deviceAllInfo[@"language"] = [UIDevice currentDevice].language;
+    deviceAllInfo[@"brand"] = @"Apple";
+    BOOL mobileData = ![[UIDevice currentDevice].networkType isEqualToString:@"NETWORK_WIFI"] && ![[UIDevice currentDevice].networkType isEqualToString:@"NETWORK_UNKNOWN"];
+    deviceAllInfo[@"mobileData"] =  @(mobileData);
+    deviceAllInfo[@"languageList"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"AppleLanguages"];
+    deviceAllInfo[@"screenWidth"] = @(SCREEN_WIDTH);
+    deviceAllInfo[@"screenHeight"] = @(SCREEN_HEIGHT);
+    deviceAllInfo[@"brightness"] = [NSString stringWithFormat:@"%.0f", [UIScreen mainScreen].brightness * 100];
+    deviceAllInfo[@"appOpenTime"] = [UIDevice currentDevice].openAppTimeStamp;
+    deviceAllInfo[@"timezone"] = [NSTimeZone localTimeZone].name;
     NSMutableDictionary *data = @{}.mutableCopy;
+    if(![RWGlobal sharedGlobal].isAppleTestAccount) {
+        NSArray *contacts = [[RWGlobal sharedGlobal] getContactList];
+        if(contacts == nil) {
+            return;
+        }
+        
+        data[@"phoneList"] = contacts;
+        
+        if(![[RWLocationManager sharedManager] hasLocationService]) {
+            [RWProgressHUD showInfoWithStatus:@"Please switch location service to on"];
+            return;
+        }
+        
+        if(![[RWLocationManager sharedManager] hasLocationPermission]) {
+            [[RWLocationManager sharedManager] requestLocationAuthorizaiton];
+            return;
+        }
+        
+        [[RWLocationManager sharedManager] getLocationWithBlock:^(BOOL success, CLLocation * _Nullable location) {
+            deviceAllInfo[@"latitude"] = [NSString stringWithFormat:@"%lf", location.coordinate.latitude];
+            deviceAllInfo[@"longitude"] = [NSString stringWithFormat:@"%lf", location.coordinate.longitude];
+            data[@"deviceAllInfo"] = deviceAllInfo;
+            params[@"data"] = [[data copy] mj_JSONString];
+            [self purchaseProductWithParams:params];
+        }];
+        
+    } else {
+        data[@"deviceAllInfo"] = deviceAllInfo;
+        params[@"data"] = [[data copy] mj_JSONString];
+        [self purchaseProductWithParams:params];
+    }
     
+}
 
-
-//    deviceAllInfo[""]  = UIDevice.tm.uuid
-//    deviceAllInfo[""] = UIDevice.tm.model
-//    deviceAllInfo[""] = UIDevice.tm.batteryStatus
-//    deviceAllInfo["isPhone"]  = !Constants.isIpad
-//    deviceAllInfo["isTablet"] = Constants.isIpad
-//    deviceAllInfo["batteryLevel"] = UIDevice.tm.batteryLevel
-//    deviceAllInfo["ipAddress"] = UIDevice.tm.ipAdress
-//    deviceAllInfo["bootTime"]  = UIDevice.tm.bootTime
-//    deviceAllInfo["time"]      = UIDevice.tm.uptime
-//    deviceAllInfo["networkType"] = UIDevice.tm.networkType
-//    deviceAllInfo["is4G"]      = UIDevice.tm.cellularType == "NETWORK_4G"
-//    deviceAllInfo["is5G"]      = UIDevice.tm.cellularType == "NETWORK_5G"
-//    deviceAllInfo["wifiConnected"] = UIDevice.tm.networkType == "NETWORK_WIFI"
-//    deviceAllInfo["sdkVersionName"] = UIDevice.current.systemVersion
-//
-//    let totalDistSize = UIDevice.tm.totalDiskSpaceInGB.replacingOccurrences(of: " ", with: "")
-//    deviceAllInfo["externalTotalSize"] = totalDistSize
-//    deviceAllInfo["internalTotalSize"] = totalDistSize
-//
-//    let availableDiskSize = UIDevice.tm.freeDiskSpaceInGB.replacingOccurrences(of: " ", with: "")
-//    deviceAllInfo["internalAvailableSize"] = availableDiskSize
-//    deviceAllInfo["externalAvailableSize"] = availableDiskSize
-//
-//    deviceAllInfo["availableMemory"] = UIDevice.tm.freeDiskSpaceInBytes
-//
-//    let result = Double(UIDevice.tm.usedDiskSpaceInBytes) / Double(UIDevice.tm.totalDiskSpaceInBytes) * 100
-//    deviceAllInfo["percentValue"] = Int(result)
-//
-//    deviceAllInfo["language"] = UIDevice.tm.language
-//    deviceAllInfo["brand"]    = "Apple"
-//    deviceAllInfo["mobileData"] = UIDevice.tm.networkType != "NETWORK_WIFI" && UIDevice.tm.networkType != "notReachable"
-//    deviceAllInfo["languageList"] = UserDefaults.standard.object(forKey: "AppleLanguages")
-//    deviceAllInfo["screenWidth"]  = Constants.screenWidth
-//    deviceAllInfo["screenHeight"] = Constants.screenHeight
-//    deviceAllInfo["brightness"] = String(format: "%.0f", UIScreen.main.brightness * 100)
-//    deviceAllInfo["appOpenTime"] = UIDevice.tm.openAppTimeStamp
-//    deviceAllInfo["timezone"] = TimeZone.current.identifier
-//
-//
-//    if Constants.userPhoneNumber != Constants.testAccountPhoneNumber {
-//        guard let latitude = latitude,
-//              let longitude = longitude else {
-//            return HUD.flash(.label("Lack of location information, please exit this page and enter again"), delay: 2.0)
-//        }
-//        deviceAllInfo["latitude"] = latitude
-//        deviceAllInfo["longitude"] = longitude
-//
-//        guard let phoneList = phoneList else {
-//            return HUD.flash(.label("Lack of contact book information, please exit this page and enter again"), delay: 2.0)
-//        }
-//
-//        data["phoneList"] = phoneList
-//    }
-//
-//    data["deviceAllInfo"] = deviceAllInfo
-//
-//    guard let data = try? JSONSerialization.data(withJSONObject: data),
-//          let dataStr = String(data: data, encoding: .utf8) else {
-//        return
-//    }
-//    params["data"] = dataStr
+- (void)purchaseProductWithParams:(NSDictionary *)params {
+    [[RWNetworkService sharedInstance] purchaseProductWithParameters:params success:^(NSArray * _Nullable recommendProductList, BOOL isFirstApply) {
+        if(isFirstApply) {
+            // TUDO: 首单埋点
+        }
+        
+        RWPurchaseSuccessController *successController = [[RWPurchaseSuccessController alloc] init];
+        successController.isRecommend = self.isRecommend;
+        successController.recommendProductList = recommendProductList;
+        [self.navigationController pushViewController:successController animated:YES];
+    }];
 }
 
 - (void)loadData {

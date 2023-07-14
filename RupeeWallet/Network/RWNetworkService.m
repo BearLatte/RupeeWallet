@@ -117,6 +117,15 @@ static NSString * const baseURL = @"";
     }];
 }
 
+- (void)logoutWithSuccess:(void(^)(void))success {
+    [RWProgressHUD showWithStatus:@"logout..."];
+    [self requestWithPath:@"/uzYONRY/WOwvcV" parameters:nil success:^(RWBaseModel *response) {
+        success();
+    } failure:^{
+        
+    }];
+}
+
 - (void)fetchUserAuthInfoWithType:(RWAuthType)type success:(void (^)(RWContentModel * _Nonnull))success {
     [RWProgressHUD showWithStatus:@"loading..."];
     NSMutableDictionary *params = @{}.mutableCopy;

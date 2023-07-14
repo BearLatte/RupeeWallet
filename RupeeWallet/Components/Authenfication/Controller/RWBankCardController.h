@@ -10,6 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RWBankCardController : RWBaseScrollViewController
+@property(nonatomic, assign, getter=isModify) BOOL modify;
 @property(nonatomic, strong) RWContentModel *authStatus;
 @end
 

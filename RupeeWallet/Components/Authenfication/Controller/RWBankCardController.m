@@ -110,7 +110,11 @@
     
     [RWAlertView showAlertViewWithStyle:RWAlertStyleTips title:@"TIPS" message:@"The information cannot be changed in step 1-3 after submission. Please fill in the correct information." confirmAction:^{
         [[RWNetworkService sharedInstance] authInfoWithType:RWAuthTypeBankCardInfo parameters:[params copy] success:^{
-            [self fetchRecommendProduct];
+            if (self.isModify) {
+                [self.navigationController popViewControllerAnimated:YES];
+            } else {
+                [self fetchRecommendProduct];
+            }
         }];
     }];
 }

@@ -54,21 +54,42 @@ NSString * const APP_STORE_TEST_ACCOUNT = @"";
     return [[NSUserDefaults standardUserDefaults] boolForKey:IS_LOGIN_KEY];
 }
 
+- (NSString *)currentPhoneNumber {
+    return [[NSUserDefaults standardUserDefaults] valueForKey:LOGIN_PHONE_NUMBER_KEY];
+}
+
 - (BOOL)isAppleTestAccount {
     NSString *loginPhoneNumber = [[NSUserDefaults standardUserDefaults] valueForKey:LOGIN_PHONE_NUMBER_KEY];
     return [loginPhoneNumber isEqualToString:APP_STORE_TEST_ACCOUNT];
 }
 
-- (void)go2login {
-    [[NSUserDefaults standardUserDefaults] setValue:nil forKey:ACCESS_TOKEN_KEY];
-    [[NSUserDefaults standardUserDefaults] setValue:@(NO) forKey:IS_LOGIN_KEY];
-    [[NSUserDefaults standardUserDefaults] setValue:nil forKey:LOGIN_PHONE_NUMBER_KEY];
+- (BOOL)isBangs {
+    if([[UIDevice currentDevice].model isEqualToString:@"iPad"]) {
+        return NO;
+    }
     
+    if(@available(iOS 11.0, *)) {
+        UIWindow *currentWindow = [UIApplication sharedApplication].delegate.window;
+        if(currentWindow.safeAreaInsets.left > 0 || currentWindow.safeAreaInsets.bottom > 0) {
+            return  YES;
+        }
+    }
+    return NO;
+}
+
+- (void)go2login {
+    [self clearLoginData];
     RWLoginViewController *loginVC = [[RWLoginViewController alloc] init];
     loginVC.modalStyle = RWModalStylePresent;
     loginVC.modalPresentationStyle = UIModalPresentationFullScreen;
     
     [[UIApplication sharedApplication].windows.firstObject.rootViewController presentViewController:loginVC animated:YES completion:nil];
+}
+
+- (void)clearLoginData {
+    [[NSUserDefaults standardUserDefaults] setValue:nil forKey:ACCESS_TOKEN_KEY];
+    [[NSUserDefaults standardUserDefaults] setValue:@(NO) forKey:IS_LOGIN_KEY];
+    [[NSUserDefaults standardUserDefaults] setValue:nil forKey:LOGIN_PHONE_NUMBER_KEY];
 }
 
 - (UIButton *)createThemeButtonWithTitle:(NSString * _Nullable)title cornerRadius:(CGFloat)radius {

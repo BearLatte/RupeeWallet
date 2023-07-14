@@ -40,10 +40,12 @@ typedef NS_ENUM(NSUInteger, RWOCRType) {
 @interface RWGlobal : NSObject
 @property(nonatomic, assign) BOOL isLogin;
 @property(nonatomic, assign) BOOL isAppleTestAccount;
+@property(nonatomic, assign, readonly, getter=isBangs) BOOL bangs;
+@property(nonatomic, copy, readonly) NSString *_Nullable currentPhoneNumber;
 
 + (RWGlobal *)sharedGlobal;
-
 - (void)go2login;
+- (void)clearLoginData;
 - (UIButton *)createThemeButtonWithTitle: (NSString *_Nullable)title cornerRadius: (CGFloat)radius;
 - (UILabel *)createLabelWithText: (NSString *_Nullable)text font:(UIFont *)font textColor: (NSString *)color;
 - (UILabel *)createAttributedStringLabelWithKey:(NSString *_Nonnull)key keyColor:(NSString *_Nullable)keyColor keyFont:(UIFont *)keyFont value:(NSString *_Nonnull)value valueColor:(NSString *_Nullable)valueColor valueFont:(UIFont *)valueFont;

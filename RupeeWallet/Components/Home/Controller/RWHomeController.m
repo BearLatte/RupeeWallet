@@ -12,7 +12,6 @@
 #import "RWKYCInfoContrroller.h"
 #import "RWOrderDetailViewController.h"
 #import "RWProductDetailController.h"
-#import "RWPurchaseSuccessController.h"
 
 @interface RWHomeController ()
 @property(nonatomic, strong) UIImageView *_Nullable headerImageView;
@@ -49,19 +48,16 @@
     self.tableView.layer.cornerRadius = 10;
     self.tableView.layer.masksToBounds = YES;
     
-    UIButton *testBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    testBtn.backgroundColor = [UIColor random];
-    testBtn.frame = CGRectMake(100, 100, 100, 100);
-    [self.view addSubview:testBtn];
-    [testBtn addTarget:self action:@selector(testAction) forControlEvents:UIControlEventTouchUpInside];
+//    UIButton *testBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+//    testBtn.backgroundColor = [UIColor random];
+//    testBtn.frame = CGRectMake(100, 100, 100, 100);
+//    [self.view addSubview:testBtn];
+//    [testBtn addTarget:self action:@selector(testAction) forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)testAction {
-    RWPurchaseSuccessController *successController = [[RWPurchaseSuccessController alloc] init];
-    successController.isRecommend = NO;
-    successController.recommendProductList = self.products;
-    [self.navigationController pushViewController:successController animated:YES];
-}
+//- (void)testAction {
+//
+//}
 
 - (void)loadData {
     if([RWGlobal sharedGlobal].isLogin) {

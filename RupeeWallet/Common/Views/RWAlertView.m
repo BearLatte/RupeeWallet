@@ -99,8 +99,8 @@
     if(self.alertStyle == RWAlertStyleTips) {
         [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.mas_equalTo(TOP_SAFE_AREA);
-            make.left.right.equalTo(@0);
-            make.height.equalTo(@55);
+            make.left.right.mas_equalTo(@0);
+            make.height.mas_equalTo(@55);
         }];
     } else {
         [self.errorIconView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -109,8 +109,8 @@
             make.centerX.mas_equalTo(self.containerView);
         }];
     }
-    
-    
+    [self layoutIfNeeded];
+        
     [self.messageLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         
         if(self.alertStyle == RWAlertStyleTips) {

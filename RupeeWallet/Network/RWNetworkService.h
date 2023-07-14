@@ -31,6 +31,7 @@ typedef NS_ENUM(NSUInteger, RWAuthType) {
 - (void)authInfoWithType:(RWAuthType)type parameters:(NSDictionary *)parameters success:(void(^)(void))success;
 - (void)userFaceAuthWithImage:(UIImage *)image success:(void(^)(void))success failure:(void(^)(void))failure;
 - (void)purchaseProductWithParameters:(NSDictionary *)parameters success:(void(^)(NSArray *_Nullable recommendProductList, BOOL isFirstApply))success;
+- (void)logoutWithSuccess:(void(^)(void))success;
 @end
 
 NS_ASSUME_NONNULL_END

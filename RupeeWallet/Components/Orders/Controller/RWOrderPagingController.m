@@ -9,6 +9,7 @@
 #import "RWOrderListController.h"
 #import "RWPagingTitleView.h"
 #import "RWPagingListContainerView.h"
+#import "RWPagingIndicatorLineView.h"
 
 @interface RWOrderPagingController ()<RWPagingViewDelegate, RWPagingListContainerViewDelegate>
 @property(nonatomic, strong) NSArray *listTitles;
@@ -26,8 +27,13 @@
         _pagingView.titleColor = [UIColor colorWithWhite:1 alpha:0.5];
         _pagingView.titleFont = [UIFont systemFontOfSize:20];
         _pagingView.titleSelectedColor = [UIColor whiteColor];
-//        _pagingView.indicators
-        _pagingView.backgroundColor = [UIColor colorWithHexString:THEME_COLOR];
+        RWPagingIndicatorLineView *lineView = [[RWPagingIndicatorLineView alloc] init];
+        lineView.indicatorWidth = RWPagingViewAutomaticDimension;
+        lineView.lineStyle = RWPagingIndicatorLineStyle_Lengthen;
+        lineView.indicatorColor = [UIColor whiteColor];
+        lineView.indicatorHeight = 2;
+        _pagingView.indicators = @[lineView];
+        
     }
     return _pagingView;
 }
@@ -58,16 +64,25 @@
     }];
     [self.view layoutIfNeeded];
     
-    [self.view addSubview:self.pagingView];
-    [self.pagingView mas_makeConstraints:^(MASConstraintMaker *make) {
+    UIView *pagingBgView = [[UIView alloc] init];
+    pagingBgView.backgroundColor = [UIColor colorWithHexString:THEME_COLOR];
+    [self.view addSubview:pagingBgView];
+    [pagingBgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(topView.mas_bottom);
         make.left.right.mas_equalTo(0);
-        make.height.mas_equalTo(50);
+        make.height.mas_equalTo(44);
+    }];
+    
+    [pagingBgView addSubview:self.pagingView];
+    [self.pagingView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(14);
+        make.left.right.mas_equalTo(0);
+        make.height.mas_equalTo(28);
     }];
     
     [self.view addSubview:self.containerView];
     [self.containerView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.pagingView.mas_bottom);
+        make.top.mas_equalTo(pagingBgView.mas_bottom);
         make.left.right.mas_equalTo(0);
         make.height.mas_equalTo(SCREEN_HEIGHT);
     }];
@@ -87,7 +102,11 @@
 
 // MARK: - RWPagingViewDelegate
 - (void)categoryView:(RWPagingBaseView *)categoryView didSelectedItemAtIndex:(NSInteger)index {
-    
+    if(index == 0) {
+        [self openGesturePop];
+    } else {
+        [self closeGesturePop];
+    }
 }
 
 // MARK: - RWPagingListContainerViewDelegate

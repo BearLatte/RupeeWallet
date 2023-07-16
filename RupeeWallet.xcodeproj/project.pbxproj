@@ -48,6 +48,50 @@
 		227FD5662A59C77A00AC718A /* RWOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 227FD5652A59C77A00AC718A /* RWOrderModel.m */; };
 		227FD5692A59C98E00AC718A /* RWProductDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 227FD5682A59C98E00AC718A /* RWProductDetailModel.m */; };
 		227FD56C2A59D0E400AC718A /* RWProductDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227FD56B2A59D0E400AC718A /* RWProductDetailController.m */; };
+		229772E72A6252B100B7DCE5 /* RWAboutUsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 229772E62A6252B100B7DCE5 /* RWAboutUsController.m */; };
+		229772EA2A6254F700B7DCE5 /* NSBundle+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 229772E92A6254F700B7DCE5 /* NSBundle+Extension.m */; };
+		229772ED2A62561700B7DCE5 /* RWOrderListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 229772EC2A62561700B7DCE5 /* RWOrderListController.m */; };
+		229772F02A62568800B7DCE5 /* RWOrderPagingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 229772EF2A62568800B7DCE5 /* RWOrderPagingController.m */; };
+		229773072A62650500B7DCE5 /* RWPagingBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 229773062A62650500B7DCE5 /* RWPagingBaseCell.m */; };
+		2297730B2A6265D800B7DCE5 /* RTLManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297730A2A6265D800B7DCE5 /* RTLManager.m */; };
+		2297730E2A62668600B7DCE5 /* RWPagingBaseCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297730D2A62668600B7DCE5 /* RWPagingBaseCellModel.m */; };
+		229773112A6266D000B7DCE5 /* RWPagingBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 229773102A6266D000B7DCE5 /* RWPagingBaseView.m */; };
+		229773152A6268DC00B7DCE5 /* RWPagingFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 229773142A6268DC00B7DCE5 /* RWPagingFactory.m */; };
+		229773182A62697800B7DCE5 /* UIColor+RWAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 229773172A62697800B7DCE5 /* UIColor+RWAdd.m */; };
+		2297731B2A6269EF00B7DCE5 /* RWPagingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297731A2A6269EF00B7DCE5 /* RWPagingCollectionView.m */; };
+		2297731F2A626B7E00B7DCE5 /* RWPagingIndicatorParamsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297731E2A626B7E00B7DCE5 /* RWPagingIndicatorParamsModel.m */; };
+		229773232A62A6B300B7DCE5 /* RWPagingListContainerRTLCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 229773222A62A6B300B7DCE5 /* RWPagingListContainerRTLCell.m */; };
+		229773262A62A72100B7DCE5 /* RWPagingListContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 229773252A62A72100B7DCE5 /* RWPagingListContainerView.m */; };
+		229773292A62A88C00B7DCE5 /* RWPagingViewAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 229773282A62A88C00B7DCE5 /* RWPagingViewAnimator.m */; };
+		2297732E2A62A96800B7DCE5 /* RWPagingTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297732D2A62A96800B7DCE5 /* RWPagingTitleCell.m */; };
+		229773322A62A9A600B7DCE5 /* RWPagingIndicatorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 229773312A62A9A600B7DCE5 /* RWPagingIndicatorCell.m */; };
+		229773352A62A9D700B7DCE5 /* RWPagingIndicatorCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 229773342A62A9D700B7DCE5 /* RWPagingIndicatorCellModel.m */; };
+		229773382A62AA1300B7DCE5 /* RWPagingIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 229773372A62AA1300B7DCE5 /* RWPagingIndicatorView.m */; };
+		2297733C2A62AAF400B7DCE5 /* RWPagingIndicatorBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297733B2A62AAF400B7DCE5 /* RWPagingIndicatorBackgroundView.m */; };
+		2297733F2A62AB2800B7DCE5 /* RWPagingIndicatorComponentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297733E2A62AB2800B7DCE5 /* RWPagingIndicatorComponentView.m */; };
+		229773422A62AD1D00B7DCE5 /* RWPagingIndicatorBallView.m in Sources */ = {isa = PBXBuildFile; fileRef = 229773412A62AD1D00B7DCE5 /* RWPagingIndicatorBallView.m */; };
+		229773452A62AD9F00B7DCE5 /* RWPagingIndicatorDotLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 229773442A62AD9F00B7DCE5 /* RWPagingIndicatorDotLineView.m */; };
+		229773482A62AE2900B7DCE5 /* RWPagingIndicatorImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 229773472A62AE2800B7DCE5 /* RWPagingIndicatorImageView.m */; };
+		2297734B2A62AE9300B7DCE5 /* RWPagingndicatorLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297734A2A62AE9300B7DCE5 /* RWPagingndicatorLineView.m */; };
+		2297734E2A62AF9000B7DCE5 /* RWPagingndicatorRainbowLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297734D2A62AF9000B7DCE5 /* RWPagingndicatorRainbowLineView.m */; };
+		229773512A62AFF500B7DCE5 /* RWPagingIndicatorTriangleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 229773502A62AFF500B7DCE5 /* RWPagingIndicatorTriangleView.m */; };
+		229773542A62B1C100B7DCE5 /* RWPagingTitleCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 229773532A62B1C100B7DCE5 /* RWPagingTitleCellModel.m */; };
+		229773572A62B21100B7DCE5 /* RWPagingTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 229773562A62B21100B7DCE5 /* RWPagingTitleView.m */; };
+		2297735A2A62B40A00B7DCE5 /* RWPagingDotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 229773592A62B40A00B7DCE5 /* RWPagingDotCell.m */; };
+		2297735D2A62B43D00B7DCE5 /* RWPagingDotCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297735C2A62B43D00B7DCE5 /* RWPagingDotCellModel.m */; };
+		229773602A62B45900B7DCE5 /* RWPagingDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297735F2A62B45900B7DCE5 /* RWPagingDotView.m */; };
+		229773642A62B57700B7DCE5 /* RWPagingImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 229773632A62B57700B7DCE5 /* RWPagingImageCell.m */; };
+		229773672A62B59600B7DCE5 /* RWPagingImageCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 229773662A62B59600B7DCE5 /* RWPagingImageCellModel.m */; };
+		2297736A2A62B5FC00B7DCE5 /* RWPagingImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 229773692A62B5FC00B7DCE5 /* RWPagingImageView.m */; };
+		2297736E2A62B7E100B7DCE5 /* RWPagingNumberCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297736D2A62B7E100B7DCE5 /* RWPagingNumberCell.m */; };
+		229773712A62B80800B7DCE5 /* RWPagingNumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = 229773702A62B80800B7DCE5 /* RWPagingNumberView.m */; };
+		229773742A62B82200B7DCE5 /* RWPaingNumberCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 229773732A62B82200B7DCE5 /* RWPaingNumberCellModel.m */; };
+		229773782A62B96500B7DCE5 /* RWPagingTitleImageCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 229773772A62B96500B7DCE5 /* RWPagingTitleImageCellModel.m */; };
+		2297737B2A62B9B800B7DCE5 /* RWPagingTitleImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297737A2A62B9B800B7DCE5 /* RWPagingTitleImageCell.m */; };
+		2297737E2A62BA6300B7DCE5 /* RWPagingTitleImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297737D2A62BA6300B7DCE5 /* RWPagingTitleImageView.m */; };
+		229773822A62BB4100B7DCE5 /* RWPagingVerticalTitleZoomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 229773812A62BB4100B7DCE5 /* RWPagingVerticalTitleZoomView.m */; };
+		229773852A62BB5C00B7DCE5 /* RWPagingVerticalTitleZoomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 229773842A62BB5C00B7DCE5 /* RWPagingVerticalTitleZoomCell.m */; };
+		229773882A62BB7300B7DCE5 /* RWPagingVerticalTitleZoomCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 229773872A62BB7300B7DCE5 /* RWPagingVerticalTitleZoomCellModel.m */; };
 		22A0BEB22A53D88A00B8C360 /* RWMainTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A0BEB12A53D88A00B8C360 /* RWMainTabbarController.m */; };
 		22A0BEB52A53D8E900B8C360 /* RWBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A0BEB42A53D8E900B8C360 /* RWBaseViewController.m */; };
 		22A0BEB82A53D92A00B8C360 /* RWBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A0BEB72A53D92A00B8C360 /* RWBaseTableViewController.m */; };
@@ -143,6 +187,96 @@
 		227FD5682A59C98E00AC718A /* RWProductDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWProductDetailModel.m; sourceTree = "<group>"; };
 		227FD56A2A59D0E400AC718A /* RWProductDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWProductDetailController.h; sourceTree = "<group>"; };
 		227FD56B2A59D0E400AC718A /* RWProductDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWProductDetailController.m; sourceTree = "<group>"; };
+		229772E52A6252B100B7DCE5 /* RWAboutUsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWAboutUsController.h; sourceTree = "<group>"; };
+		229772E62A6252B100B7DCE5 /* RWAboutUsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWAboutUsController.m; sourceTree = "<group>"; };
+		229772E82A6254F700B7DCE5 /* NSBundle+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSBundle+Extension.h"; sourceTree = "<group>"; };
+		229772E92A6254F700B7DCE5 /* NSBundle+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+Extension.m"; sourceTree = "<group>"; };
+		229772EB2A62561700B7DCE5 /* RWOrderListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWOrderListController.h; sourceTree = "<group>"; };
+		229772EC2A62561700B7DCE5 /* RWOrderListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWOrderListController.m; sourceTree = "<group>"; };
+		229772EE2A62568800B7DCE5 /* RWOrderPagingController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWOrderPagingController.h; sourceTree = "<group>"; };
+		229772EF2A62568800B7DCE5 /* RWOrderPagingController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWOrderPagingController.m; sourceTree = "<group>"; };
+		229773052A62650500B7DCE5 /* RWPagingBaseCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPagingBaseCell.h; sourceTree = "<group>"; };
+		229773062A62650500B7DCE5 /* RWPagingBaseCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPagingBaseCell.m; sourceTree = "<group>"; };
+		229773092A6265D800B7DCE5 /* RTLManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTLManager.h; sourceTree = "<group>"; };
+		2297730A2A6265D800B7DCE5 /* RTLManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTLManager.m; sourceTree = "<group>"; };
+		2297730C2A62668600B7DCE5 /* RWPagingBaseCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPagingBaseCellModel.h; sourceTree = "<group>"; };
+		2297730D2A62668600B7DCE5 /* RWPagingBaseCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPagingBaseCellModel.m; sourceTree = "<group>"; };
+		2297730F2A6266D000B7DCE5 /* RWPagingBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPagingBaseView.h; sourceTree = "<group>"; };
+		229773102A6266D000B7DCE5 /* RWPagingBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPagingBaseView.m; sourceTree = "<group>"; };
+		229773132A6268DC00B7DCE5 /* RWPagingFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPagingFactory.h; sourceTree = "<group>"; };
+		229773142A6268DC00B7DCE5 /* RWPagingFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPagingFactory.m; sourceTree = "<group>"; };
+		229773162A62697800B7DCE5 /* UIColor+RWAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+RWAdd.h"; sourceTree = "<group>"; };
+		229773172A62697800B7DCE5 /* UIColor+RWAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RWAdd.m"; sourceTree = "<group>"; };
+		229773192A6269EF00B7DCE5 /* RWPagingCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPagingCollectionView.h; sourceTree = "<group>"; };
+		2297731A2A6269EF00B7DCE5 /* RWPagingCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPagingCollectionView.m; sourceTree = "<group>"; };
+		2297731C2A626A2F00B7DCE5 /* RWPagingIndicatorProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPagingIndicatorProtocol.h; sourceTree = "<group>"; };
+		2297731D2A626B7E00B7DCE5 /* RWPagingIndicatorParamsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPagingIndicatorParamsModel.h; sourceTree = "<group>"; };
+		2297731E2A626B7E00B7DCE5 /* RWPagingIndicatorParamsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPagingIndicatorParamsModel.m; sourceTree = "<group>"; };
+		229773202A62A66200B7DCE5 /* RWPagingViewDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPagingViewDefines.h; sourceTree = "<group>"; };
+		229773212A62A6B300B7DCE5 /* RWPagingListContainerRTLCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPagingListContainerRTLCell.h; sourceTree = "<group>"; };
+		229773222A62A6B300B7DCE5 /* RWPagingListContainerRTLCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPagingListContainerRTLCell.m; sourceTree = "<group>"; };
+		229773242A62A72100B7DCE5 /* RWPagingListContainerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPagingListContainerView.h; sourceTree = "<group>"; };
+		229773252A62A72100B7DCE5 /* RWPagingListContainerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPagingListContainerView.m; sourceTree = "<group>"; };
+		229773272A62A88C00B7DCE5 /* RWPagingViewAnimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPagingViewAnimator.h; sourceTree = "<group>"; };
+		229773282A62A88C00B7DCE5 /* RWPagingViewAnimator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPagingViewAnimator.m; sourceTree = "<group>"; };
+		2297732C2A62A96800B7DCE5 /* RWPagingTitleCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPagingTitleCell.h; sourceTree = "<group>"; };
+		2297732D2A62A96800B7DCE5 /* RWPagingTitleCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPagingTitleCell.m; sourceTree = "<group>"; };
+		229773302A62A9A600B7DCE5 /* RWPagingIndicatorCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPagingIndicatorCell.h; sourceTree = "<group>"; };
+		229773312A62A9A600B7DCE5 /* RWPagingIndicatorCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPagingIndicatorCell.m; sourceTree = "<group>"; };
+		229773332A62A9D700B7DCE5 /* RWPagingIndicatorCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPagingIndicatorCellModel.h; sourceTree = "<group>"; };
+		229773342A62A9D700B7DCE5 /* RWPagingIndicatorCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPagingIndicatorCellModel.m; sourceTree = "<group>"; };
+		229773362A62AA1300B7DCE5 /* RWPagingIndicatorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPagingIndicatorView.h; sourceTree = "<group>"; };
+		229773372A62AA1300B7DCE5 /* RWPagingIndicatorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPagingIndicatorView.m; sourceTree = "<group>"; };
+		2297733A2A62AAF400B7DCE5 /* RWPagingIndicatorBackgroundView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPagingIndicatorBackgroundView.h; sourceTree = "<group>"; };
+		2297733B2A62AAF400B7DCE5 /* RWPagingIndicatorBackgroundView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPagingIndicatorBackgroundView.m; sourceTree = "<group>"; };
+		2297733D2A62AB2800B7DCE5 /* RWPagingIndicatorComponentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPagingIndicatorComponentView.h; sourceTree = "<group>"; };
+		2297733E2A62AB2800B7DCE5 /* RWPagingIndicatorComponentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPagingIndicatorComponentView.m; sourceTree = "<group>"; };
+		229773402A62AD1D00B7DCE5 /* RWPagingIndicatorBallView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPagingIndicatorBallView.h; sourceTree = "<group>"; };
+		229773412A62AD1D00B7DCE5 /* RWPagingIndicatorBallView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPagingIndicatorBallView.m; sourceTree = "<group>"; };
+		229773432A62AD9F00B7DCE5 /* RWPagingIndicatorDotLineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPagingIndicatorDotLineView.h; sourceTree = "<group>"; };
+		229773442A62AD9F00B7DCE5 /* RWPagingIndicatorDotLineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPagingIndicatorDotLineView.m; sourceTree = "<group>"; };
+		229773462A62AE2800B7DCE5 /* RWPagingIndicatorImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPagingIndicatorImageView.h; sourceTree = "<group>"; };
+		229773472A62AE2800B7DCE5 /* RWPagingIndicatorImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPagingIndicatorImageView.m; sourceTree = "<group>"; };
+		229773492A62AE9300B7DCE5 /* RWPagingIndicatorLineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPagingIndicatorLineView.h; sourceTree = "<group>"; };
+		2297734A2A62AE9300B7DCE5 /* RWPagingndicatorLineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPagingndicatorLineView.m; sourceTree = "<group>"; };
+		2297734C2A62AF9000B7DCE5 /* RWPagingndicatorRainbowLineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPagingndicatorRainbowLineView.h; sourceTree = "<group>"; };
+		2297734D2A62AF9000B7DCE5 /* RWPagingndicatorRainbowLineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPagingndicatorRainbowLineView.m; sourceTree = "<group>"; };
+		2297734F2A62AFF500B7DCE5 /* RWPagingIndicatorTriangleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPagingIndicatorTriangleView.h; sourceTree = "<group>"; };
+		229773502A62AFF500B7DCE5 /* RWPagingIndicatorTriangleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPagingIndicatorTriangleView.m; sourceTree = "<group>"; };
+		229773522A62B1C100B7DCE5 /* RWPagingTitleCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPagingTitleCellModel.h; sourceTree = "<group>"; };
+		229773532A62B1C100B7DCE5 /* RWPagingTitleCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPagingTitleCellModel.m; sourceTree = "<group>"; };
+		229773552A62B21000B7DCE5 /* RWPagingTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPagingTitleView.h; sourceTree = "<group>"; };
+		229773562A62B21100B7DCE5 /* RWPagingTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPagingTitleView.m; sourceTree = "<group>"; };
+		229773582A62B40A00B7DCE5 /* RWPagingDotCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPagingDotCell.h; sourceTree = "<group>"; };
+		229773592A62B40A00B7DCE5 /* RWPagingDotCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPagingDotCell.m; sourceTree = "<group>"; };
+		2297735B2A62B43D00B7DCE5 /* RWPagingDotCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPagingDotCellModel.h; sourceTree = "<group>"; };
+		2297735C2A62B43D00B7DCE5 /* RWPagingDotCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPagingDotCellModel.m; sourceTree = "<group>"; };
+		2297735E2A62B45900B7DCE5 /* RWPagingDotView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPagingDotView.h; sourceTree = "<group>"; };
+		2297735F2A62B45900B7DCE5 /* RWPagingDotView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPagingDotView.m; sourceTree = "<group>"; };
+		229773622A62B57700B7DCE5 /* RWPagingImageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPagingImageCell.h; sourceTree = "<group>"; };
+		229773632A62B57700B7DCE5 /* RWPagingImageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPagingImageCell.m; sourceTree = "<group>"; };
+		229773652A62B59600B7DCE5 /* RWPagingImageCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPagingImageCellModel.h; sourceTree = "<group>"; };
+		229773662A62B59600B7DCE5 /* RWPagingImageCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPagingImageCellModel.m; sourceTree = "<group>"; };
+		229773682A62B5FC00B7DCE5 /* RWPagingImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPagingImageView.h; sourceTree = "<group>"; };
+		229773692A62B5FC00B7DCE5 /* RWPagingImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPagingImageView.m; sourceTree = "<group>"; };
+		2297736C2A62B7E100B7DCE5 /* RWPagingNumberCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPagingNumberCell.h; sourceTree = "<group>"; };
+		2297736D2A62B7E100B7DCE5 /* RWPagingNumberCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPagingNumberCell.m; sourceTree = "<group>"; };
+		2297736F2A62B80800B7DCE5 /* RWPagingNumberView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPagingNumberView.h; sourceTree = "<group>"; };
+		229773702A62B80800B7DCE5 /* RWPagingNumberView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPagingNumberView.m; sourceTree = "<group>"; };
+		229773722A62B82200B7DCE5 /* RWPagingNumberCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPagingNumberCellModel.h; sourceTree = "<group>"; };
+		229773732A62B82200B7DCE5 /* RWPaingNumberCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPaingNumberCellModel.m; sourceTree = "<group>"; };
+		229773762A62B96500B7DCE5 /* RWPagingTitleImageCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPagingTitleImageCellModel.h; sourceTree = "<group>"; };
+		229773772A62B96500B7DCE5 /* RWPagingTitleImageCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPagingTitleImageCellModel.m; sourceTree = "<group>"; };
+		229773792A62B9B800B7DCE5 /* RWPagingTitleImageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPagingTitleImageCell.h; sourceTree = "<group>"; };
+		2297737A2A62B9B800B7DCE5 /* RWPagingTitleImageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPagingTitleImageCell.m; sourceTree = "<group>"; };
+		2297737C2A62BA6300B7DCE5 /* RWPagingTitleImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPagingTitleImageView.h; sourceTree = "<group>"; };
+		2297737D2A62BA6300B7DCE5 /* RWPagingTitleImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPagingTitleImageView.m; sourceTree = "<group>"; };
+		229773802A62BB4100B7DCE5 /* RWPagingVerticalTitleZoomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPagingVerticalTitleZoomView.h; sourceTree = "<group>"; };
+		229773812A62BB4100B7DCE5 /* RWPagingVerticalTitleZoomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPagingVerticalTitleZoomView.m; sourceTree = "<group>"; };
+		229773832A62BB5C00B7DCE5 /* RWPagingVerticalTitleZoomCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPagingVerticalTitleZoomCell.h; sourceTree = "<group>"; };
+		229773842A62BB5C00B7DCE5 /* RWPagingVerticalTitleZoomCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPagingVerticalTitleZoomCell.m; sourceTree = "<group>"; };
+		229773862A62BB7300B7DCE5 /* RWPagingVerticalTitleZoomCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPagingVerticalTitleZoomCellModel.h; sourceTree = "<group>"; };
+		229773872A62BB7300B7DCE5 /* RWPagingVerticalTitleZoomCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPagingVerticalTitleZoomCellModel.m; sourceTree = "<group>"; };
 		22A0BEB02A53D88A00B8C360 /* RWMainTabbarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWMainTabbarController.h; sourceTree = "<group>"; };
 		22A0BEB12A53D88A00B8C360 /* RWMainTabbarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWMainTabbarController.m; sourceTree = "<group>"; };
 		22A0BEB32A53D8E900B8C360 /* RWBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWBaseViewController.h; sourceTree = "<group>"; };
@@ -213,6 +347,8 @@
 				2240267E2A5EF40600BA9A02 /* UIViewController+Extension.m */,
 				2227179C2A61466800F865FD /* UIButton+Extension.h */,
 				2227179D2A61466800F865FD /* UIButton+Extension.m */,
+				229772E82A6254F700B7DCE5 /* NSBundle+Extension.h */,
+				229772E92A6254F700B7DCE5 /* NSBundle+Extension.m */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -354,10 +490,191 @@
 		227FD5602A59C18800AC718A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				229772EB2A62561700B7DCE5 /* RWOrderListController.h */,
+				229772EC2A62561700B7DCE5 /* RWOrderListController.m */,
+				229772EE2A62568800B7DCE5 /* RWOrderPagingController.h */,
+				229772EF2A62568800B7DCE5 /* RWOrderPagingController.m */,
 				227FD5612A59C32C00AC718A /* RWOrderDetailViewController.h */,
 				227FD5622A59C32C00AC718A /* RWOrderDetailViewController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		229772F12A625BEE00B7DCE5 /* RWPagingView */ = {
+			isa = PBXGroup;
+			children = (
+				2297732A2A62A90F00B7DCE5 /* Dot */,
+				2297732B2A62A92C00B7DCE5 /* Title */,
+				229773042A6264E300B7DCE5 /* Base */,
+				229773612A62B55700B7DCE5 /* Image */,
+				2297736B2A62B7B900B7DCE5 /* Number */,
+				2297732F2A62A97600B7DCE5 /* Indicator */,
+				229773122A6268AC00B7DCE5 /* Common */,
+				229773752A62B93000B7DCE5 /* TitleImage */,
+				229773082A6265B400B7DCE5 /* RTLManager */,
+				2297737F2A62BAFD00B7DCE5 /* VerticalTitleZoom */,
+			);
+			path = RWPagingView;
+			sourceTree = "<group>";
+		};
+		229773042A6264E300B7DCE5 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				229773052A62650500B7DCE5 /* RWPagingBaseCell.h */,
+				229773062A62650500B7DCE5 /* RWPagingBaseCell.m */,
+				2297730F2A6266D000B7DCE5 /* RWPagingBaseView.h */,
+				229773102A6266D000B7DCE5 /* RWPagingBaseView.m */,
+				2297730C2A62668600B7DCE5 /* RWPagingBaseCellModel.h */,
+				2297730D2A62668600B7DCE5 /* RWPagingBaseCellModel.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		229773082A6265B400B7DCE5 /* RTLManager */ = {
+			isa = PBXGroup;
+			children = (
+				229773092A6265D800B7DCE5 /* RTLManager.h */,
+				2297730A2A6265D800B7DCE5 /* RTLManager.m */,
+			);
+			path = RTLManager;
+			sourceTree = "<group>";
+		};
+		229773122A6268AC00B7DCE5 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				229773162A62697800B7DCE5 /* UIColor+RWAdd.h */,
+				229773172A62697800B7DCE5 /* UIColor+RWAdd.m */,
+				229773132A6268DC00B7DCE5 /* RWPagingFactory.h */,
+				229773142A6268DC00B7DCE5 /* RWPagingFactory.m */,
+				229773202A62A66200B7DCE5 /* RWPagingViewDefines.h */,
+				229773272A62A88C00B7DCE5 /* RWPagingViewAnimator.h */,
+				229773282A62A88C00B7DCE5 /* RWPagingViewAnimator.m */,
+				229773192A6269EF00B7DCE5 /* RWPagingCollectionView.h */,
+				2297731A2A6269EF00B7DCE5 /* RWPagingCollectionView.m */,
+				2297731C2A626A2F00B7DCE5 /* RWPagingIndicatorProtocol.h */,
+				229773242A62A72100B7DCE5 /* RWPagingListContainerView.h */,
+				229773252A62A72100B7DCE5 /* RWPagingListContainerView.m */,
+				2297731D2A626B7E00B7DCE5 /* RWPagingIndicatorParamsModel.h */,
+				2297731E2A626B7E00B7DCE5 /* RWPagingIndicatorParamsModel.m */,
+				229773212A62A6B300B7DCE5 /* RWPagingListContainerRTLCell.h */,
+				229773222A62A6B300B7DCE5 /* RWPagingListContainerRTLCell.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		2297732A2A62A90F00B7DCE5 /* Dot */ = {
+			isa = PBXGroup;
+			children = (
+				229773582A62B40A00B7DCE5 /* RWPagingDotCell.h */,
+				229773592A62B40A00B7DCE5 /* RWPagingDotCell.m */,
+				2297735E2A62B45900B7DCE5 /* RWPagingDotView.h */,
+				2297735F2A62B45900B7DCE5 /* RWPagingDotView.m */,
+				2297735B2A62B43D00B7DCE5 /* RWPagingDotCellModel.h */,
+				2297735C2A62B43D00B7DCE5 /* RWPagingDotCellModel.m */,
+			);
+			path = Dot;
+			sourceTree = "<group>";
+		};
+		2297732B2A62A92C00B7DCE5 /* Title */ = {
+			isa = PBXGroup;
+			children = (
+				2297732C2A62A96800B7DCE5 /* RWPagingTitleCell.h */,
+				2297732D2A62A96800B7DCE5 /* RWPagingTitleCell.m */,
+				229773552A62B21000B7DCE5 /* RWPagingTitleView.h */,
+				229773562A62B21100B7DCE5 /* RWPagingTitleView.m */,
+				229773522A62B1C100B7DCE5 /* RWPagingTitleCellModel.h */,
+				229773532A62B1C100B7DCE5 /* RWPagingTitleCellModel.m */,
+			);
+			path = Title;
+			sourceTree = "<group>";
+		};
+		2297732F2A62A97600B7DCE5 /* Indicator */ = {
+			isa = PBXGroup;
+			children = (
+				229773302A62A9A600B7DCE5 /* RWPagingIndicatorCell.h */,
+				229773312A62A9A600B7DCE5 /* RWPagingIndicatorCell.m */,
+				229773362A62AA1300B7DCE5 /* RWPagingIndicatorView.h */,
+				229773372A62AA1300B7DCE5 /* RWPagingIndicatorView.m */,
+				229773332A62A9D700B7DCE5 /* RWPagingIndicatorCellModel.h */,
+				229773342A62A9D700B7DCE5 /* RWPagingIndicatorCellModel.m */,
+				229773392A62AA9200B7DCE5 /* IndicatorViews */,
+			);
+			path = Indicator;
+			sourceTree = "<group>";
+		};
+		229773392A62AA9200B7DCE5 /* IndicatorViews */ = {
+			isa = PBXGroup;
+			children = (
+				229773492A62AE9300B7DCE5 /* RWPagingIndicatorLineView.h */,
+				2297734A2A62AE9300B7DCE5 /* RWPagingndicatorLineView.m */,
+				229773402A62AD1D00B7DCE5 /* RWPagingIndicatorBallView.h */,
+				229773412A62AD1D00B7DCE5 /* RWPagingIndicatorBallView.m */,
+				2297733A2A62AAF400B7DCE5 /* RWPagingIndicatorBackgroundView.h */,
+				2297733B2A62AAF400B7DCE5 /* RWPagingIndicatorBackgroundView.m */,
+				2297733D2A62AB2800B7DCE5 /* RWPagingIndicatorComponentView.h */,
+				2297733E2A62AB2800B7DCE5 /* RWPagingIndicatorComponentView.m */,
+				229773432A62AD9F00B7DCE5 /* RWPagingIndicatorDotLineView.h */,
+				229773442A62AD9F00B7DCE5 /* RWPagingIndicatorDotLineView.m */,
+				229773462A62AE2800B7DCE5 /* RWPagingIndicatorImageView.h */,
+				229773472A62AE2800B7DCE5 /* RWPagingIndicatorImageView.m */,
+				2297734C2A62AF9000B7DCE5 /* RWPagingndicatorRainbowLineView.h */,
+				2297734D2A62AF9000B7DCE5 /* RWPagingndicatorRainbowLineView.m */,
+				2297734F2A62AFF500B7DCE5 /* RWPagingIndicatorTriangleView.h */,
+				229773502A62AFF500B7DCE5 /* RWPagingIndicatorTriangleView.m */,
+			);
+			path = IndicatorViews;
+			sourceTree = "<group>";
+		};
+		229773612A62B55700B7DCE5 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				229773682A62B5FC00B7DCE5 /* RWPagingImageView.h */,
+				229773692A62B5FC00B7DCE5 /* RWPagingImageView.m */,
+				229773622A62B57700B7DCE5 /* RWPagingImageCell.h */,
+				229773632A62B57700B7DCE5 /* RWPagingImageCell.m */,
+				229773652A62B59600B7DCE5 /* RWPagingImageCellModel.h */,
+				229773662A62B59600B7DCE5 /* RWPagingImageCellModel.m */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		2297736B2A62B7B900B7DCE5 /* Number */ = {
+			isa = PBXGroup;
+			children = (
+				2297736F2A62B80800B7DCE5 /* RWPagingNumberView.h */,
+				229773702A62B80800B7DCE5 /* RWPagingNumberView.m */,
+				2297736C2A62B7E100B7DCE5 /* RWPagingNumberCell.h */,
+				2297736D2A62B7E100B7DCE5 /* RWPagingNumberCell.m */,
+				229773722A62B82200B7DCE5 /* RWPagingNumberCellModel.h */,
+				229773732A62B82200B7DCE5 /* RWPaingNumberCellModel.m */,
+			);
+			path = Number;
+			sourceTree = "<group>";
+		};
+		229773752A62B93000B7DCE5 /* TitleImage */ = {
+			isa = PBXGroup;
+			children = (
+				2297737C2A62BA6300B7DCE5 /* RWPagingTitleImageView.h */,
+				2297737D2A62BA6300B7DCE5 /* RWPagingTitleImageView.m */,
+				229773792A62B9B800B7DCE5 /* RWPagingTitleImageCell.h */,
+				2297737A2A62B9B800B7DCE5 /* RWPagingTitleImageCell.m */,
+				229773762A62B96500B7DCE5 /* RWPagingTitleImageCellModel.h */,
+				229773772A62B96500B7DCE5 /* RWPagingTitleImageCellModel.m */,
+			);
+			path = TitleImage;
+			sourceTree = "<group>";
+		};
+		2297737F2A62BAFD00B7DCE5 /* VerticalTitleZoom */ = {
+			isa = PBXGroup;
+			children = (
+				229773802A62BB4100B7DCE5 /* RWPagingVerticalTitleZoomView.h */,
+				229773812A62BB4100B7DCE5 /* RWPagingVerticalTitleZoomView.m */,
+				229773832A62BB5C00B7DCE5 /* RWPagingVerticalTitleZoomCell.h */,
+				229773842A62BB5C00B7DCE5 /* RWPagingVerticalTitleZoomCell.m */,
+				229773862A62BB7300B7DCE5 /* RWPagingVerticalTitleZoomCellModel.h */,
+				229773872A62BB7300B7DCE5 /* RWPagingVerticalTitleZoomCellModel.m */,
+			);
+			path = VerticalTitleZoom;
 			sourceTree = "<group>";
 		};
 		22A0BE8A2A53C4E800B8C360 /* Resources */ = {
@@ -416,14 +733,15 @@
 		22A0BE952A53C8A500B8C360 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				22A0BEC42A53DC3700B8C360 /* RWPrefixHeader.pch */,
 				2227174B2A57AE5200F865FD /* RWGlobal.h */,
 				2227174C2A57AE5200F865FD /* RWGlobal.m */,
+				22A0BEC42A53DC3700B8C360 /* RWPrefixHeader.pch */,
 				222717772A5D563100F865FD /* RWLocationManager.h */,
 				222717782A5D563100F865FD /* RWLocationManager.m */,
 				2227178F2A5FBA2700F865FD /* Views */,
 				220176982A555446002C718D /* Extension */,
 				220176992A555455002C718D /* ProgressHUD */,
+				229772F12A625BEE00B7DCE5 /* RWPagingView */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -479,6 +797,8 @@
 			children = (
 				22A0BECE2A53ED8B00B8C360 /* RWPersonalCenterController.h */,
 				22A0BECF2A53ED8B00B8C360 /* RWPersonalCenterController.m */,
+				229772E52A6252B100B7DCE5 /* RWAboutUsController.h */,
+				229772E62A6252B100B7DCE5 /* RWAboutUsController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -638,53 +958,97 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2297730B2A6265D800B7DCE5 /* RTLManager.m in Sources */,
 				220176B32A566A25002C718D /* RWBaseModel.m in Sources */,
 				2227179E2A61466800F865FD /* UIButton+Extension.m in Sources */,
 				2244DEDD2A53C3E40093F903 /* AppDelegate.m in Sources */,
 				222717952A5FBA9C00F865FD /* RWAttributedLabel.m in Sources */,
+				2297731B2A6269EF00B7DCE5 /* RWPagingCollectionView.m in Sources */,
+				229773292A62A88C00B7DCE5 /* RWPagingViewAnimator.m in Sources */,
+				229773452A62AD9F00B7DCE5 /* RWPagingIndicatorDotLineView.m in Sources */,
+				229773262A62A72100B7DCE5 /* RWPagingListContainerView.m in Sources */,
+				229773112A6266D000B7DCE5 /* RWPagingBaseView.m in Sources */,
 				222717502A57B87A00F865FD /* RWLoginContentView.m in Sources */,
+				2297734E2A62AF9000B7DCE5 /* RWPagingndicatorRainbowLineView.m in Sources */,
 				2227177C2A5D6E1400F865FD /* RWPersonalInfoController.m in Sources */,
+				229773782A62B96500B7DCE5 /* RWPagingTitleImageCellModel.m in Sources */,
 				2244DEEE2A53C3E60093F903 /* main.m in Sources */,
+				2297733C2A62AAF400B7DCE5 /* RWPagingIndicatorBackgroundView.m in Sources */,
+				2297737E2A62BA6300B7DCE5 /* RWPagingTitleImageView.m in Sources */,
 				22A0BEBE2A53D96200B8C360 /* RWMainNavigationController.m in Sources */,
 				227FD5692A59C98E00AC718A /* RWProductDetailModel.m in Sources */,
 				22A0BED32A53F2BB00B8C360 /* UIImage+Extension.m in Sources */,
+				229773232A62A6B300B7DCE5 /* RWPagingListContainerRTLCell.m in Sources */,
+				229772E72A6252B100B7DCE5 /* RWAboutUsController.m in Sources */,
+				229773852A62BB5C00B7DCE5 /* RWPagingVerticalTitleZoomCell.m in Sources */,
 				222717A32A615E4D00F865FD /* RWFeedbackController.m in Sources */,
 				2201769C2A55548D002C718D /* RWProgressHUD.m in Sources */,
 				222717732A5CFFC800F865FD /* NSDate+Extension.m in Sources */,
+				229773512A62AFF500B7DCE5 /* RWPagingIndicatorTriangleView.m in Sources */,
+				229773572A62B21100B7DCE5 /* RWPagingTitleView.m in Sources */,
 				22A0BED02A53ED8B00B8C360 /* RWPersonalCenterController.m in Sources */,
+				2297733F2A62AB2800B7DCE5 /* RWPagingIndicatorComponentView.m in Sources */,
+				229773152A6268DC00B7DCE5 /* RWPagingFactory.m in Sources */,
 				22A0BEBB2A53D93E00B8C360 /* RWBaseScrollViewController.m in Sources */,
 				220176A52A556AA9002C718D /* UIView+Extension.m in Sources */,
 				22C78A4B2A58AE6E00F4B563 /* RWKYCInfoContrroller.m in Sources */,
 				222717822A5E852A00F865FD /* RWContactInputView.m in Sources */,
 				22A0BEB52A53D8E900B8C360 /* RWBaseViewController.m in Sources */,
+				2297730E2A62668600B7DCE5 /* RWPagingBaseCellModel.m in Sources */,
+				229773182A62697800B7DCE5 /* UIColor+RWAdd.m in Sources */,
 				222717532A58004A00F865FD /* RWNetworkResponseModel.m in Sources */,
 				222717792A5D563100F865FD /* RWLocationManager.m in Sources */,
 				2227177F2A5E7DC400F865FD /* RWContactInfoController.m in Sources */,
 				22A0BECD2A53ED7200B8C360 /* RWHomeController.m in Sources */,
 				227FD5662A59C77A00AC718A /* RWOrderModel.m in Sources */,
+				229773322A62A9A600B7DCE5 /* RWPagingIndicatorCell.m in Sources */,
 				220176C32A5697E3002C718D /* NSDictionary+Log.m in Sources */,
 				227FD5632A59C32C00AC718A /* RWOrderDetailViewController.m in Sources */,
 				222717702A5C12DB00F865FD /* RWAddressInpuView.m in Sources */,
 				2227178B2A5F96DA00F865FD /* RWAlertView.m in Sources */,
 				220176B92A566C72002C718D /* RWContentModel.m in Sources */,
+				2297732E2A62A96800B7DCE5 /* RWPagingTitleCell.m in Sources */,
 				222717672A5BD2A800F865FD /* RWOCRCameraPanel.m in Sources */,
 				2240267F2A5EF40600BA9A02 /* UIViewController+Extension.m in Sources */,
 				220176BF2A56882E002C718D /* RWSectionHeaderView.m in Sources */,
+				229773882A62BB7300B7DCE5 /* RWPagingVerticalTitleZoomCellModel.m in Sources */,
 				22A0BEB22A53D88A00B8C360 /* RWMainTabbarController.m in Sources */,
+				229773422A62AD1D00B7DCE5 /* RWPagingIndicatorBallView.m in Sources */,
 				2227174D2A57AE5200F865FD /* RWGlobal.m in Sources */,
+				229772ED2A62561700B7DCE5 /* RWOrderListController.m in Sources */,
+				2297734B2A62AE9300B7DCE5 /* RWPagingndicatorLineView.m in Sources */,
 				22A0BEC12A53DB0700B8C360 /* UIColor+Extension.m in Sources */,
+				229773602A62B45900B7DCE5 /* RWPagingDotView.m in Sources */,
 				220176BC2A567027002C718D /* NSString+Extension.m in Sources */,
+				2297735A2A62B40A00B7DCE5 /* RWPagingDotCell.m in Sources */,
+				229773382A62AA1300B7DCE5 /* RWPagingIndicatorView.m in Sources */,
+				229773642A62B57700B7DCE5 /* RWPagingImageCell.m in Sources */,
+				2297736E2A62B7E100B7DCE5 /* RWPagingNumberCell.m in Sources */,
+				229773822A62BB4100B7DCE5 /* RWPagingVerticalTitleZoomView.m in Sources */,
 				220176AC2A5583BB002C718D /* UIDevice+Extension.m in Sources */,
+				2297731F2A626B7E00B7DCE5 /* RWPagingIndicatorParamsModel.m in Sources */,
 				2227179B2A5FE9E200F865FD /* RWTakePhotoController.m in Sources */,
 				2227176D2A5BFE3000F865FD /* RWGenderSelectView.m in Sources */,
 				2227174A2A56D46C00F865FD /* RWLoginViewController.m in Sources */,
 				22A0BEB82A53D92A00B8C360 /* RWBaseTableViewController.m in Sources */,
+				229773482A62AE2900B7DCE5 /* RWPagingIndicatorImageView.m in Sources */,
 				2201769F2A555651002C718D /* RWNetworkService.m in Sources */,
+				229773352A62A9D700B7DCE5 /* RWPagingIndicatorCellModel.m in Sources */,
 				2227176A2A5BEDB300F865FD /* RWFormInputView.m in Sources */,
 				220176EF2A56AFDC002C718D /* RWProductCell.m in Sources */,
 				222717882A5EBE4C00F865FD /* RWBankCardController.m in Sources */,
+				229773672A62B59600B7DCE5 /* RWPagingImageCellModel.m in Sources */,
+				229772EA2A6254F700B7DCE5 /* NSBundle+Extension.m in Sources */,
+				2297735D2A62B43D00B7DCE5 /* RWPagingDotCellModel.m in Sources */,
 				227FD56C2A59D0E400AC718A /* RWProductDetailController.m in Sources */,
+				229773712A62B80800B7DCE5 /* RWPagingNumberView.m in Sources */,
+				2297737B2A62B9B800B7DCE5 /* RWPagingTitleImageCell.m in Sources */,
+				229773742A62B82200B7DCE5 /* RWPaingNumberCellModel.m in Sources */,
 				222717982A5FE8C800F865FD /* RWPurchaseSuccessController.m in Sources */,
+				229773542A62B1C100B7DCE5 /* RWPagingTitleCellModel.m in Sources */,
+				2297736A2A62B5FC00B7DCE5 /* RWPagingImageView.m in Sources */,
+				229772F02A62568800B7DCE5 /* RWOrderPagingController.m in Sources */,
+				229773072A62650500B7DCE5 /* RWPagingBaseCell.m in Sources */,
 				220176B62A566AC6002C718D /* RWProductModel.m in Sources */,
 				222717762A5D272F00F865FD /* RWOSSCredentialModel.m in Sources */,
 			);
@@ -838,7 +1202,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.cocoapods.RupeeWallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -874,7 +1238,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.cocoapods.RupeeWallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

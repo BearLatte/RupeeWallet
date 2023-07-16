@@ -9,6 +9,8 @@
 #import "UIButton+Extension.h"
 #import "RWBankCardController.h"
 #import "RWFeedbackController.h"
+#import "RWAboutUsController.h"
+#import "RWOrderPagingController.h"
 
 
 typedef void(^ItemViewTapAction)(void);
@@ -166,7 +168,8 @@ typedef void(^ItemViewTapAction)(void);
     [privacyView setCornerRadius:10 rectCorner:UIRectCornerTopLeft | UIRectCornerTopRight];
     
     RWItemView *aboutUsView = [RWItemView itemViewWithIcon:@"about_us_icon" title:@"About Us" tapAction:^{
-        RWLog(@"打开关于我们");
+        RWAboutUsController *aboutUsController = [[RWAboutUsController alloc] init];
+        [self.navigationController pushViewController:aboutUsController animated:YES];
     }];
     [self.view addSubview:aboutUsView];
     [aboutUsView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -237,7 +240,8 @@ typedef void(^ItemViewTapAction)(void);
 
 - (void)ordersBtnClicked {
     if([RWGlobal sharedGlobal].isLogin) {
-        
+        RWOrderPagingController *paging = [[RWOrderPagingController alloc] init];
+        [self.navigationController pushViewController:paging animated:YES];
     } else {
         [[RWGlobal sharedGlobal] go2login];
     }

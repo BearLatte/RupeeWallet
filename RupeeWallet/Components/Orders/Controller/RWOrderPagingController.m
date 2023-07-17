@@ -84,7 +84,7 @@
     [self.containerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(pagingBgView.mas_bottom);
         make.left.right.mas_equalTo(0);
-        make.height.mas_equalTo(SCREEN_HEIGHT);
+        make.height.mas_equalTo(SCREEN_HEIGHT - NAVIGATION_BAR_HEIGHT - TOP_SAFE_AREA - 44);
     }];
 }
 

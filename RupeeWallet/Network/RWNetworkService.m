@@ -12,6 +12,7 @@
 #import "RWProgressHUD.h"
 #import "RWNetworkResponseModel.h"
 #import <AliyunOSSiOS/AliyunOSSiOS.h>
+#import "RWOrderModel.h"
 
 @interface RWNetworkService()
 @property(nonatomic, strong) AFHTTPSessionManager *_Nullable networkManager;
@@ -284,8 +285,70 @@ static NSString * const baseURL = @"";
 
 
 - (void)purchaseProductWithParameters:(NSDictionary *)parameters success:(void (^)(NSArray * _Nullable, BOOL))success {
+    [RWProgressHUD showWithStatus:@"loading..."];
     [self requestWithPath:@"/uzYONRY/Yuulyz/fXdLNe" parameters:parameters success:^(RWBaseModel *response) {
         success([RWProductModel mj_objectArrayWithKeyValuesArray:response.list], response.cont.isFirstApply);
+    } failure:^{
+        
+    }];
+}
+
+- (void)fetchOrderListWithOrderType:(RWOrderType)orderType success:(void (^)(NSArray * _Nonnull))success failure:(void (^)(void))failure {
+    [RWProgressHUD showWithStatus:@"loading..."];
+    NSString *status = nil;
+    switch (orderType) {
+        case RWOrderTypePending:
+            status = @"1";
+            break;
+        case RWOrderTypeDisbursing:
+            status = @"2";
+            break;
+        case RWOrderTypeToBeRepaid:
+            status = @"3";
+            break;
+        case RWOrderTypeRepaid:
+            status = @"4";
+            break;
+        case RWOrderTypeDenied:
+            status = @"5";
+            break;
+        case RWOrderTypeOverdue:
+            status = @"6";
+            break;
+        default:
+            break;
+    }
+    [self requestWithPath:@"/PZJqjz/RrKrKN/kVqBc" parameters:orderType == RWOrderTypeAll ? nil : @{@"status" : status} success:^(RWBaseModel *response) {
+        NSArray *orders = [RWOrderModel mj_objectArrayWithKeyValuesArray:response.list];
+        success(orders);
+    } failure:^{
+        failure();
+    }];
+}
+
+- (void)checkExtensionBtnShowWithOrderNumber:(NSString *)orderNumber success:(void (^)(BOOL))success {
+    [RWProgressHUD showWithStatus:@"loading..."];
+    [self requestWithPath:@"/PZJqjz/RrKrKN/nVegz" parameters:@{@"orderNo" : orderNumber, @"repayType" : @"extend"} success:^(RWBaseModel *response) {
+        success(response.cont.isExtend);
+    } failure:^{
+        
+    }];
+}
+
+- (void)fetchOrderDetailWithOrderNumber:(NSString *)orderNumber success:(void (^)(NSInteger, RWOrderModel * _Nonnull, NSArray * _Nonnull))success {
+    [RWProgressHUD showWithStatus:@"loading..."];
+    [self requestWithPath:@"/PZJqjz/RrKrKN/jYAdR" parameters:@{@"auditOrderNo" : orderNumber} success:^(RWBaseModel *response) {
+        NSArray *list = [RWProductModel mj_objectArrayWithKeyValuesArray:response.list];
+        success(response.cont.frozenDays, response.cont.loanAuditOrderVo, list);
+    } failure:^{
+        
+    }];
+}
+
+- (void)fetchRepayPathWithOrderNumber:(NSString *)orderNumber repayType:(NSString *)repayType success:(void (^)(RWContentModel * _Nonnull))success {
+    [RWProgressHUD showWithStatus:@"loading..."];
+    [self requestWithPath:@"/PZJqjz/RrKrKN/RPsWC" parameters:@{@"orderNo" : orderNumber, @"repayType" : repayType} success:^(RWBaseModel *response) {
+        success(response.cont);
     } failure:^{
         
     }];
@@ -337,6 +400,7 @@ static NSString * const baseURL = @"";
             } else {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [RWProgressHUD showInfoWithStatus:model.msg];
+                    failure();
                 });
             }
         });

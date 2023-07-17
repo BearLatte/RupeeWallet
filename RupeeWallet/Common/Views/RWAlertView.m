@@ -15,17 +15,13 @@
 @property(nonatomic, weak) UIButton *sureButton;
 @property(nonatomic, copy) ConfirmButtonAction confirmAction;
 
+@property(nonatomic, copy) NSString *_Nullable title;
+
 @property(nonatomic, assign) RWAlertStyle alertStyle;
 @end
 @implementation RWAlertView
 + (void)showAlertViewWithStyle:(RWAlertStyle)alertStyle title:(NSString *)title message:(NSString *)message confirmAction:(ConfirmButtonAction)action {
     RWAlertView *alertView = [[RWAlertView alloc] init];
-    if(title) {
-        alertView.titleLabel.text = title;
-    } else {
-        alertView.titleLabel.hidden = YES;
-    }
-    
     alertView.alertStyle = alertStyle;
     switch (alertStyle) {
         case RWAlertStyleTips:
@@ -39,10 +35,23 @@
         default:
             break;
     }
+    alertView.title = title;
     alertView.messageLabel.text = message;
     alertView.confirmAction = action;
     [alertView layoutIfNeeded];
     [alertView show];
+}
+
+- (void)setTitle:(NSString *)title {
+    _title = title;
+    
+    if(title.length > 0) {
+        self.titleLabel.hidden = NO;
+    } else {
+        self.titleLabel.hidden = YES;
+    }
+    
+    self.titleLabel.text = title;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {

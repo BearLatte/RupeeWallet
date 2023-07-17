@@ -37,6 +37,16 @@ typedef NS_ENUM(NSUInteger, RWOCRType) {
     RWOCRTypePanCardFront
 };
 
+typedef NS_ENUM(NSUInteger, RWOrderType) {
+    RWOrderTypeAll = 0,
+    RWOrderTypeDisbursing = 1,
+    RWOrderTypeToBeRepaid = 2,
+    RWOrderTypeDenied = 3,
+    RWOrderTypePending = 4,
+    RWOrderTypeRepaid = 5,
+    RWOrderTypeOverdue = 6
+};
+
 @interface RWGlobal : NSObject
 @property(nonatomic, assign) BOOL isLogin;
 @property(nonatomic, assign) BOOL isAppleTestAccount;

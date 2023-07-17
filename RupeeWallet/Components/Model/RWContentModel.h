@@ -28,6 +28,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 1是登录 0是注册
 @property(nonatomic, assign) NSInteger isLogin;
 
+/// 是否显示展期按钮
+@property(nonatomic, assign) BOOL isExtend;
+
 // MARK: - Authenfication
 
 /// 总的信息认证状态  1 认证 0 未认证
@@ -105,6 +108,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 是否是第一次下单
 @property(nonatomic, assign) BOOL isFirstApply;
+
+/// 支付跳转地址
+@property(nonatomic, copy) NSString *_Nullable path;
+/// 支付拦截地址
+@property(nonatomic, copy) NSString *_Nullable h5;
+/// webview 这个字段。
+/// 0 跳转系统浏览器
+/// 1 打开原生webview 并且里面可以跳转系统浏览器
+/// 2 只能在webview 里面处理
+@property(nonatomic, copy) NSString *_Nullable webview;
 @end
 
 NS_ASSUME_NONNULL_END

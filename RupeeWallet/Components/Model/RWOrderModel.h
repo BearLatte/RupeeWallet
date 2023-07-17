@@ -10,6 +10,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RWOrderModel : NSObject
+@property(nonatomic, copy) NSString *logo;
+@property(nonatomic, copy) NSString *loanName;
+@property(nonatomic, copy) NSString *productId;
 @property(nonatomic, copy) NSString *bankCardNo;
 /// 距离还款日时间
 @property(nonatomic, copy) NSString *daysToRepay;

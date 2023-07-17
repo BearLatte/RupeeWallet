@@ -44,6 +44,8 @@
 		2244DEE82A53C3E60093F903 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2244DEE72A53C3E60093F903 /* Assets.xcassets */; };
 		2244DEEB2A53C3E60093F903 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2244DEE92A53C3E60093F903 /* LaunchScreen.storyboard */; };
 		2244DEEE2A53C3E60093F903 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2244DEED2A53C3E60093F903 /* main.m */; };
+		224BE6EB2A64E82B00D4A50C /* RWOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 224BE6EA2A64E82B00D4A50C /* RWOrderCell.m */; };
+		224BE6EE2A6553D700D4A50C /* RWApplyExtensionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 224BE6ED2A6553D700D4A50C /* RWApplyExtensionController.m */; };
 		227FD5632A59C32C00AC718A /* RWOrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227FD5622A59C32C00AC718A /* RWOrderDetailViewController.m */; };
 		227FD5662A59C77A00AC718A /* RWOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 227FD5652A59C77A00AC718A /* RWOrderModel.m */; };
 		227FD5692A59C98E00AC718A /* RWProductDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 227FD5682A59C98E00AC718A /* RWProductDetailModel.m */; };
@@ -179,6 +181,10 @@
 		2244DEEA2A53C3E60093F903 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2244DEEC2A53C3E60093F903 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2244DEED2A53C3E60093F903 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		224BE6E92A64E82B00D4A50C /* RWOrderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWOrderCell.h; sourceTree = "<group>"; };
+		224BE6EA2A64E82B00D4A50C /* RWOrderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWOrderCell.m; sourceTree = "<group>"; };
+		224BE6EC2A6553D700D4A50C /* RWApplyExtensionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWApplyExtensionController.h; sourceTree = "<group>"; };
+		224BE6ED2A6553D700D4A50C /* RWApplyExtensionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWApplyExtensionController.m; sourceTree = "<group>"; };
 		227FD5612A59C32C00AC718A /* RWOrderDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWOrderDetailViewController.h; sourceTree = "<group>"; };
 		227FD5622A59C32C00AC718A /* RWOrderDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWOrderDetailViewController.m; sourceTree = "<group>"; };
 		227FD5642A59C77A00AC718A /* RWOrderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWOrderModel.h; sourceTree = "<group>"; };
@@ -479,9 +485,19 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		224BE6E82A64E7EA00D4A50C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				224BE6E92A64E82B00D4A50C /* RWOrderCell.h */,
+				224BE6EA2A64E82B00D4A50C /* RWOrderCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		227FD55F2A59C17600AC718A /* Orders */ = {
 			isa = PBXGroup;
 			children = (
+				224BE6E82A64E7EA00D4A50C /* View */,
 				227FD5602A59C18800AC718A /* Controller */,
 			);
 			path = Orders;
@@ -496,6 +512,8 @@
 				229772EF2A62568800B7DCE5 /* RWOrderPagingController.m */,
 				227FD5612A59C32C00AC718A /* RWOrderDetailViewController.h */,
 				227FD5622A59C32C00AC718A /* RWOrderDetailViewController.m */,
+				224BE6EC2A6553D700D4A50C /* RWApplyExtensionController.h */,
+				224BE6ED2A6553D700D4A50C /* RWApplyExtensionController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -969,6 +987,7 @@
 				229773262A62A72100B7DCE5 /* RWPagingListContainerView.m in Sources */,
 				229773112A6266D000B7DCE5 /* RWPagingBaseView.m in Sources */,
 				222717502A57B87A00F865FD /* RWLoginContentView.m in Sources */,
+				224BE6EB2A64E82B00D4A50C /* RWOrderCell.m in Sources */,
 				2297734E2A62AF9000B7DCE5 /* RWPagingndicatorRainbowLineView.m in Sources */,
 				2227177C2A5D6E1400F865FD /* RWPersonalInfoController.m in Sources */,
 				229773782A62B96500B7DCE5 /* RWPagingTitleImageCellModel.m in Sources */,
@@ -987,6 +1006,7 @@
 				229773512A62AFF500B7DCE5 /* RWPagingIndicatorTriangleView.m in Sources */,
 				229773572A62B21100B7DCE5 /* RWPagingTitleView.m in Sources */,
 				22A0BED02A53ED8B00B8C360 /* RWPersonalCenterController.m in Sources */,
+				224BE6EE2A6553D700D4A50C /* RWApplyExtensionController.m in Sources */,
 				2297733F2A62AB2800B7DCE5 /* RWPagingIndicatorComponentView.m in Sources */,
 				229773152A6268DC00B7DCE5 /* RWPagingFactory.m in Sources */,
 				22A0BEBB2A53D93E00B8C360 /* RWBaseScrollViewController.m in Sources */,

@@ -37,6 +37,7 @@ typedef NS_ENUM(NSUInteger, RWAuthType) {
 - (void)checkExtensionBtnShowWithOrderNumber:(NSString *)orderNumber success:(void(^)(BOOL isShow))success;
 - (void)fetchOrderDetailWithOrderNumber:(NSString *)orderNumber success:(void(^)(NSInteger frozenDays, RWOrderModel *order, NSArray *productList))success;
 - (void)fetchRepayPathWithOrderNumber:(NSString *)orderNumber repayType:(NSString *)repayType success:(void(^)(RWContentModel *repayPathModel))success;
+- (void)fetchExtensionApplyWithOrderNumber:(NSString *)orderNumber success:(void(^)(RWContentModel *extensionModel))success;
 @end
 
 NS_ASSUME_NONNULL_END

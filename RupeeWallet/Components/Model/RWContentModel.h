@@ -118,6 +118,17 @@ NS_ASSUME_NONNULL_BEGIN
 /// 1 打开原生webview 并且里面可以跳转系统浏览器
 /// 2 只能在webview 里面处理
 @property(nonatomic, copy) NSString *_Nullable webview;
+
+/// 是否申请了展期还款流水 1是  0否
+@property(nonatomic, assign) BOOL isExtendIng;
+/// 展期手续费
+@property(nonatomic, copy) NSString *extendFee;
+/// 展期天数
+@property(nonatomic, copy) NSString *extendDate;
+/// 展期后还款日
+@property(nonatomic, copy) NSString *extendRepayDate;
+/// 展期后还款金额
+@property(nonatomic, copy) NSString *extendRepayAmount;
 @end
 
 NS_ASSUME_NONNULL_END

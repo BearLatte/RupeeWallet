@@ -714,7 +714,9 @@
 - (void)extensionRepay {
     [RWAlertView showAlertViewWithStyle:RWAlertStyleTips title:nil message:@"Paying a small amount admission fee. You can pay the whole bill later." confirmAction:^{
         RWApplyExtensionController *applyController = [[RWApplyExtensionController alloc] init];
-        applyController.order = self.orderDetail;
+        applyController.orderNumber = self.orderDetail.loanOrderNo;
+        applyController.productLogo = self.orderDetail.logo;
+        applyController.productName = self.orderDetail.loanName;
         [self.navigationController pushViewController:applyController animated:YES];
     }];
 }

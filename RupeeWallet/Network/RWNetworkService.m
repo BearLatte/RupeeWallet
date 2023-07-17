@@ -354,6 +354,15 @@ static NSString * const baseURL = @"";
     }];
 }
 
+- (void)fetchExtensionApplyWithOrderNumber:(NSString *)orderNumber success:(void (^)(RWContentModel * _Nonnull))success {
+    [RWProgressHUD showWithStatus:@"loading..."];
+    [self requestWithPath:@"/uzYONRY/Yuulyz/rmoKCbx" parameters:@{@"orderNo" : orderNumber} success:^(RWBaseModel *response) {
+        success(response.cont);
+    } failure:^{
+        
+    }];
+}
+
 
 // MARK: - Private method
 - (NSDictionary *)configParametersWithOldParameters: (NSDictionary *)oldParams {

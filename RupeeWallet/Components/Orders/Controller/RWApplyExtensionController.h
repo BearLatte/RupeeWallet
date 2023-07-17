@@ -11,7 +11,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RWApplyExtensionController : RWBaseViewController
-@property(nonatomic, strong) RWOrderModel *_Nullable order;
+@property(nonatomic, copy) NSString *orderNumber;
+@property(nonatomic, copy) NSString *productLogo;
+@property(nonatomic, copy) NSString *productName;
 @end
 
 NS_ASSUME_NONNULL_END

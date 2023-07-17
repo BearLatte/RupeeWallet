@@ -8,6 +8,8 @@
 #import "RWPurchaseSuccessController.h"
 #import "RWProductCell.h"
 #import "RWSectionHeaderView.h"
+#import "RWProductDetailController.h"
+#import "RWOrderDetailViewController.h"
 
 @interface RWPurchaseSuccessController ()
 
@@ -110,5 +112,20 @@
     RWSectionHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"SectionView"];
     [headerView layoutIfNeeded];
     return headerView;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    RWProductModel *product = self.recommendProductList[indexPath.row];
+    [[RWNetworkService sharedInstance] checkUserStatusWithProductId:product.productId success:^(NSInteger userStatus, NSString * _Nonnull orderNumber, RWProductDetailModel * _Nonnull productDetail) {
+        if (userStatus == 2) {
+            RWProductDetailController *detailController = [[RWProductDetailController alloc] init];
+            detailController.productId = product.productId;
+            [self.navigationController pushViewController:detailController animated:YES];
+        } else {
+            RWOrderDetailViewController *detailController = [[RWOrderDetailViewController alloc] init];
+            detailController.auditOrderNo = orderNumber;
+            [self.navigationController pushViewController:detailController animated:YES];
+        }
+    }];
 }
 @end

@@ -12,6 +12,7 @@
 #import "RWSectionHeaderView.h"
 #import "RWAlertView.h"
 #import "RWApplyExtensionController.h"
+#import "RWProductDetailController.h"
 
 @interface RWOrderDetailViewController ()
 @property(nonatomic, weak) UIView *detailBgView;
@@ -769,6 +770,21 @@
     }
     
     return headerView;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    RWProductModel *product = self.recommendProducts[indexPath.row];
+    [[RWNetworkService sharedInstance] checkUserStatusWithProductId:product.productId success:^(NSInteger userStatus, NSString * _Nonnull orderNumber, RWProductDetailModel * _Nonnull productDetail) {
+        if (userStatus == 2) {
+            RWProductDetailController *detailController = [[RWProductDetailController alloc] init];
+            detailController.productId = product.productId;
+            [self.navigationController pushViewController:detailController animated:YES];
+        } else {
+            RWOrderDetailViewController *detailController = [[RWOrderDetailViewController alloc] init];
+            detailController.auditOrderNo = orderNumber;
+            [self.navigationController pushViewController:detailController animated:YES];
+        }
+    }];
 }
 
 

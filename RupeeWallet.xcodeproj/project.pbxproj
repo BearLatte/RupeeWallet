@@ -373,14 +373,14 @@
 			children = (
 				220176B12A566A25002C718D /* RWBaseModel.h */,
 				220176B22A566A25002C718D /* RWBaseModel.m */,
+				227FD5642A59C77A00AC718A /* RWOrderModel.h */,
+				227FD5652A59C77A00AC718A /* RWOrderModel.m */,
 				220176B72A566C72002C718D /* RWContentModel.h */,
 				220176B82A566C72002C718D /* RWContentModel.m */,
 				220176B42A566AC6002C718D /* RWProductModel.h */,
 				220176B52A566AC6002C718D /* RWProductModel.m */,
 				227FD5672A59C98E00AC718A /* RWProductDetailModel.h */,
 				227FD5682A59C98E00AC718A /* RWProductDetailModel.m */,
-				227FD5642A59C77A00AC718A /* RWOrderModel.h */,
-				227FD5652A59C77A00AC718A /* RWOrderModel.m */,
 				222717742A5D272F00F865FD /* RWOSSCredentialModel.h */,
 				222717752A5D272F00F865FD /* RWOSSCredentialModel.m */,
 			);
@@ -800,12 +800,12 @@
 			children = (
 				22A0BECB2A53ED7200B8C360 /* RWHomeController.h */,
 				22A0BECC2A53ED7200B8C360 /* RWHomeController.m */,
+				222717992A5FE9E200F865FD /* RWTakePhotoController.h */,
+				2227179A2A5FE9E200F865FD /* RWTakePhotoController.m */,
 				227FD56A2A59D0E400AC718A /* RWProductDetailController.h */,
 				227FD56B2A59D0E400AC718A /* RWProductDetailController.m */,
 				222717962A5FE8C800F865FD /* RWPurchaseSuccessController.h */,
 				222717972A5FE8C800F865FD /* RWPurchaseSuccessController.m */,
-				222717992A5FE9E200F865FD /* RWTakePhotoController.h */,
-				2227179A2A5FE9E200F865FD /* RWTakePhotoController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

@@ -55,6 +55,9 @@
 		224BE7082A66664100D4A50C /* UITextView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 224BE7072A66664100D4A50C /* UITextView+Extension.m */; };
 		224BE70B2A666B8600D4A50C /* RWPhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = 224BE70A2A666B8600D4A50C /* RWPhotosView.m */; };
 		224BE70F2A666F7900D4A50C /* RWPhotosItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 224BE70E2A666F7900D4A50C /* RWPhotosItemView.m */; };
+		224BE7122A668F5700D4A50C /* RWFeedbackItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 224BE7112A668F5700D4A50C /* RWFeedbackItemCell.m */; };
+		224BE7152A66948B00D4A50C /* RWSaveFeedbackSuccessToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 224BE7142A66948B00D4A50C /* RWSaveFeedbackSuccessToastView.m */; };
+		224BE7182A669B5700D4A50C /* RWFeedbackDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 224BE7172A669B5700D4A50C /* RWFeedbackDetailController.m */; };
 		227FD5632A59C32C00AC718A /* RWOrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227FD5622A59C32C00AC718A /* RWOrderDetailViewController.m */; };
 		227FD5662A59C77A00AC718A /* RWOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 227FD5652A59C77A00AC718A /* RWOrderModel.m */; };
 		227FD5692A59C98E00AC718A /* RWProductDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 227FD5682A59C98E00AC718A /* RWProductDetailModel.m */; };
@@ -212,6 +215,12 @@
 		224BE70A2A666B8600D4A50C /* RWPhotosView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPhotosView.m; sourceTree = "<group>"; };
 		224BE70D2A666F7900D4A50C /* RWPhotosItemView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPhotosItemView.h; sourceTree = "<group>"; };
 		224BE70E2A666F7900D4A50C /* RWPhotosItemView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPhotosItemView.m; sourceTree = "<group>"; };
+		224BE7102A668F5700D4A50C /* RWFeedbackItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWFeedbackItemCell.h; sourceTree = "<group>"; };
+		224BE7112A668F5700D4A50C /* RWFeedbackItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWFeedbackItemCell.m; sourceTree = "<group>"; };
+		224BE7132A66948B00D4A50C /* RWSaveFeedbackSuccessToastView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWSaveFeedbackSuccessToastView.h; sourceTree = "<group>"; };
+		224BE7142A66948B00D4A50C /* RWSaveFeedbackSuccessToastView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWSaveFeedbackSuccessToastView.m; sourceTree = "<group>"; };
+		224BE7162A669B5700D4A50C /* RWFeedbackDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWFeedbackDetailController.h; sourceTree = "<group>"; };
+		224BE7172A669B5700D4A50C /* RWFeedbackDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWFeedbackDetailController.m; sourceTree = "<group>"; };
 		227FD5612A59C32C00AC718A /* RWOrderDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWOrderDetailViewController.h; sourceTree = "<group>"; };
 		227FD5622A59C32C00AC718A /* RWOrderDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWOrderDetailViewController.m; sourceTree = "<group>"; };
 		227FD5642A59C77A00AC718A /* RWOrderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWOrderModel.h; sourceTree = "<group>"; };
@@ -474,6 +483,8 @@
 				222717A22A615E4D00F865FD /* RWFeedbackController.m */,
 				224BE6F22A6637BD00D4A50C /* RWSubmitFeedbackController.h */,
 				224BE6F32A6637BD00D4A50C /* RWSubmitFeedbackController.m */,
+				224BE7162A669B5700D4A50C /* RWFeedbackDetailController.h */,
+				224BE7172A669B5700D4A50C /* RWFeedbackDetailController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -532,6 +543,10 @@
 		224BE6F52A663D1400D4A50C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				224BE7102A668F5700D4A50C /* RWFeedbackItemCell.h */,
+				224BE7112A668F5700D4A50C /* RWFeedbackItemCell.m */,
+				224BE7132A66948B00D4A50C /* RWSaveFeedbackSuccessToastView.h */,
+				224BE7142A66948B00D4A50C /* RWSaveFeedbackSuccessToastView.m */,
 				224BE6F62A663D3800D4A50C /* RWProblemToastView.h */,
 				224BE6F72A663D3800D4A50C /* RWProblemToastView.m */,
 				224BE6FC2A664AC000D4A50C /* RWProblemToastItemCell.h */,
@@ -1047,6 +1062,7 @@
 			files = (
 				2297730B2A6265D800B7DCE5 /* RTLManager.m in Sources */,
 				220176B32A566A25002C718D /* RWBaseModel.m in Sources */,
+				224BE7152A66948B00D4A50C /* RWSaveFeedbackSuccessToastView.m in Sources */,
 				2227179E2A61466800F865FD /* UIButton+Extension.m in Sources */,
 				2244DEDD2A53C3E40093F903 /* AppDelegate.m in Sources */,
 				222717952A5FBA9C00F865FD /* RWAttributedLabel.m in Sources */,
@@ -1058,6 +1074,7 @@
 				229773112A6266D000B7DCE5 /* RWPagingBaseView.m in Sources */,
 				222717502A57B87A00F865FD /* RWLoginContentView.m in Sources */,
 				224BE6EB2A64E82B00D4A50C /* RWOrderCell.m in Sources */,
+				224BE7182A669B5700D4A50C /* RWFeedbackDetailController.m in Sources */,
 				2297734E2A62AF9000B7DCE5 /* RWPagingndicatorRainbowLineView.m in Sources */,
 				2227177C2A5D6E1400F865FD /* RWPersonalInfoController.m in Sources */,
 				229773782A62B96500B7DCE5 /* RWPagingTitleImageCellModel.m in Sources */,
@@ -1081,6 +1098,7 @@
 				229773152A6268DC00B7DCE5 /* RWPagingFactory.m in Sources */,
 				224BE6F42A6637BD00D4A50C /* RWSubmitFeedbackController.m in Sources */,
 				22A0BEBB2A53D93E00B8C360 /* RWBaseScrollViewController.m in Sources */,
+				224BE7122A668F5700D4A50C /* RWFeedbackItemCell.m in Sources */,
 				224BE6FE2A664AC000D4A50C /* RWProblemToastItemCell.m in Sources */,
 				220176A52A556AA9002C718D /* UIView+Extension.m in Sources */,
 				224BE7022A66579400D4A50C /* RWSelectionableModel.m in Sources */,

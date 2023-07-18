@@ -11,6 +11,7 @@
 #import "RWSelectionableModel.h"
 #import "UITextView+Extension.h"
 #import "RWPhotosView.h"
+#import "RWSaveFeedbackSuccessToastView.h"
 
 @interface RWSubmitFeedbackController ()
 
@@ -192,8 +193,9 @@
     params[@"feedBackImg"] = [self.photosView.imageUrls mj_JSONString];
     
     [[RWNetworkService sharedInstance] saveFeedbackWithParameters:params success:^{
-        [RWProgressHUD showSuccessWithStatus:@"Save Successed"];
-        [self.navigationController popViewControllerAnimated:YES];
+        [RWSaveFeedbackSuccessToastView showToastWithOkAction:^{
+            [self.navigationController popViewControllerAnimated:YES];
+        }];
     }];
     
 }

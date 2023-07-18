@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, copy) NSArray *_Nullable feedBackImg;
 @property(nonatomic, copy) NSString *_Nullable feedBackReply;
 @property(nonatomic, copy) NSString *_Nullable replyTime;
-@property(nonatomic, copy) NSString *_Nullable replyNum;
+@property(nonatomic, assign) NSInteger replyNum;
 @property(nonatomic, copy) NSString *_Nullable createTime;
 @end
 

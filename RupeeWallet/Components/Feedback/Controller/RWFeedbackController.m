@@ -8,6 +8,8 @@
 #import "RWFeedbackController.h"
 #import "UIScrollView+EmptyDataSet.h"
 #import "RWSubmitFeedbackController.h"
+#import "RWFeedbackItemCell.h"
+#import "RWFeedbackDetailController.h"
 
 @interface RWFeedbackController ()<EmptyDataSetSource, EmptyDataSetDelegate>
 @property(nonatomic, strong) RWContentModel *_Nullable feedbackParams;
@@ -57,6 +59,7 @@
     self.tableView.layer.masksToBounds = YES;
     self.tableView.emptyDataSetSource = self;
     self.tableView.emptyDataSetDelegate = self;
+    [self.tableView registerClass:[RWFeedbackItemCell class] forCellReuseIdentifier:@"FeedbackCell"];
 }
 
 - (void)addBtnClicked {
@@ -88,5 +91,25 @@
     } failure:^{
         [self.tableView.pullToRefreshView stopAnimating];
     }];
+}
+
+// MARK: - UITableViewDataSource UITableViewDelegate
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.feedbackList.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    RWFeedbackItemCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FeedbackCell" forIndexPath:indexPath];
+    cell.feedback = self.feedbackList[indexPath.row];
+    if(indexPath.row == self.feedbackList.count - 1) {
+        cell.hiddedDashedView = YES;
+    }
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    RWFeedbackDetailController *detail = [[RWFeedbackDetailController alloc] init];
+    detail.feedback = self.feedbackList[indexPath.row];
+    [self.navigationController pushViewController:detail animated:YES];
 }
 @end

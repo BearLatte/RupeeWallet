@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, copy) NSString *_Nullable loanDate;
 @property(nonatomic, copy) NSString *_Nullable loanAmount;
 @property(nonatomic, copy) NSString *_Nullable loanRate;
+@property(nonatomic, assign, getter=isSelected) BOOL selected;
 @end
 
 NS_ASSUME_NONNULL_END

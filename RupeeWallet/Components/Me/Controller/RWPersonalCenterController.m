@@ -261,8 +261,12 @@ typedef void(^ItemViewTapAction)(void);
 }
 
 - (void)feedbackBtnClicked {
-    RWFeedbackController *feedback = [[RWFeedbackController alloc] init];
-    [self.navigationController pushViewController:feedback animated:YES];
+    if([RWGlobal sharedGlobal].isLogin) {
+        RWFeedbackController *feedback = [[RWFeedbackController alloc] init];
+        [self.navigationController pushViewController:feedback animated:YES];
+    } else {
+        [[RWGlobal sharedGlobal] go2login];
+    }
 }
 
 

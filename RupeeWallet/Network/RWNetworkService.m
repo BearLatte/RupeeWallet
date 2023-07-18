@@ -13,6 +13,7 @@
 #import "RWNetworkResponseModel.h"
 #import <AliyunOSSiOS/AliyunOSSiOS.h>
 #import "RWOrderModel.h"
+#import "RWFeedbackModel.h"
 
 @interface RWNetworkService()
 @property(nonatomic, strong) AFHTTPSessionManager *_Nullable networkManager;
@@ -358,6 +359,54 @@ static NSString * const baseURL = @"";
     [RWProgressHUD showWithStatus:@"loading..."];
     [self requestWithPath:@"/uzYONRY/Yuulyz/rmoKCbx" parameters:@{@"orderNo" : orderNumber} success:^(RWBaseModel *response) {
         success(response.cont);
+    } failure:^{
+        
+    }];
+}
+
+- (void)fetchFeedbackListWithSuccess:(void (^)(RWContentModel * _Nonnull, NSArray * _Nonnull))success failure:(void (^)(void))failure {
+    [RWProgressHUD showWithStatus:@"loading..."];
+    [self requestWithPath:@"/uzYONRY/Yuulyz/Mudiuud" parameters:nil success:^(RWBaseModel *response) {
+        NSArray *feedbackList = [RWFeedbackModel mj_objectArrayWithKeyValuesArray:response.list];
+        success(response.cont, feedbackList);
+    } failure:^{
+        failure();
+    }];
+}
+
+- (void)uploadImageWithImage:(UIImage *)image success:(void (^)(NSString * _Nonnull))success failure:(nonnull void (^)(void))failure {
+    dispatch_queue_t dispatchQueue = dispatch_queue_create("background.queue", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    dispatch_async(dispatchQueue, ^{
+        __block RWContentModel *ossParams = nil;
+        
+        [self fetchOSSParametersSuccess:^(RWContentModel *content) {
+            ossParams = content;
+            dispatch_semaphore_signal(semaphore);
+        } failure:^{
+            dispatch_semaphore_signal(semaphore);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                failure();
+            });
+        }];
+        
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+        [self uploadImageWithOSSParameters:ossParams image:image success:^(NSString *imgUrl) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                success(imgUrl);
+            });
+        } failure:^{
+            dispatch_async(dispatch_get_main_queue(), ^{
+                failure();
+            });
+        }];
+    });
+}
+
+- (void)saveFeedbackWithParameters:(NSDictionary *)parameters success:(void (^)(void))success {
+    [RWProgressHUD showWithStatus:@"Saving..."];
+    [self requestWithPath:@"/uzYONRY/Yuulyz/nmayy" parameters:parameters success:^(RWBaseModel *response) {
+        success();
     } failure:^{
         
     }];

@@ -13,7 +13,6 @@ target 'RupeeWallet' do
   pod 'SVPullToRefresh'
   pod 'IQKeyboardManager'
   
-  
 end
 
 post_install do |installer|

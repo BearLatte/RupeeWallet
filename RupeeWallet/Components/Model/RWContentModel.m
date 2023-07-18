@@ -16,7 +16,8 @@
         @"jobList" : [NSString class],
         @"moneyList" : [NSString class],
         @"monthSalaryList" : [NSString class],
-        @"industryList" : [NSString class]
+        @"industryList" : [NSString class],
+        @"feedBackTypeList" : [NSString class]
     };
 }
 @end

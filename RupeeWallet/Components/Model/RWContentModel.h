@@ -129,6 +129,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, copy) NSString *extendRepayDate;
 /// 展期后还款金额
 @property(nonatomic, copy) NSString *extendRepayAmount;
+
+/// 反馈问题列表
+@property(nonatomic, strong) NSArray *_Nullable feedBackTypeList;
 @end
 
 NS_ASSUME_NONNULL_END

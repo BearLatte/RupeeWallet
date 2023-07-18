@@ -142,6 +142,9 @@
         make.right.mas_equalTo(-12);
     }];
     
+    NSData *imagesData = [self.feedback.feedBackImg mj_JSONData];
+    NSArray *images = [imagesData mj_JSONObject];
+    
     UILabel *contentLabel = [[RWGlobal sharedGlobal] createLabelWithText:self.feedback.feedBackContent font:[UIFont systemFontOfSize:16] textColor:INDICATOR_TEXT_COLOR];
     contentLabel.numberOfLines = 0;
     [contentTextBgView addSubview:contentLabel];
@@ -150,14 +153,14 @@
         make.left.mas_equalTo(20);
         make.right.mas_equalTo(-20);
         make.height.mas_greaterThanOrEqualTo(60);
-        if(self.feedback.feedBackImg.count == 0) {
+        if(images.count == 0) {
             make.bottom.mas_equalTo(-20).priority(MASLayoutPriorityDefaultHigh);
         }
     }];
     
-    if(self.feedback.feedBackImg.count > 0) {
+    if(images.count > 0) {
         RWPhotosView *photosView = [RWPhotosView photosViewWithStyle:RWPhotosViewStylePreview maxItem:9];
-        photosView.imageUrls = self.feedback.feedBackImg.mutableCopy;
+        photosView.imageUrls = images.mutableCopy;
         [contentTextBgView addSubview:photosView];
         [photosView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.mas_equalTo(contentLabel.mas_bottom).offset(20);

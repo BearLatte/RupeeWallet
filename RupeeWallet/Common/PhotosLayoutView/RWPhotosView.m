@@ -34,7 +34,7 @@
 }
 
 - (void)setImageUrls:(NSMutableArray *)imageUrls {
-    _images = imageUrls;
+    _imageUrls = imageUrls;
     [self configImages];
 }
 
@@ -75,10 +75,12 @@
         [self layoutIfNeeded];
     } else {
         for (NSInteger index = 0; index < self.imageUrls.count; index++) {
-            RWPhotosItemView *itemView = [RWPhotosItemView itemViewWithIsShowDeleteBtn:YES tag:0 deleteAction:nil];
+            RWPhotosItemView *itemView = [RWPhotosItemView itemViewWithIsShowDeleteBtn:NO tag:0 deleteAction:nil];
             itemView.imageUrl = self.imageUrls[index];
             [self addSubview:itemView];
         }
+        
+        [self layoutIfNeeded];
     }
 }
 

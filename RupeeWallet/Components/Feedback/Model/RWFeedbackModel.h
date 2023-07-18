@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, copy) NSString *_Nullable loanName;
 @property(nonatomic, copy) NSString *_Nullable feedBackType;
 @property(nonatomic, copy) NSString *_Nullable feedBackContent;
-@property(nonatomic, copy) NSArray *_Nullable feedBackImg;
+@property(nonatomic, copy) NSString *_Nullable feedBackImg;
 @property(nonatomic, copy) NSString *_Nullable feedBackReply;
 @property(nonatomic, copy) NSString *_Nullable replyTime;
 @property(nonatomic, assign) NSInteger replyNum;

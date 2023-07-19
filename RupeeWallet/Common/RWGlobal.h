@@ -28,6 +28,7 @@ extern NSString * const PLACEHOLDER_IMAGE_COLOR;
 
 // MARK: - Constants
 extern NSString * const APP_STORE_TEST_ACCOUNT;
+extern NSString * const ADJUST_APP_TOKEN;
 
 
 // MARK: - Enums

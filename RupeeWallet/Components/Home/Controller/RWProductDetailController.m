@@ -188,6 +188,9 @@
 }
 
 - (void)loanNowBtnClicked {
+    if (self.isRecommend) {
+        [RWADJTrackTool trackingWithPoint:@"2i9h7p"];
+    }
     [[RWNetworkService sharedInstance] fetchProductWithIsRecommend:NO success:^(RWContentModel * _Nullable userInfo, NSArray * _Nullable products, RWProductDetailModel * _Nullable recommendProduct) {
         if(userInfo.userLiveness) {
             [self configParameters];
@@ -323,7 +326,8 @@
 - (void)purchaseProductWithParams:(NSDictionary *)params {
     [[RWNetworkService sharedInstance] purchaseProductWithParameters:params success:^(NSArray * _Nullable recommendProductList, BOOL isFirstApply) {
         if(isFirstApply) {
-            // TUDO: 首单埋点
+            [RWADJTrackTool trackingWithPoint:@"rbafr6"];
+            [RWFBTrackTool tracWithPoint:@"rbafr6"];
         }
         
         RWPurchaseSuccessController *successController = [[RWPurchaseSuccessController alloc] init];
@@ -341,6 +345,7 @@
 
 - (void)backAction {
     if(self.isRecommend) {
+        [RWADJTrackTool trackingWithPoint:@"mx5wic"];
         [self dismissViewControllerAnimated:YES completion:nil];
     } else {
         [self.navigationController popViewControllerAnimated:YES];

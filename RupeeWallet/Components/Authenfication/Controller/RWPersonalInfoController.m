@@ -186,6 +186,7 @@ typedef NS_ENUM(NSUInteger, RWInputType) {
 }
 
 - (void)nextBtnClicked {
+    [RWADJTrackTool trackingWithPoint:@"dz3rol"];
     NSString *whatsAppNumber = self.whatsAppNumberInput.inputedText;
     if(whatsAppNumber.length != 10 || ![whatsAppNumber isNum]) {
         [RWProgressHUD showInfoWithStatus:@"WhatsApp Account must enter a 10-digit mobile number"];
@@ -256,6 +257,7 @@ typedef NS_ENUM(NSUInteger, RWInputType) {
 
 // MARK: RWOCRCameraPanelDelegate
 - (void)camerapPanelDidTappedFrontView:(RWOCRCameraPanel *)panelView {
+    [RWADJTrackTool trackingWithPoint:@"e1ylnn"];
     [[RWGlobal sharedGlobal] checkCameraAuthorityWithTarget:self];
 }
 

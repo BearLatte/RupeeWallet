@@ -51,4 +51,19 @@
 
     self.viewControllers = @[homeNav, personalCenterNav];
 }
+
+- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
+    
+    if([RWGlobal sharedGlobal].isLogin) {
+        
+    } else {
+        if([item.title isEqualToString:@"Loan"]) {
+            [RWADJTrackTool trackingWithPoint:@"hsbyqk"];
+        } else {
+            [RWADJTrackTool trackingWithPoint:@"zfct0v"];
+        }
+    }
+}
+
+
 @end

@@ -130,6 +130,18 @@
     if(textField == self.nameField) {
         _contactName = textField.text;
         
+        if([self.titleLabel.text isEqualToString:@"Parents Contact"]) {
+            [RWADJTrackTool trackingWithPoint: @"bdnkgc"];
+        }
+        
+        if([self.titleLabel.text isEqualToString:@"Family Contact"]) {
+            [RWADJTrackTool trackingWithPoint: @"1fzfz8"];
+        }
+        
+        if([self.titleLabel.text isEqualToString:@"Colleague Contact"]) {
+            [RWADJTrackTool trackingWithPoint: @"l016cb"];
+        }
+        
         if(self.didEditingAction) {
             self.didEditingAction();
         }
@@ -137,6 +149,19 @@
     
     if(textField == self.numberField) {
         _contactNumber = textField.text;
+        
+        if([self.titleLabel.text isEqualToString:@"Parents Contact"]) {
+            [RWADJTrackTool trackingWithPoint: @"bg5onu"];
+        }
+        
+        if([self.titleLabel.text isEqualToString:@"Family Contact"]) {
+            [RWADJTrackTool trackingWithPoint: @"b7q9bn"];
+        }
+        
+        if([self.titleLabel.text isEqualToString:@"Colleague Contact"]) {
+            [RWADJTrackTool trackingWithPoint: @"a9zvqi"];
+        }
+        
         if(self.didEditingAction) {
             self.didEditingAction();
         }

@@ -1,4 +1,7 @@
 PODS:
+  - Adjust (4.33.4):
+    - Adjust/Core (= 4.33.4)
+  - Adjust/Core (4.33.4)
   - AFNetworking (4.0.1):
     - AFNetworking/NSURLSession (= 4.0.1)
     - AFNetworking/Reachability (= 4.0.1)
@@ -27,6 +30,7 @@ PODS:
   - SVPullToRefresh (0.4.1)
 
 DEPENDENCIES:
+  - Adjust
   - AFNetworking
   - AliyunOSSiOS
   - CRBoxInputView
@@ -39,6 +43,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - Adjust
     - AFNetworking
     - AliyunOSSiOS
     - CRBoxInputView
@@ -50,6 +55,7 @@ SPEC REPOS:
     - SVPullToRefresh
 
 SPEC CHECKSUMS:
+  Adjust: 4690e07ea401ee56d4d3f4f5bdad86c94f51903f
   AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
   AliyunOSSiOS: 8469b21f375813e0da340d63cbae1dadbfb0f0bf
   CRBoxInputView: 2380c292aabbf786fe923776f111ba3053438fba
@@ -60,6 +66,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
 
-PODFILE CHECKSUM: a893128e50e5464bc1223921d1b3f87c22d1c33b
+PODFILE CHECKSUM: 3d40958b3a6fae2f5e11bbb5e8f3ce592dea6ff1
 
 COCOAPODS: 1.12.1

@@ -702,6 +702,12 @@
 }
 
 - (void)repayNow {
+    if(self.orderDetail.status == 5) {
+        [RWADJTrackTool trackingWithPoint:@"h2ppgy"];
+    } else {
+        [RWADJTrackTool trackingWithPoint:@"dh9710"];
+    }
+    
     [[RWNetworkService sharedInstance] fetchRepayPathWithOrderNumber:self.auditOrderNo repayType:@"all" success:^(RWContentModel * _Nonnull repayPathModel) {
         NSURL *url = [NSURL URLWithString:repayPathModel.path];
         if([[UIApplication sharedApplication] canOpenURL:url]) {
@@ -713,6 +719,11 @@
 }
 
 - (void)extensionRepay {
+    if(self.orderDetail.status == 5) {
+        [RWADJTrackTool trackingWithPoint:@"rwel5k"];
+    } else {
+        [RWADJTrackTool trackingWithPoint:@"m7og9z"];
+    }
     [RWAlertView showAlertViewWithStyle:RWAlertStyleTips title:nil message:@"Paying a small amount admission fee. You can pay the whole bill later." confirmAction:^{
         RWApplyExtensionController *applyController = [[RWApplyExtensionController alloc] init];
         applyController.orderNumber = self.orderDetail.loanOrderNo;
@@ -773,6 +784,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(self.orderDetail.status == 7) {
+        [RWADJTrackTool trackingWithPoint:@"ebjfex"];
+    }
     RWProductModel *product = self.recommendProducts[indexPath.row];
     [[RWNetworkService sharedInstance] checkUserStatusWithProductId:product.productId success:^(NSInteger userStatus, NSString * _Nonnull orderNumber, RWProductDetailModel * _Nonnull productDetail) {
         if (userStatus == 2) {

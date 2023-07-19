@@ -97,6 +97,68 @@
 
 // MARK: - UITextFieldDelegate
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    if([self.titleLabel.text isEqualToString:@"Aadhaar Name"]) {
+        [RWADJTrackTool trackingWithPoint:@"8q92wt"];
+    }
+    
+    if([self.titleLabel.text isEqualToString:@"Aadhaar Number"]) {
+        [RWADJTrackTool trackingWithPoint:@"4tkrp3"];
+    }
+    
+    if([self.titleLabel.text isEqualToString:@"Date of Birth"]) {
+        [RWADJTrackTool trackingWithPoint:@"czx314"];
+    }
+    
+    if([self.titleLabel.text isEqualToString:@"Marriage Status"]) {
+        [RWADJTrackTool trackingWithPoint:@"ltew9q"];
+    }
+    
+    if([self.titleLabel.text isEqualToString:@"Education"]) {
+        [RWADJTrackTool trackingWithPoint:@"67z1gu"];
+    }
+
+    if([self.titleLabel.text isEqualToString:@"Industry"]) {
+        [RWADJTrackTool trackingWithPoint:@"hyowdu"];
+    }
+    
+    if([self.titleLabel.text isEqualToString:@"Work Title"]) {
+        [RWADJTrackTool trackingWithPoint:@"e4zvwn"];
+    }
+    
+    if([self.titleLabel.text isEqualToString:@"Monthly Salary"]) {
+        [RWADJTrackTool trackingWithPoint:@"e4zvwn"];
+    }
+    
+    if([self.titleLabel.text isEqualToString:@"E-mail"]) {
+        [RWADJTrackTool trackingWithPoint:@"nm8pva"];
+    }
+    
+    if([self.titleLabel.text isEqualToString:@"E-mail"]) {
+        [RWADJTrackTool trackingWithPoint:@"nm8pva"];
+    }
+    
+    if([self.titleLabel.text isEqualToString:@"Paytm Account （optional）"]) {
+        [RWADJTrackTool trackingWithPoint:@"nljjg8"];
+    }
+    
+    if([self.titleLabel.text isEqualToString:@"Pan Number"]) {
+        [RWADJTrackTool trackingWithPoint:@"mnis69"];
+    }
+    
+    if([self.titleLabel.text isEqualToString:@"Bank Name"]) {
+        [RWADJTrackTool trackingWithPoint:@"vlml7l"];
+    }
+    
+    if([self.titleLabel.text isEqualToString:@"Account Number"]) {
+        [RWADJTrackTool trackingWithPoint:@"ncfxf8"];
+    }
+    
+    if([self.titleLabel.text isEqualToString:@"IFSC Code"]) {
+        [RWADJTrackTool trackingWithPoint:@"fpvgrp"];
+    }
+    
+    
+    
     if(self.tapAction) {
         self.tapAction();
         return NO;

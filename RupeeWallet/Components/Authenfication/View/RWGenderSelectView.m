@@ -126,6 +126,7 @@
 }
 
 - (void)thumbViewTapped:(UITapGestureRecognizer *)tap {
+    [RWADJTrackTool trackingWithPoint:@"bt6dr7"];
     if(self.gender == RWGenderMale) {
         self.gender = RWGenderFemale;
     } else {

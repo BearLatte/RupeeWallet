@@ -73,6 +73,15 @@ static NSString * const baseURL = @"";
     return [header copy];
 }
 
+- (void)firstLaunchNetworkWithSuccess:(void (^)(void))success {
+    [RWProgressHUD showWithStatus:@"loading..."];
+    [self requestWithPath:@"/uzYONRY/YaPQnr" parameters:nil success:^(RWBaseModel *response) {
+        success();
+    } failure:^{
+        
+    }];
+}
+
 - (void)fetchProductWithIsRecommend:(BOOL)isRecommend success:(void (^)(RWContentModel *, NSArray * _Nullable, RWProductDetailModel * _Nullable))successClosure failure:(void (^)(void))failureClosure {
     [RWProgressHUD showWithStatus:@"loading..."];
     NSMutableDictionary *params = @{}.mutableCopy;
@@ -109,7 +118,8 @@ static NSString * const baseURL = @"";
     [RWProgressHUD showWithStatus:@"login..."];
     [self requestWithPath:@"/uzYONRY/xKEWXAdz" parameters:@{@"phone" : phone, @"code": code} success:^(RWBaseModel *response) {
         if(response.cont.isLogin == 0) {
-            // TODO: - 此处需要做注册的埋点
+            [RWADJTrackTool trackingWithPoint:@"myl771"];
+            [RWFBTrackTool tracWithPoint:@"myl771"];
         }
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:IS_LOGIN_KEY];
         [[NSUserDefaults standardUserDefaults] setValue:response.cont.token forKey:ACCESS_TOKEN_KEY];
@@ -412,6 +422,16 @@ static NSString * const baseURL = @"";
     }];
 }
 
+- (void)changeBankCardWithParameters:(NSDictionary *)parameters success:(void (^)(void))success {
+    [RWProgressHUD showWithStatus:@"loading..."];
+    [self requestWithPath:@"/uzYONRY/Yuulyz/EmzHb" parameters:parameters success:^(RWBaseModel *response) {
+        [RWProgressHUD showSuccessWithStatus:@"Successed"];
+        success();
+    } failure:^{
+        
+    }];
+}
+
 
 // MARK: - Private method
 - (NSDictionary *)configParametersWithOldParameters: (NSDictionary *)oldParams {
@@ -426,7 +446,7 @@ static NSString * const baseURL = @"";
 #ifdef DEBUG
     keyString = [NSString stringWithFormat:@"%@&indiakey=6ShEUmiNSp9sQWgBzS8N831zyJXlKEKrjqlcZBZN", [NSString sortedDictionary:body]];
 #else
-    keyString = @"";
+    keyString = [NSString stringWithFormat:@"%@&rupeewallet=0MFJV2NGVKD8ＭBVKMFMB", [NSString sortedDictionary:body]];
 #endif
     NSString *signString = [[keyString MD5] uppercaseString];
     body[@"sign"] = signString;

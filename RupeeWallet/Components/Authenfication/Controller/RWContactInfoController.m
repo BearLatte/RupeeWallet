@@ -159,6 +159,7 @@ typedef NS_ENUM(NSUInteger, RWContactType) {
 }
 
 - (void)nextBtnClicked {
+    [RWADJTrackTool trackingWithPoint:@"tagrdx"];
     NSMutableDictionary *params = @{}.mutableCopy;
     params[@"brotherOrSisterName"] = self.parentsContactInputView.contactName;
     params[@"brotherOrSisterNumber"] = self.parentsContactInputView.contactNumber;

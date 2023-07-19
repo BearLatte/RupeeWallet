@@ -39,6 +39,13 @@
 		2227179B2A5FE9E200F865FD /* RWTakePhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2227179A2A5FE9E200F865FD /* RWTakePhotoController.m */; };
 		2227179E2A61466800F865FD /* UIButton+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2227179D2A61466800F865FD /* UIButton+Extension.m */; };
 		222717A32A615E4D00F865FD /* RWFeedbackController.m in Sources */ = {isa = PBXBuildFile; fileRef = 222717A22A615E4D00F865FD /* RWFeedbackController.m */; };
+		223177C62A67BFD900067AD6 /* FacebookAEM in Frameworks */ = {isa = PBXBuildFile; productRef = 223177C52A67BFD900067AD6 /* FacebookAEM */; };
+		223177C82A67BFD900067AD6 /* FacebookBasics in Frameworks */ = {isa = PBXBuildFile; productRef = 223177C72A67BFD900067AD6 /* FacebookBasics */; };
+		223177CA2A67BFD900067AD6 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 223177C92A67BFD900067AD6 /* FacebookCore */; };
+		223177CC2A67BFD900067AD6 /* FacebookGamingServices in Frameworks */ = {isa = PBXBuildFile; productRef = 223177CB2A67BFD900067AD6 /* FacebookGamingServices */; };
+		223177CE2A67BFD900067AD6 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 223177CD2A67BFD900067AD6 /* FacebookLogin */; };
+		223177D02A67BFD900067AD6 /* FacebookShare in Frameworks */ = {isa = PBXBuildFile; productRef = 223177CF2A67BFD900067AD6 /* FacebookShare */; };
+		223177D42A67C34600067AD6 /* RWFBTrackTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223177D32A67C34600067AD6 /* RWFBTrackTool.swift */; };
 		2240267F2A5EF40600BA9A02 /* UIViewController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2240267E2A5EF40600BA9A02 /* UIViewController+Extension.m */; };
 		2244DEDD2A53C3E40093F903 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2244DEDC2A53C3E40093F903 /* AppDelegate.m */; };
 		2244DEE82A53C3E60093F903 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2244DEE72A53C3E60093F903 /* Assets.xcassets */; };
@@ -58,6 +65,14 @@
 		224BE7122A668F5700D4A50C /* RWFeedbackItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 224BE7112A668F5700D4A50C /* RWFeedbackItemCell.m */; };
 		224BE7152A66948B00D4A50C /* RWSaveFeedbackSuccessToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 224BE7142A66948B00D4A50C /* RWSaveFeedbackSuccessToastView.m */; };
 		224BE7182A669B5700D4A50C /* RWFeedbackDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 224BE7172A669B5700D4A50C /* RWFeedbackDetailController.m */; };
+		224BE71B2A677DE900D4A50C /* RWUserPayFailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 224BE71A2A677DE900D4A50C /* RWUserPayFailModel.m */; };
+		224BE71E2A677E7E00D4A50C /* RWPayFailToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 224BE71D2A677E7E00D4A50C /* RWPayFailToastView.m */; };
+		224BE7202A678D2300D4A50C /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224BE71F2A678D2300D4A50C /* AdSupport.framework */; };
+		224BE7222A678D2D00D4A50C /* AdServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224BE7212A678D2D00D4A50C /* AdServices.framework */; };
+		224BE7242A678D3800D4A50C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224BE7232A678D3800D4A50C /* StoreKit.framework */; };
+		224BE7262A678D4000D4A50C /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224BE7252A678D4000D4A50C /* AppTrackingTransparency.framework */; };
+		224BE7282A678D4C00D4A50C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224BE7272A678D4C00D4A50C /* WebKit.framework */; };
+		224BE72F2A67B30D00D4A50C /* RWADJTrackTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 224BE72E2A67B30D00D4A50C /* RWADJTrackTool.m */; };
 		227FD5632A59C32C00AC718A /* RWOrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227FD5622A59C32C00AC718A /* RWOrderDetailViewController.m */; };
 		227FD5662A59C77A00AC718A /* RWOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 227FD5652A59C77A00AC718A /* RWOrderModel.m */; };
 		227FD5692A59C98E00AC718A /* RWProductDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 227FD5682A59C98E00AC718A /* RWProductDetailModel.m */; };
@@ -184,6 +199,9 @@
 		2227179D2A61466800F865FD /* UIButton+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Extension.m"; sourceTree = "<group>"; };
 		222717A12A615E4D00F865FD /* RWFeedbackController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWFeedbackController.h; sourceTree = "<group>"; };
 		222717A22A615E4D00F865FD /* RWFeedbackController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWFeedbackController.m; sourceTree = "<group>"; };
+		223177D12A67C17900067AD6 /* RupeeWalletDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RupeeWalletDebug.entitlements; sourceTree = "<group>"; };
+		223177D22A67C34600067AD6 /* RupeeWallet-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RupeeWallet-Bridging-Header.h"; sourceTree = "<group>"; };
+		223177D32A67C34600067AD6 /* RWFBTrackTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RWFBTrackTool.swift; sourceTree = "<group>"; };
 		2240267D2A5EF40600BA9A02 /* UIViewController+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extension.h"; sourceTree = "<group>"; };
 		2240267E2A5EF40600BA9A02 /* UIViewController+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Extension.m"; sourceTree = "<group>"; };
 		2244DED82A53C3E40093F903 /* RupeeWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RupeeWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -221,6 +239,17 @@
 		224BE7142A66948B00D4A50C /* RWSaveFeedbackSuccessToastView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWSaveFeedbackSuccessToastView.m; sourceTree = "<group>"; };
 		224BE7162A669B5700D4A50C /* RWFeedbackDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWFeedbackDetailController.h; sourceTree = "<group>"; };
 		224BE7172A669B5700D4A50C /* RWFeedbackDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWFeedbackDetailController.m; sourceTree = "<group>"; };
+		224BE7192A677DE900D4A50C /* RWUserPayFailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWUserPayFailModel.h; sourceTree = "<group>"; };
+		224BE71A2A677DE900D4A50C /* RWUserPayFailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWUserPayFailModel.m; sourceTree = "<group>"; };
+		224BE71C2A677E7E00D4A50C /* RWPayFailToastView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPayFailToastView.h; sourceTree = "<group>"; };
+		224BE71D2A677E7E00D4A50C /* RWPayFailToastView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPayFailToastView.m; sourceTree = "<group>"; };
+		224BE71F2A678D2300D4A50C /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		224BE7212A678D2D00D4A50C /* AdServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdServices.framework; path = System/Library/Frameworks/AdServices.framework; sourceTree = SDKROOT; };
+		224BE7232A678D3800D4A50C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		224BE7252A678D4000D4A50C /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
+		224BE7272A678D4C00D4A50C /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		224BE72D2A67B30D00D4A50C /* RWADJTrackTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWADJTrackTool.h; sourceTree = "<group>"; };
+		224BE72E2A67B30D00D4A50C /* RWADJTrackTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWADJTrackTool.m; sourceTree = "<group>"; };
 		227FD5612A59C32C00AC718A /* RWOrderDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWOrderDetailViewController.h; sourceTree = "<group>"; };
 		227FD5622A59C32C00AC718A /* RWOrderDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWOrderDetailViewController.m; sourceTree = "<group>"; };
 		227FD5642A59C77A00AC718A /* RWOrderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWOrderModel.h; sourceTree = "<group>"; };
@@ -350,6 +379,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				224BE7282A678D4C00D4A50C /* WebKit.framework in Frameworks */,
+				223177C62A67BFD900067AD6 /* FacebookAEM in Frameworks */,
+				223177D02A67BFD900067AD6 /* FacebookShare in Frameworks */,
+				224BE7262A678D4000D4A50C /* AppTrackingTransparency.framework in Frameworks */,
+				223177CC2A67BFD900067AD6 /* FacebookGamingServices in Frameworks */,
+				224BE7242A678D3800D4A50C /* StoreKit.framework in Frameworks */,
+				223177CE2A67BFD900067AD6 /* FacebookLogin in Frameworks */,
+				224BE7222A678D2D00D4A50C /* AdServices.framework in Frameworks */,
+				223177C82A67BFD900067AD6 /* FacebookBasics in Frameworks */,
+				224BE7202A678D2300D4A50C /* AdSupport.framework in Frameworks */,
+				223177CA2A67BFD900067AD6 /* FacebookCore in Frameworks */,
 				F295F65F2B8FEAE85A790458 /* libPods-RupeeWallet.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,6 +459,8 @@
 				220176B82A566C72002C718D /* RWContentModel.m */,
 				220176B42A566AC6002C718D /* RWProductModel.h */,
 				220176B52A566AC6002C718D /* RWProductModel.m */,
+				224BE7192A677DE900D4A50C /* RWUserPayFailModel.h */,
+				224BE71A2A677DE900D4A50C /* RWUserPayFailModel.m */,
 				227FD5672A59C98E00AC718A /* RWProductDetailModel.h */,
 				227FD5682A59C98E00AC718A /* RWProductDetailModel.m */,
 				222717742A5D272F00F865FD /* RWOSSCredentialModel.h */,
@@ -430,10 +472,12 @@
 		220176EC2A56AE9B002C718D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				220176BD2A56882E002C718D /* RWSectionHeaderView.h */,
-				220176BE2A56882E002C718D /* RWSectionHeaderView.m */,
 				220176ED2A56AFDC002C718D /* RWProductCell.h */,
 				220176EE2A56AFDC002C718D /* RWProductCell.m */,
+				224BE71C2A677E7E00D4A50C /* RWPayFailToastView.h */,
+				224BE71D2A677E7E00D4A50C /* RWPayFailToastView.m */,
+				220176BD2A56882E002C718D /* RWSectionHeaderView.h */,
+				220176BE2A56882E002C718D /* RWSectionHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -510,6 +554,7 @@
 		2244DEDA2A53C3E40093F903 /* RupeeWallet */ = {
 			isa = PBXGroup;
 			children = (
+				223177D12A67C17900067AD6 /* RupeeWalletDebug.entitlements */,
 				2244DEF42A53C4260093F903 /* App */,
 				22A0BE8E2A53C7C900B8C360 /* Main */,
 				2201761C2A54118D002C718D /* Network */,
@@ -575,6 +620,17 @@
 				224BE70E2A666F7900D4A50C /* RWPhotosItemView.m */,
 			);
 			path = PhotosLayoutView;
+			sourceTree = "<group>";
+		};
+		224BE7292A6792EC00D4A50C /* TrackingEvent */ = {
+			isa = PBXGroup;
+			children = (
+				224BE72D2A67B30D00D4A50C /* RWADJTrackTool.h */,
+				224BE72E2A67B30D00D4A50C /* RWADJTrackTool.m */,
+				223177D32A67C34600067AD6 /* RWFBTrackTool.swift */,
+				223177D22A67C34600067AD6 /* RupeeWallet-Bridging-Header.h */,
+			);
+			path = TrackingEvent;
 			sourceTree = "<group>";
 		};
 		227FD55F2A59C17600AC718A /* Orders */ = {
@@ -844,6 +900,7 @@
 				220176992A555455002C718D /* ProgressHUD */,
 				229772F12A625BEE00B7DCE5 /* RWPagingView */,
 				224BE70C2A666F3B00D4A50C /* PhotosLayoutView */,
+				224BE7292A6792EC00D4A50C /* TrackingEvent */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -932,6 +989,11 @@
 		5E8D96E3B39CC6CC20082A10 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				224BE7272A678D4C00D4A50C /* WebKit.framework */,
+				224BE7252A678D4000D4A50C /* AppTrackingTransparency.framework */,
+				224BE7232A678D3800D4A50C /* StoreKit.framework */,
+				224BE7212A678D2D00D4A50C /* AdServices.framework */,
+				224BE71F2A678D2300D4A50C /* AdSupport.framework */,
 				CE5ACEB6E5765A1C3C71A808 /* libPods-RupeeWallet.a */,
 			);
 			name = Frameworks;
@@ -964,6 +1026,14 @@
 			dependencies = (
 			);
 			name = RupeeWallet;
+			packageProductDependencies = (
+				223177C52A67BFD900067AD6 /* FacebookAEM */,
+				223177C72A67BFD900067AD6 /* FacebookBasics */,
+				223177C92A67BFD900067AD6 /* FacebookCore */,
+				223177CB2A67BFD900067AD6 /* FacebookGamingServices */,
+				223177CD2A67BFD900067AD6 /* FacebookLogin */,
+				223177CF2A67BFD900067AD6 /* FacebookShare */,
+			);
 			productName = RupeeWallet;
 			productReference = 2244DED82A53C3E40093F903 /* RupeeWallet.app */;
 			productType = "com.apple.product-type.application";
@@ -980,6 +1050,7 @@
 				TargetAttributes = {
 					2244DED72A53C3E40093F903 = {
 						CreatedOnToolsVersion = 14.3.1;
+						LastSwiftMigration = 1430;
 					};
 				};
 			};
@@ -992,6 +1063,9 @@
 				Base,
 			);
 			mainGroup = 2244DECF2A53C3E30093F903;
+			packageReferences = (
+				223177C42A67BFD900067AD6 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+			);
 			productRefGroup = 2244DED92A53C3E40093F903 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1066,6 +1140,7 @@
 				2227179E2A61466800F865FD /* UIButton+Extension.m in Sources */,
 				2244DEDD2A53C3E40093F903 /* AppDelegate.m in Sources */,
 				222717952A5FBA9C00F865FD /* RWAttributedLabel.m in Sources */,
+				224BE71B2A677DE900D4A50C /* RWUserPayFailModel.m in Sources */,
 				2297731B2A6269EF00B7DCE5 /* RWPagingCollectionView.m in Sources */,
 				229773292A62A88C00B7DCE5 /* RWPagingViewAnimator.m in Sources */,
 				229773452A62AD9F00B7DCE5 /* RWPagingIndicatorDotLineView.m in Sources */,
@@ -1097,6 +1172,7 @@
 				2297733F2A62AB2800B7DCE5 /* RWPagingIndicatorComponentView.m in Sources */,
 				229773152A6268DC00B7DCE5 /* RWPagingFactory.m in Sources */,
 				224BE6F42A6637BD00D4A50C /* RWSubmitFeedbackController.m in Sources */,
+				224BE72F2A67B30D00D4A50C /* RWADJTrackTool.m in Sources */,
 				22A0BEBB2A53D93E00B8C360 /* RWBaseScrollViewController.m in Sources */,
 				224BE7122A668F5700D4A50C /* RWFeedbackItemCell.m in Sources */,
 				224BE6FE2A664AC000D4A50C /* RWProblemToastItemCell.m in Sources */,
@@ -1143,6 +1219,7 @@
 				2297731F2A626B7E00B7DCE5 /* RWPagingIndicatorParamsModel.m in Sources */,
 				2227179B2A5FE9E200F865FD /* RWTakePhotoController.m in Sources */,
 				2227176D2A5BFE3000F865FD /* RWGenderSelectView.m in Sources */,
+				224BE71E2A677E7E00D4A50C /* RWPayFailToastView.m in Sources */,
 				2227174A2A56D46C00F865FD /* RWLoginViewController.m in Sources */,
 				22A0BEB82A53D92A00B8C360 /* RWBaseTableViewController.m in Sources */,
 				229773482A62AE2900B7DCE5 /* RWPagingIndicatorImageView.m in Sources */,
@@ -1163,6 +1240,7 @@
 				229773542A62B1C100B7DCE5 /* RWPagingTitleCellModel.m in Sources */,
 				2297736A2A62B5FC00B7DCE5 /* RWPagingImageView.m in Sources */,
 				229772F02A62568800B7DCE5 /* RWOrderPagingController.m in Sources */,
+				223177D42A67C34600067AD6 /* RWFBTrackTool.swift in Sources */,
 				229773072A62650500B7DCE5 /* RWPagingBaseCell.m in Sources */,
 				220176B62A566AC6002C718D /* RWProductModel.m in Sources */,
 				224BE6F12A6632F000D4A50C /* UIScrollView+EmptyDataSet.m in Sources */,
@@ -1300,9 +1378,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = RupeeWallet/RupeeWalletDebug.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 7MC978XNU9;
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/Common/RWPrefixHeader.pch";
 				GENERATE_INFOPLIST_FILE = NO;
@@ -1326,6 +1407,9 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RupeeWallet/Common/TrackingEvent/RupeeWallet-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1336,9 +1420,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 7MC978XNU9;
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/Common/RWPrefixHeader.pch";
 				GENERATE_INFOPLIST_FILE = NO;
@@ -1362,6 +1448,8 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RupeeWallet/Common/TrackingEvent/RupeeWallet-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -1388,6 +1476,50 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		223177C42A67BFD900067AD6 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		223177C52A67BFD900067AD6 /* FacebookAEM */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 223177C42A67BFD900067AD6 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookAEM;
+		};
+		223177C72A67BFD900067AD6 /* FacebookBasics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 223177C42A67BFD900067AD6 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookBasics;
+		};
+		223177C92A67BFD900067AD6 /* FacebookCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 223177C42A67BFD900067AD6 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookCore;
+		};
+		223177CB2A67BFD900067AD6 /* FacebookGamingServices */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 223177C42A67BFD900067AD6 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookGamingServices;
+		};
+		223177CD2A67BFD900067AD6 /* FacebookLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 223177C42A67BFD900067AD6 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookLogin;
+		};
+		223177CF2A67BFD900067AD6 /* FacebookShare */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 223177C42A67BFD900067AD6 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookShare;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2244DED02A53C3E30093F903 /* Project object */;
 }

@@ -239,6 +239,7 @@ typedef void(^ItemViewTapAction)(void);
 }
 
 - (void)ordersBtnClicked {
+    [RWADJTrackTool trackingWithPoint:@"6fh0a9"];
     if([RWGlobal sharedGlobal].isLogin) {
         RWOrderPagingController *paging = [[RWOrderPagingController alloc] init];
         [self.navigationController pushViewController:paging animated:YES];
@@ -248,12 +249,17 @@ typedef void(^ItemViewTapAction)(void);
 }
 
 - (void)bankCardBtnClicked {
+    [RWADJTrackTool trackingWithPoint:@"ruvhae"];
     if([RWGlobal sharedGlobal].isLogin) {
         [[RWNetworkService sharedInstance] fetchUserAuthInfoWithType:RWAuthTypeAllInfo success:^(RWContentModel * _Nonnull authenficationInfo) {
-            RWBankCardController *controller= [[RWBankCardController alloc] init];
-            controller.authStatus = authenficationInfo;
-            controller.modify = YES;
-            [self.navigationController pushViewController:controller animated:YES];
+            if(authenficationInfo.authStatus) {
+                RWBankCardController *controller= [[RWBankCardController alloc] init];
+                controller.authStatus = authenficationInfo;
+                controller.modify = YES;
+                [self.navigationController pushViewController:controller animated:YES];
+            } else {
+                [RWProgressHUD showInfoWithStatus:@"Please authenticate your identity first."];
+            }
         }];
     } else {
         [[RWGlobal sharedGlobal] go2login];

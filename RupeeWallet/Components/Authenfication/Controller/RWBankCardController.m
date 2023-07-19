@@ -101,22 +101,24 @@
 }
 
 - (void)submitBtnClicked {
-    
+    [RWADJTrackTool trackingWithPoint:@"kp9d7h"];
     NSMutableDictionary *params = @{}.mutableCopy;
     params[@"bankName"] = self.bankNameInput.inputedText;
     params[@"bankCardNo"] = self.bankNumberInput.inputedText;
     params[@"bankCardNoPaste"] = @"0";
     params[@"ifscCode"] = self.ifscCodeInput.inputedText;
     
-    [RWAlertView showAlertViewWithStyle:RWAlertStyleTips title:@"TIPS" message:@"The information cannot be changed in step 1-3 after submission. Please fill in the correct information." confirmAction:^{
-        [[RWNetworkService sharedInstance] authInfoWithType:RWAuthTypeBankCardInfo parameters:[params copy] success:^{
-            if (self.isModify) {
-                [self.navigationController popViewControllerAnimated:YES];
-            } else {
-                [self fetchRecommendProduct];
-            }
+    if(self.isModify) {
+        [[RWNetworkService sharedInstance] changeBankCardWithParameters:params success:^{
+            [self.navigationController popViewControllerAnimated:YES];
         }];
-    }];
+    } else {
+        [RWAlertView showAlertViewWithStyle:RWAlertStyleTips title:@"TIPS" message:@"The information cannot be changed in step 1-3 after submission. Please fill in the correct information." confirmAction:^{
+            [[RWNetworkService sharedInstance] authInfoWithType:RWAuthTypeBankCardInfo parameters:[params copy] success:^{
+                [self fetchRecommendProduct];
+            }];
+        }];
+    }
 }
 
 - (void)fetchRecommendProduct {

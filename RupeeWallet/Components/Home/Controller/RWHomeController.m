@@ -12,6 +12,7 @@
 #import "RWKYCInfoContrroller.h"
 #import "RWOrderDetailViewController.h"
 #import "RWProductDetailController.h"
+#import "RWPayFailToastView.h"
 
 @interface RWHomeController ()
 @property(nonatomic, strong) UIImageView *_Nullable headerImageView;
@@ -47,17 +48,7 @@
     }];
     self.tableView.layer.cornerRadius = 10;
     self.tableView.layer.masksToBounds = YES;
-    
-//    UIButton *testBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-//    testBtn.backgroundColor = [UIColor random];
-//    testBtn.frame = CGRectMake(100, 100, 100, 100);
-//    [self.view addSubview:testBtn];
-//    [testBtn addTarget:self action:@selector(testAction) forControlEvents:UIControlEventTouchUpInside];
 }
-
-//- (void)testAction {
-//
-//}
 
 - (void)loadData {
     if([RWGlobal sharedGlobal].isLogin) {
@@ -67,6 +58,9 @@
     }
     
     [[RWNetworkService sharedInstance] fetchProductWithIsRecommend:NO success:^(RWContentModel *userInfo, NSArray * _Nullable products, RWProductDetailModel * _Nullable recommendProduct) {
+        if(userInfo.userPayFail) {
+            [RWPayFailToastView showToastWithPayFailInfo:userInfo.userPayFailInfo];
+        }
         self.products = products;
         [self.tableView reloadData];
         [self.tableView.pullToRefreshView stopAnimating];
@@ -95,9 +89,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (![RWGlobal sharedGlobal].isLogin) {
+        [RWADJTrackTool trackingWithPoint:@"p0bv1q"];
         [[RWGlobal sharedGlobal] go2login];
     }
     
+    
+    [RWADJTrackTool trackingWithPoint:@"pzyuaj"];
     RWProductModel *product = self.products[indexPath.row];
     [[RWNetworkService sharedInstance] fetchUserAuthInfoWithType:RWAuthTypeAllInfo success:^(RWContentModel * _Nonnull authenficationInfo) {
         if (authenficationInfo.authStatus) {

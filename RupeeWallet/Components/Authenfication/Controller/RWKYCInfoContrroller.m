@@ -248,6 +248,7 @@
 }
 
 - (void)nextButtonAction {
+    [RWADJTrackTool trackingWithPoint:@"cjn69w"];
     // check location permission
     if(![[RWLocationManager sharedManager] hasLocationService]) {
         [RWProgressHUD showInfoWithStatus:@"Please trun on the Location service."];
@@ -282,11 +283,13 @@
 // MARK: - RWOCRCameraPanelDelegate
 - (void)camerapPanelDidTappedFrontView:(RWOCRCameraPanel *)panelView {
     self.isFront = YES;
+    [RWADJTrackTool trackingWithPoint:@"y75opz"];
     [[RWGlobal sharedGlobal] checkCameraAuthorityWithTarget:self];
 }
 
 - (void)camerapPanelDidTappedBackView:(RWOCRCameraPanel *)panelView {
     self.isFront = NO;
+    [RWADJTrackTool trackingWithPoint:@"ntnq9v"];
     [[RWGlobal sharedGlobal] checkCameraAuthorityWithTarget:self];
 }
 

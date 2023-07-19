@@ -157,6 +157,7 @@
 }
 
 - (void)extensionNowBtnClicked {
+    [RWADJTrackTool trackingWithPoint:@"nve5kh"];
     [[RWNetworkService sharedInstance] fetchRepayPathWithOrderNumber:self.orderNumber repayType:@"extend" success:^(RWContentModel * _Nonnull repayPathModel) {
         NSURL *url = [NSURL URLWithString:repayPathModel.path];
         if([[UIApplication sharedApplication] canOpenURL:url]) {

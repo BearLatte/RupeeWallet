@@ -10,6 +10,7 @@
 #import "RWOrderModel.h"
 #import "RWProductDetailModel.h"
 #import "RWOSSCredentialModel.h"
+#import "RWUserPayFailModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -21,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, assign) BOOL userLiveness;
 /// 用户是否放款失败  0否 1是 (1的时候 需要弹放款失败的弹窗)
 @property(nonatomic, assign) BOOL userPayFail;
+/// 失败的弹窗详情信息
+@property(nonatomic, strong) RWUserPayFailModel *_Nullable userPayFailInfo;
 
 // MARK: - Login
 @property(nonatomic, copy) NSString *_Nullable uid;

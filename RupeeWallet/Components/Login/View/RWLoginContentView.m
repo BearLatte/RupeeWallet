@@ -127,6 +127,12 @@
         _smsCodeView = [[CRBoxInputView alloc] initWithCodeLength:4];
         _smsCodeView.boxFlowLayout.itemSize = CGSizeMake(78, 45);
         _smsCodeView.customCellProperty = cellProperty;
+        
+        _smsCodeView.textEditStatusChangeblock = ^(CRTextEditStatus state) {
+            if(state == CRTextEditStatus_BeginEdit) {
+                [RWADJTrackTool trackingWithPoint:@"eaodys"];
+            }
+        };
     }
     return _smsCodeView;
 }

@@ -100,12 +100,14 @@
 
 - (void)contentViewActionButtonDidTapped:(RWLoginContentView *)contentView {
     if (contentView == self.loginPhoneNumberContentView) {
+        [RWADJTrackTool trackingWithPoint:@"6wrfcr"];
         [[RWNetworkService sharedInstance] sendSMSWithPhoneNumber:self.loginPhoneNumberContentView.phoneNumber success:^{
             self.step = 2;
             self.loginOPTContentView.phoneNumber = self.loginPhoneNumberContentView.phoneNumber;
             [self.loginOPTContentView loadCodeInputView];
         }];
     } else {
+        [RWADJTrackTool trackingWithPoint:@"on6zfi"];
         [[RWNetworkService sharedInstance] loginWithPhone:self.loginPhoneNumberContentView.phoneNumber code:self.loginOPTContentView.smsCode success:^{
             [self dismissViewControllerAnimated:YES completion:nil];
         }];

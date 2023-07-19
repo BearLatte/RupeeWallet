@@ -6,12 +6,12 @@
 //
 
 #import "AppDelegate.h"
+#import <Adjust/Adjust.h>
 #import "UIDevice+Extension.h"
 #import "RWMainTabbarController.h"
 #import <IQKeyboardManager.h>
 #import <AdSupport/AdSupport.h>
 #import <AppTrackingTransparency/AppTrackingTransparency.h>
-
 
 
 @interface AppDelegate ()
@@ -23,6 +23,20 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [[IQKeyboardManager sharedManager] setEnable:YES];
     [[UIDevice currentDevice] setOpenAppTimeStamp];
+    
+    [self firstLuanchNetwork];
+    
+    [self requestIDFA];
+    
+    ADJConfig *adjustConfig = [[ADJConfig alloc] initWithAppToken:ADJUST_APP_TOKEN environment:ADJEnvironmentSandbox];
+    adjustConfig.logLevel = ADJLogLevelVerbose;
+    adjustConfig.defaultTracker = @"AppStore";
+    adjustConfig.allowIdfaReading = YES;
+    [Adjust appDidLaunch:adjustConfig];
+    
+    // facebook
+    [RWFBTrackTool applicationDidFinishLaunchingWith:application options:launchOptions];
+    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [[RWMainTabbarController alloc] init];
     [self.window makeKeyAndVisible];
@@ -31,7 +45,13 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     [self requestIDFA];
+    [Adjust requestTrackingAuthorizationWithCompletionHandler:nil];
 }
+
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+    return [RWFBTrackTool applicationWith:app open:url options:options];
+}
+
 
 
 // MARK: - idfa
@@ -53,4 +73,10 @@
 }
 
 
+// MARK: - First Launch Network
+- (void)firstLuanchNetwork {
+    [[RWNetworkService sharedInstance] firstLaunchNetworkWithSuccess:^{
+            
+    }];
+}
 @end

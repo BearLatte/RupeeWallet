@@ -22,6 +22,7 @@ typedef NS_ENUM(NSUInteger, RWAuthType) {
 
 @interface RWNetworkService : NSObject
 + (instancetype)sharedInstance;
+- (void)firstLaunchNetworkWithSuccess:(void(^)(void))success;
 - (void)fetchProductWithIsRecommend:(BOOL)isRecommend success:(void(^)(RWContentModel *_Nullable userInfo, NSArray *_Nullable products, RWProductDetailModel *_Nullable recommendProduct))successClosure failure: (void(^)(void))failureClosure;
 - (void)sendSMSWithPhoneNumber:(NSString *)phoneNumber success:(void (^)(void))success;
 - (void)loginWithPhone:(NSString *)phone code:(NSString *)code success: (void(^)(void))success;
@@ -41,6 +42,7 @@ typedef NS_ENUM(NSUInteger, RWAuthType) {
 - (void)fetchFeedbackListWithSuccess:(void(^)(RWContentModel *feedbackParams, NSArray *feedbackList))success failure:(void(^)(void))failure;
 - (void)uploadImageWithImage:(UIImage *)image success:(void(^)(NSString *imageUrl))success failure:(void(^)(void))failure;
 - (void)saveFeedbackWithParameters:(NSDictionary *)parameters success:(void(^)(void))success;
+- (void)changeBankCardWithParameters:(NSDictionary *)parameters success:(void(^)(void))success;
 @end
 
 NS_ASSUME_NONNULL_END

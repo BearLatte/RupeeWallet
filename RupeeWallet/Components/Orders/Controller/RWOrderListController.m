@@ -57,6 +57,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [RWADJTrackTool trackingWithPoint:@"yg090b"];
     RWOrderModel *order = self.orders[indexPath.row];
     RWOrderDetailViewController *detail = [[RWOrderDetailViewController alloc] init];
     detail.auditOrderNo = order.loanOrderNo;

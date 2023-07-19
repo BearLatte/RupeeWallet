@@ -9,6 +9,7 @@
 
 @implementation UITextView (Extension)
 - (void)setPlaceholderWithText:(NSString *)text placeholderColor:(NSString *)placeholderColor {
+    [self.superview layoutIfNeeded];
     if(text == nil) {
         return;
     }
@@ -18,7 +19,8 @@
     placeholderLabel.numberOfLines = 0;
     placeholderLabel.font = self.font;
     placeholderLabel.text = text;
-    [placeholderLabel sizeToFit];
+    placeholderLabel.frame = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
+    placeholderLabel.textAlignment = self.textAlignment;
     [self addSubview:placeholderLabel];
     [self setValue:placeholderLabel forKeyPath:@"_placeholderLabel"];
 }

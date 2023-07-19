@@ -80,7 +80,7 @@
 }
 
 - (void)loadData {
-    RWLog(@"开始加载数据");
+    
 }
 
 - (void)backAction {

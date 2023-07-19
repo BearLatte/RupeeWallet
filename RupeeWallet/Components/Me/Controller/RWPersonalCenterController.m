@@ -179,7 +179,11 @@ typedef void(^ItemViewTapAction)(void);
     self.aboutUsView = aboutUsView;
     
     RWItemView *deleteAccountView = [RWItemView itemViewWithIcon:@"delete_icon" title:@"Delete account" tapAction:^{
-        RWLog(@"删除账号");
+        if([RWGlobal sharedGlobal].isLogin) {
+            [self logoutAction];
+        } else {
+            return;
+        }
     }];
     [self.view addSubview:deleteAccountView];
     [deleteAccountView mas_makeConstraints:^(MASConstraintMaker *make) {

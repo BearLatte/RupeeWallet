@@ -56,14 +56,13 @@
 
 // MARK: - idfa
 - (void)requestIDFA {
-    if (@available(iOS 14, *)) {
+    if (@available(iOS 14.0, *)) {
         [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
             if (status == ATTrackingManagerAuthorizationStatusAuthorized) {
                 NSString *idfa = [ASIdentifierManager sharedManager].advertisingIdentifier.UUIDString;
                 [[NSUserDefaults standardUserDefaults] setValue:idfa forKey: IDFA_KEY];
             }
         }];
-        
     } else {
         if ([ASIdentifierManager sharedManager].isAdvertisingTrackingEnabled) {
             NSString *idfa = [ASIdentifierManager sharedManager].advertisingIdentifier.UUIDString;

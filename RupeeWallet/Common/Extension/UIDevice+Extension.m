@@ -12,11 +12,10 @@
 #import <SystemConfiguration/SystemConfiguration.h>
 
 @implementation UIDevice (Extension)
-static NSString * const IDFA = @"kIDFA";
 static NSString * const OPEN_APP_TIME_KEY = @"kOPEN_APP_TIME_KEY";
 
 - (NSString *)idfa {
-    NSString *idfaString = [[NSUserDefaults standardUserDefaults] valueForKey:IDFA];
+    NSString *idfaString = [[NSUserDefaults standardUserDefaults] valueForKey:IDFA_KEY];
     if ([idfaString isEqual: @"00000000-0000-0000-0000-000000000000"]) {
         return @"";
     } else {

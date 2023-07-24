@@ -513,8 +513,8 @@
 		2227179F2A615E0100F865FD /* Feedback */ = {
 			isa = PBXGroup;
 			children = (
-				224BE6FF2A66577800D4A50C /* Model */,
 				224BE6F52A663D1400D4A50C /* View */,
+				224BE6FF2A66577800D4A50C /* Model */,
 				222717A02A615E0900F865FD /* Controller */,
 			);
 			path = Feedback;

@@ -180,7 +180,10 @@ typedef void(^ItemViewTapAction)(void);
     
     RWItemView *deleteAccountView = [RWItemView itemViewWithIcon:@"delete_icon" title:@"Delete account" tapAction:^{
         if([RWGlobal sharedGlobal].isLogin) {
-            [self logoutAction];
+            [[RWNetworkService sharedInstance] logoutWithDeleteAccount:YES success:^{
+                [[RWGlobal sharedGlobal] clearLoginData];
+                [self loadData];
+            }];
         } else {
             return;
         }
@@ -281,7 +284,7 @@ typedef void(^ItemViewTapAction)(void);
 
 
 - (void)logoutAction {
-    [[RWNetworkService sharedInstance] logoutWithSuccess:^{
+    [[RWNetworkService sharedInstance] logoutWithDeleteAccount:NO success:^{
         [[RWGlobal sharedGlobal] clearLoginData];
         [self loadData];
     }];

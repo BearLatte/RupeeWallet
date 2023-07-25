@@ -129,12 +129,17 @@ static NSString * const baseURL = @"";
     }];
 }
 
-- (void)logoutWithSuccess:(void(^)(void))success {
-    [RWProgressHUD showWithStatus:@"logout..."];
+- (void)logoutWithDeleteAccount:(BOOL)isDeleteAccount success:(void (^)(void))success {
+    if(isDeleteAccount) {
+        [RWProgressHUD showWithStatus:@"delete account..."];
+    } else {
+        [RWProgressHUD showWithStatus:@"logout..."];
+    }
+    
     [self requestWithPath:@"/uzYONRY/WOwvcV" parameters:nil success:^(RWBaseModel *response) {
         success();
     } failure:^{
-        
+
     }];
 }
 

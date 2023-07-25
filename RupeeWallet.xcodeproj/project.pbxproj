@@ -16,7 +16,6 @@
 		220176B92A566C72002C718D /* RWContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 220176B82A566C72002C718D /* RWContentModel.m */; };
 		220176BC2A567027002C718D /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 220176BB2A567027002C718D /* NSString+Extension.m */; };
 		220176BF2A56882E002C718D /* RWSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 220176BE2A56882E002C718D /* RWSectionHeaderView.m */; };
-		220176C32A5697E3002C718D /* NSDictionary+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 220176C22A5697E3002C718D /* NSDictionary+Log.m */; };
 		220176EF2A56AFDC002C718D /* RWProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 220176EE2A56AFDC002C718D /* RWProductCell.m */; };
 		2227174A2A56D46C00F865FD /* RWLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 222717492A56D46C00F865FD /* RWLoginViewController.m */; };
 		2227174D2A57AE5200F865FD /* RWGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = 2227174C2A57AE5200F865FD /* RWGlobal.m */; };
@@ -39,12 +38,12 @@
 		2227179B2A5FE9E200F865FD /* RWTakePhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2227179A2A5FE9E200F865FD /* RWTakePhotoController.m */; };
 		2227179E2A61466800F865FD /* UIButton+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2227179D2A61466800F865FD /* UIButton+Extension.m */; };
 		222717A32A615E4D00F865FD /* RWFeedbackController.m in Sources */ = {isa = PBXBuildFile; fileRef = 222717A22A615E4D00F865FD /* RWFeedbackController.m */; };
-		223177C62A67BFD900067AD6 /* FacebookAEM in Frameworks */ = {isa = PBXBuildFile; productRef = 223177C52A67BFD900067AD6 /* FacebookAEM */; };
-		223177C82A67BFD900067AD6 /* FacebookBasics in Frameworks */ = {isa = PBXBuildFile; productRef = 223177C72A67BFD900067AD6 /* FacebookBasics */; };
-		223177CA2A67BFD900067AD6 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 223177C92A67BFD900067AD6 /* FacebookCore */; };
-		223177CC2A67BFD900067AD6 /* FacebookGamingServices in Frameworks */ = {isa = PBXBuildFile; productRef = 223177CB2A67BFD900067AD6 /* FacebookGamingServices */; };
-		223177CE2A67BFD900067AD6 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 223177CD2A67BFD900067AD6 /* FacebookLogin */; };
-		223177D02A67BFD900067AD6 /* FacebookShare in Frameworks */ = {isa = PBXBuildFile; productRef = 223177CF2A67BFD900067AD6 /* FacebookShare */; };
+		223177C62A67BFD900067AD6 /* FacebookAEM in Frameworks */ = {isa = PBXBuildFile; productRef = 223177C52A67BFD900067AD6 /* FacebookAEM */; settings = {ATTRIBUTES = (Weak, ); }; };
+		223177C82A67BFD900067AD6 /* FacebookBasics in Frameworks */ = {isa = PBXBuildFile; productRef = 223177C72A67BFD900067AD6 /* FacebookBasics */; settings = {ATTRIBUTES = (Weak, ); }; };
+		223177CA2A67BFD900067AD6 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 223177C92A67BFD900067AD6 /* FacebookCore */; settings = {ATTRIBUTES = (Weak, ); }; };
+		223177CC2A67BFD900067AD6 /* FacebookGamingServices in Frameworks */ = {isa = PBXBuildFile; productRef = 223177CB2A67BFD900067AD6 /* FacebookGamingServices */; settings = {ATTRIBUTES = (Weak, ); }; };
+		223177CE2A67BFD900067AD6 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 223177CD2A67BFD900067AD6 /* FacebookLogin */; settings = {ATTRIBUTES = (Weak, ); }; };
+		223177D02A67BFD900067AD6 /* FacebookShare in Frameworks */ = {isa = PBXBuildFile; productRef = 223177CF2A67BFD900067AD6 /* FacebookShare */; settings = {ATTRIBUTES = (Weak, ); }; };
 		223177D42A67C34600067AD6 /* RWFBTrackTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223177D32A67C34600067AD6 /* RWFBTrackTool.swift */; };
 		2240267F2A5EF40600BA9A02 /* UIViewController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2240267E2A5EF40600BA9A02 /* UIViewController+Extension.m */; };
 		2244DEDD2A53C3E40093F903 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2244DEDC2A53C3E40093F903 /* AppDelegate.m */; };
@@ -67,10 +66,9 @@
 		224BE7182A669B5700D4A50C /* RWFeedbackDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 224BE7172A669B5700D4A50C /* RWFeedbackDetailController.m */; };
 		224BE71B2A677DE900D4A50C /* RWUserPayFailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 224BE71A2A677DE900D4A50C /* RWUserPayFailModel.m */; };
 		224BE71E2A677E7E00D4A50C /* RWPayFailToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 224BE71D2A677E7E00D4A50C /* RWPayFailToastView.m */; };
-		224BE7202A678D2300D4A50C /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224BE71F2A678D2300D4A50C /* AdSupport.framework */; };
-		224BE7222A678D2D00D4A50C /* AdServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224BE7212A678D2D00D4A50C /* AdServices.framework */; };
-		224BE7242A678D3800D4A50C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224BE7232A678D3800D4A50C /* StoreKit.framework */; };
-		224BE7262A678D4000D4A50C /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224BE7252A678D4000D4A50C /* AppTrackingTransparency.framework */; };
+		224BE7202A678D2300D4A50C /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224BE71F2A678D2300D4A50C /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		224BE7222A678D2D00D4A50C /* AdServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224BE7212A678D2D00D4A50C /* AdServices.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		224BE7262A678D4000D4A50C /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224BE7252A678D4000D4A50C /* AppTrackingTransparency.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		224BE7282A678D4C00D4A50C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224BE7272A678D4C00D4A50C /* WebKit.framework */; };
 		224BE72F2A67B30D00D4A50C /* RWADJTrackTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 224BE72E2A67B30D00D4A50C /* RWADJTrackTool.m */; };
 		227FD5632A59C32C00AC718A /* RWOrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227FD5622A59C32C00AC718A /* RWOrderDetailViewController.m */; };
@@ -153,8 +151,6 @@
 		220176BB2A567027002C718D /* NSString+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
 		220176BD2A56882E002C718D /* RWSectionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWSectionHeaderView.h; sourceTree = "<group>"; };
 		220176BE2A56882E002C718D /* RWSectionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWSectionHeaderView.m; sourceTree = "<group>"; };
-		220176C12A5697E3002C718D /* NSDictionary+Log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Log.h"; sourceTree = "<group>"; };
-		220176C22A5697E3002C718D /* NSDictionary+Log.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Log.m"; sourceTree = "<group>"; };
 		220176ED2A56AFDC002C718D /* RWProductCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWProductCell.h; sourceTree = "<group>"; };
 		220176EE2A56AFDC002C718D /* RWProductCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWProductCell.m; sourceTree = "<group>"; };
 		222717482A56D46C00F865FD /* RWLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWLoginViewController.h; sourceTree = "<group>"; };
@@ -245,7 +241,6 @@
 		224BE71D2A677E7E00D4A50C /* RWPayFailToastView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPayFailToastView.m; sourceTree = "<group>"; };
 		224BE71F2A678D2300D4A50C /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		224BE7212A678D2D00D4A50C /* AdServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdServices.framework; path = System/Library/Frameworks/AdServices.framework; sourceTree = SDKROOT; };
-		224BE7232A678D3800D4A50C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		224BE7252A678D4000D4A50C /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
 		224BE7272A678D4C00D4A50C /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		224BE72D2A67B30D00D4A50C /* RWADJTrackTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWADJTrackTool.h; sourceTree = "<group>"; };
@@ -384,7 +379,6 @@
 				223177D02A67BFD900067AD6 /* FacebookShare in Frameworks */,
 				224BE7262A678D4000D4A50C /* AppTrackingTransparency.framework in Frameworks */,
 				223177CC2A67BFD900067AD6 /* FacebookGamingServices in Frameworks */,
-				224BE7242A678D3800D4A50C /* StoreKit.framework in Frameworks */,
 				223177CE2A67BFD900067AD6 /* FacebookLogin in Frameworks */,
 				224BE7222A678D2D00D4A50C /* AdServices.framework in Frameworks */,
 				223177C82A67BFD900067AD6 /* FacebookBasics in Frameworks */,
@@ -423,8 +417,6 @@
 				220176BB2A567027002C718D /* NSString+Extension.m */,
 				222717712A5CFFC800F865FD /* NSDate+Extension.h */,
 				222717722A5CFFC800F865FD /* NSDate+Extension.m */,
-				220176C12A5697E3002C718D /* NSDictionary+Log.h */,
-				220176C22A5697E3002C718D /* NSDictionary+Log.m */,
 				2227179C2A61466800F865FD /* UIButton+Extension.h */,
 				2227179D2A61466800F865FD /* UIButton+Extension.m */,
 				229772E82A6254F700B7DCE5 /* NSBundle+Extension.h */,
@@ -991,7 +983,6 @@
 			children = (
 				224BE7272A678D4C00D4A50C /* WebKit.framework */,
 				224BE7252A678D4000D4A50C /* AppTrackingTransparency.framework */,
-				224BE7232A678D3800D4A50C /* StoreKit.framework */,
 				224BE7212A678D2D00D4A50C /* AdServices.framework */,
 				224BE71F2A678D2300D4A50C /* AdSupport.framework */,
 				CE5ACEB6E5765A1C3C71A808 /* libPods-RupeeWallet.a */,
@@ -1190,7 +1181,6 @@
 				22A0BECD2A53ED7200B8C360 /* RWHomeController.m in Sources */,
 				227FD5662A59C77A00AC718A /* RWOrderModel.m in Sources */,
 				229773322A62A9A600B7DCE5 /* RWPagingIndicatorCell.m in Sources */,
-				220176C32A5697E3002C718D /* NSDictionary+Log.m in Sources */,
 				227FD5632A59C32C00AC718A /* RWOrderDetailViewController.m in Sources */,
 				222717702A5C12DB00F865FD /* RWAddressInpuView.m in Sources */,
 				2227178B2A5F96DA00F865FD /* RWAlertView.m in Sources */,

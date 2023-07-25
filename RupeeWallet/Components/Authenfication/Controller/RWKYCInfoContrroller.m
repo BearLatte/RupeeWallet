@@ -121,7 +121,7 @@
     }];
     self.addressView = address;
     
-    RWFormInputView *marriage = [RWFormInputView inputViewWithInputType:RWFormInputViewTypeDate title:@"Marriage Status" placeholder:@"Marriage Status" keyboardType:UIKeyboardTypeDefault tapAction:^{
+    RWFormInputView *marriage = [RWFormInputView inputViewWithInputType:RWFormInputViewTypeList title:@"Marriage Status" placeholder:@"Marriage Status" keyboardType:UIKeyboardTypeDefault tapAction:^{
         self.isMarriagePicker = YES;
         [self showListPickerWithTitle:@"Marriage Status"];
     } didEndEditingAction: nil];
@@ -132,7 +132,7 @@
     }];
     self.marriageView = marriage;
     
-    RWFormInputView *education = [RWFormInputView inputViewWithInputType:RWFormInputViewTypeDate title:@"Education" placeholder:@"Education" keyboardType:UIKeyboardTypeDefault tapAction:^{
+    RWFormInputView *education = [RWFormInputView inputViewWithInputType:RWFormInputViewTypeList title:@"Education" placeholder:@"Education" keyboardType:UIKeyboardTypeDefault tapAction:^{
         self.isMarriagePicker = NO;
         [self showListPickerWithTitle:@"Education"];
     } didEndEditingAction:nil];
@@ -155,6 +155,8 @@
         make.bottom.equalTo(@0).priority(MASLayoutPriorityDefaultHigh);
     }];
     self.nextBtn = next;
+    
+    [self checkUserAuthInfo];
 }
 
 - (void)setKycInfo:(RWContentModel *)kycInfo {
@@ -240,6 +242,10 @@
         self.eduList = content.eduList;
     }];
     
+    
+}
+
+- (void)checkUserAuthInfo {
     if(self.authStatus.loanapiUserIdentity) {
         [[RWNetworkService sharedInstance] fetchUserAuthInfoWithType:RWAuthTypeKYCInfo success:^(RWContentModel * _Nonnull authenficationInfo) {
             self.kycInfo = authenficationInfo;

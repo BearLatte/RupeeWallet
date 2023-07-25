@@ -125,7 +125,7 @@
 
 - (void)show {
     [self.containerView layoutIfNeeded];
-    [[UIApplication sharedApplication].windows.lastObject addSubview:self];
+    [[UIApplication sharedApplication].windows.firstObject addSubview:self];
     [UIView animateWithDuration:0.25 animations:^{
         self.containerView.transform = CGAffineTransformMakeTranslation(0, CGRectGetHeight(self.containerView.frame));
     }];

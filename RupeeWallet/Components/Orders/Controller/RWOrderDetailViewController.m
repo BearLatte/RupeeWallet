@@ -261,6 +261,8 @@
 - (void)configNotTopViewStyleViewData {
     self.topView.hidden = YES;
     if(self.orderDetail.status == 2 || self.orderDetail.status == 5) {
+        self.repayNowBtn.hidden = NO;
+        self.repayExtensionBtn.hidden = NO;
         [self checkExtensionBtnIsShow];
         self.title = self.orderDetail.status == 2 ? @"To be Repaid" : @"Overdue";
         self.repaymentAmountValueLabel.text = [NSString stringWithFormat:@"₹ %@", self.orderDetail.repayAmountStr];
@@ -276,11 +278,15 @@
         self.overdueDaysValueLabel.text = self.orderDetail.overDueDays;
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appDidBecomeActive:) name:UIApplicationDidBecomeActiveNotification object:nil];
     } else if(self.orderDetail.status == 6) {
+        self.repayNowBtn.hidden = YES;
+        self.repayExtensionBtn.hidden = YES;
         self.title = @"Disbursing Fail";
         self.loanAmountKeyLabel.text = @"Loan Amount";
         self.loanAmountValueLabel.font = [UIFont systemFontOfSize:30 weight:UIFontWeightMedium];
         self.loanAmountValueLabel.textColor = [UIColor colorWithHexString:THEME_COLOR];
     } else {
+        self.repayNowBtn.hidden = YES;
+        self.repayExtensionBtn.hidden = YES;
         self.title = @"Repaid";
         self.tableView.hidden = NO;
         self.repaymentAmountValueLabel.text = [NSString stringWithFormat:@"₹ %@", self.orderDetail.repayAmountStr];

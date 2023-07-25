@@ -33,7 +33,7 @@ typedef NS_ENUM(NSUInteger, RWAuthType) {
 - (void)authInfoWithType:(RWAuthType)type parameters:(NSDictionary *)parameters success:(void(^)(void))success;
 - (void)userFaceAuthWithImage:(UIImage *)image success:(void(^)(void))success failure:(void(^)(void))failure;
 - (void)purchaseProductWithParameters:(NSDictionary *)parameters success:(void(^)(NSArray *_Nullable recommendProductList, BOOL isFirstApply))success;
-- (void)logoutWithSuccess:(void(^)(void))success;
+- (void)logoutWithDeleteAccount:(BOOL)isDeleteAccount success:(void(^)(void))success;
 - (void)fetchOrderListWithOrderType:(RWOrderType)orderType success:(void(^)(NSArray *orderList))success failure:(void(^)(void))failure;
 - (void)checkExtensionBtnShowWithOrderNumber:(NSString *)orderNumber success:(void(^)(BOOL isShow))success;
 - (void)fetchOrderDetailWithOrderNumber:(NSString *)orderNumber success:(void(^)(NSInteger frozenDays, RWOrderModel *order, NSArray *productList))success;

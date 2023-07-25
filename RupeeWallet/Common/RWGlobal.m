@@ -204,7 +204,7 @@ NSString * const ADJUST_APP_TOKEN = @"sg346zqpiuio";
     __block NSArray *contacts = nil;
     [store requestAccessForEntityType:CNEntityTypeContacts completionHandler:^(BOOL granted, NSError * _Nullable error) {
         if(error) {
-            [RWProgressHUD showErrorWithStatus:error.description];
+            [RWProgressHUD showInfoWithStatus:@"You did not allow us to access the contacts. Allowing it will help you obtain a loan. Do you want to set up authorization."];
             return;
         }
         

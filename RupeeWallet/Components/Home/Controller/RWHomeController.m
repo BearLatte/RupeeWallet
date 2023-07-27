@@ -13,6 +13,7 @@
 #import "RWOrderDetailViewController.h"
 #import "RWProductDetailController.h"
 #import "RWPayFailToastView.h"
+#import "UIDevice+Extension.h"
 
 @interface RWHomeController ()
 @property(nonatomic, strong) UIImageView *_Nullable headerImageView;
@@ -50,17 +51,19 @@
     self.tableView.layer.masksToBounds = YES;
 }
 
+
 - (void)loadData {
-    if([RWGlobal sharedGlobal].isLogin) {
-        self.headerImageView.image = [UIImage imageNamed:@"header_img_login"];
-    } else {
-        self.headerImageView.image = [UIImage imageNamed:@"header_img"];
-    }
-    
     [[RWNetworkService sharedInstance] fetchProductWithIsRecommend:NO success:^(RWContentModel *userInfo, NSArray * _Nullable products, RWProductDetailModel * _Nullable recommendProduct) {
         if(userInfo.userPayFail) {
             [RWPayFailToastView showToastWithPayFailInfo:userInfo.userPayFailInfo];
         }
+        
+        if(userInfo.userStatus == 2) {
+            self.headerImageView.image = [UIImage imageNamed:@"header_img_login"];
+        } else {
+            self.headerImageView.image = [UIImage imageNamed:@"header_img"];
+        }
+        
         self.products = products;
         [self.tableView reloadData];
         [self.tableView.pullToRefreshView stopAnimating];
@@ -98,6 +101,7 @@
     RWProductModel *product = self.products[indexPath.row];
     [[RWNetworkService sharedInstance] fetchUserAuthInfoWithType:RWAuthTypeAllInfo success:^(RWContentModel * _Nonnull authenficationInfo) {
         if (authenficationInfo.authStatus) {
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:IS_CERTIFIED_KEY];
             [self checkUserStatusWithProduct:product.productId];
         } else {
             RWKYCInfoContrroller *kycController = [[RWKYCInfoContrroller alloc] init];

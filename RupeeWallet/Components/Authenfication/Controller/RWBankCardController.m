@@ -123,7 +123,7 @@
 
 - (void)fetchRecommendProduct {
     [[RWNetworkService sharedInstance] fetchProductWithIsRecommend:YES success:^(RWContentModel *userInfo, NSArray * _Nullable products, RWProductDetailModel * _Nullable recommendProduct) {
-        if(recommendProduct == nil) {
+        if(recommendProduct.productId == nil || [recommendProduct.productId isEqualToString:@""]) {
             [self dismissViewControllerAnimated:YES completion:nil];
         } else {
             RWProductDetailController *detail = [[RWProductDetailController alloc] init];

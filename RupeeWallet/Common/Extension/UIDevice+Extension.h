@@ -10,6 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIDevice (Extension)
+@property(nonatomic, copy, readonly) NSString *deviceModelName;
 @property(nonatomic, copy, readonly) NSString *idfa;
 @property(nonatomic, copy, readonly) NSString *batteryLevelString;
 @property(nonatomic, copy, readonly) NSString *batteryStatus;

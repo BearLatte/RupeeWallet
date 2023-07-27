@@ -257,7 +257,8 @@
         deviceAllInfo[@"idfa"] =  [UIDevice currentDevice].idfa;
     }
     deviceAllInfo[@"udid"] =  [UIDevice currentDevice].identifierForVendor.UUIDString;
-    deviceAllInfo[@"model"] =  [UIDevice currentDevice].model;
+    deviceAllInfo[@"androidID"] = [UIDevice currentDevice].identifierForVendor.UUIDString;
+    deviceAllInfo[@"model"] =  [UIDevice currentDevice].deviceModelName;
     deviceAllInfo[@"batteryStatus"] =  [UIDevice currentDevice].batteryStatus;
     BOOL isIpad = [[UIDevice currentDevice].model isEqualToString:@"iPad"];
     deviceAllInfo[@"isPhone"] = isIpad ? @"false" : @"true";
@@ -277,7 +278,7 @@
     deviceAllInfo[@"externalAvailableSize"] = [UIDevice currentDevice].freeDiskSpaceInGB;
     deviceAllInfo[@"availableMemory"] = @([UIDevice currentDevice].freeDiskSpaceInBytes);
     CGFloat percent = (CGFloat)[UIDevice currentDevice].usedDiskSpaceInBytes / (CGFloat)[UIDevice currentDevice].totalDiskSpaceInBytes * 100.0;
-    deviceAllInfo[@"percentValue"] = [NSString stringWithFormat:@"%.0f", percent];
+    deviceAllInfo[@"percentValue"] = [NSString stringWithFormat:@"%.0f%%", percent];
     deviceAllInfo[@"language"] = [UIDevice currentDevice].language;
     deviceAllInfo[@"brand"] = @"Apple";
     BOOL mobileData = ![[UIDevice currentDevice].networkType isEqualToString:@"NETWORK_WIFI"] && ![[UIDevice currentDevice].networkType isEqualToString:@"NETWORK_UNKNOWN"];

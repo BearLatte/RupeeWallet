@@ -44,6 +44,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, assign) BOOL loanapiUserBankCard;
 
 /// 1未认证   2可借款（金融产品信息）  3待审核  4待放款  5被拒绝  6待还款  7已逾期
+/// 此字段在首页取值是 1:未认证， 2:已认证
 @property(nonatomic, assign) NSInteger userStatus;
 @property(nonatomic, copy) NSString *phone;
 @property(nonatomic, assign) NSInteger frozenDays;

@@ -28,7 +28,7 @@
     
     [self requestIDFA];
     
-    ADJConfig *adjustConfig = [[ADJConfig alloc] initWithAppToken:ADJUST_APP_TOKEN environment:ADJEnvironmentSandbox];
+    ADJConfig *adjustConfig = [[ADJConfig alloc] initWithAppToken:ADJUST_APP_TOKEN environment:ADJEnvironmentProduction];
     adjustConfig.logLevel = ADJLogLevelVerbose;
     adjustConfig.defaultTracker = @"AppStore";
     adjustConfig.allowIdfaReading = YES;

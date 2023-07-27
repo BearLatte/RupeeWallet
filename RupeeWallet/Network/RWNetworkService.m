@@ -301,7 +301,7 @@ static NSString * const baseURL = @"";
 
 
 - (void)purchaseProductWithParameters:(NSDictionary *)parameters success:(void (^)(NSArray * _Nullable, BOOL))success {
-    [RWProgressHUD showWithStatus:@"loading..."];
+    [RWProgressHUD showWithStatus:@"Your application is being submitted, please do not exit or return."];
     [self requestWithPath:@"/uzYONRY/Yuulyz/fXdLNe" parameters:parameters success:^(RWBaseModel *response) {
         success([RWProductModel mj_objectArrayWithKeyValuesArray:response.list], response.cont.isFirstApply);
     } failure:^{

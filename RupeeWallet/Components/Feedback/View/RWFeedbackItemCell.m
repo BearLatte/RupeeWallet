@@ -49,6 +49,7 @@
 
 - (void)setFeedback:(RWFeedbackModel *)feedback {
     _feedback = feedback;
+    self.indicatorView.hidden = feedback.replyNum < 1;
     self.titleLabel.text = feedback.feedBackType;
     self.dateLabel.text = feedback.createTime;
     self.contentLabel.text = feedback.feedBackContent;

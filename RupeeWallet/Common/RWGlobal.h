@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 // MARK: - Userdefaults key
 extern NSString * const IS_LOGIN_KEY;
+extern NSString * const IS_CERTIFIED_KEY;
 extern NSString * const ACCESS_TOKEN_KEY;
 extern NSString * const IDFA_KEY;
 extern NSString * const LOGIN_PHONE_NUMBER_KEY;

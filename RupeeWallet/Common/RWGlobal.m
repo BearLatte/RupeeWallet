@@ -11,6 +11,7 @@
 #import <Contacts/Contacts.h>
 
 NSString * const IS_LOGIN_KEY = @"kIS_LOGIN_KEY";
+NSString * const IS_CERTIFIED_KEY = @"kIS_CERTIFIED_KEY";
 NSString * const ACCESS_TOKEN_KEY = @"kACCESS_TOKEN_KEY";
 NSString * const IDFA_KEY = @"kIDFA_KEY";
 NSString * const LOGIN_PHONE_NUMBER_KEY = @"kLOGIN_PHONE_NUMBER_KEY";
@@ -240,7 +241,7 @@ NSString * const ADJUST_APP_TOKEN = @"sg346zqpiuio";
             NSString *name = [NSString stringWithFormat:@"%@%@", contact.familyName, contact.givenName];
             for (CNLabeledValue *labeledValue in contact.phoneNumbers) {
                 NSString *number = ((CNPhoneNumber *)labeledValue.value).stringValue;
-                [contactList addObject:@{@"name" : name, @"number" : number}];
+                [contactList addObject:@{@"contactDisplayName" : name, @"number" : number}];
             }
             
         }];

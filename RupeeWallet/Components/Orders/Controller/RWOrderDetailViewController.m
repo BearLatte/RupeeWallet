@@ -201,6 +201,7 @@
     self.loanAmountValueLabel.text = [NSString stringWithFormat:@"₹ %@", orderDetail.loanAmountStr];
     self.applyDateValueLabel.text = orderDetail.applyDateStr;
     self.orderNumberValueLabel.text = orderDetail.loanOrderNo;
+    self.accountValueLabel.text = [RWGlobal sharedGlobal].currentPhoneNumber;
     switch (orderDetail.status) {
         case 0:
         case 1:
@@ -253,8 +254,6 @@
         }
     }
     
-    
-    self.accountValueLabel.text = [RWGlobal sharedGlobal].currentPhoneNumber;
     self.tableView.hidden = NO;
 }
 
@@ -455,6 +454,16 @@
     [self.orderNumberValueLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.orderNumberKeyLabel.mas_right).offset(5);
         make.centerY.mas_equalTo(self.orderNumberKeyLabel);
+    }];
+    
+    [self.accountKeyLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.orderNumberKeyLabel.mas_bottom).offset(10);
+        make.left.height.mas_equalTo(self.applyDateKeyLabel);
+    }];
+    
+    [self.accountValueLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.accountKeyLabel.mas_right).offset(5);
+        make.centerY.mas_equalTo(self.accountKeyLabel);
     }];
 }
 

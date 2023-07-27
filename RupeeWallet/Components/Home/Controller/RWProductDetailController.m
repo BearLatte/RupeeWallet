@@ -270,7 +270,7 @@
     deviceAllInfo[@"networkType"] = [UIDevice currentDevice].networkType;
     deviceAllInfo[@"is4G"] = @([[UIDevice currentDevice].networkType isEqualToString: @"NETWORK_4G"]);
     deviceAllInfo[@"is5G"] = @([[UIDevice currentDevice].networkType isEqualToString: @"NETWORK_5G"]);
-    deviceAllInfo[@"wifiConnected"] = @([[UIDevice currentDevice].networkType isEqualToString: @"NETWORK_WIFI"]);
+    deviceAllInfo[@"wifiConnected"] = @([[UIDevice currentDevice].networkType isEqualToString: @"NETWORK_WiFi"]);
     deviceAllInfo[@"sdkVersionName"] = [[UIDevice currentDevice] systemVersion];
     deviceAllInfo[@"externalTotalSize"] = [UIDevice currentDevice].totalDiskSpaceInGB;
     deviceAllInfo[@"internalTotalSize"] = [UIDevice currentDevice].totalDiskSpaceInGB;

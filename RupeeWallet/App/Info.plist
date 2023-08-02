@@ -54,9 +54,9 @@
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>You did not allow us to access the Photo Library, which will help you obtain a loan. Would you like to set up authorization.</string>
     <key>FacebookAppID</key>
-    <string>fbAPP-ID 上线前替换</string>
+    <string>6880517725291722</string>
     <key>FacebookClientToken</key>
-    <string>CLIENT-TOKEN 上线前替换</string>
+    <string>4c1fae218ce20628409eca1a31efbca7</string>
     <key>FacebookDisplayName</key>
     <string>Rupee Wallet</string>
 </dict>

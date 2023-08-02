@@ -201,7 +201,7 @@
     self.loanAmountValueLabel.text = [NSString stringWithFormat:@"₹ %@", orderDetail.loanAmountStr];
     self.applyDateValueLabel.text = orderDetail.applyDateStr;
     self.orderNumberValueLabel.text = orderDetail.loanOrderNo;
-    self.accountValueLabel.text = [RWGlobal sharedGlobal].currentPhoneNumber;
+    self.accountValueLabel.text = orderDetail.bankCardNo;
     switch (orderDetail.status) {
         case 0:
         case 1:

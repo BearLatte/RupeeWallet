@@ -26,7 +26,7 @@
     _product = product;
     [self.logoView sd_setImageWithURL:[NSURL URLWithString:product.logo]];
     self.productNameLabel.text = product.loanName;
-    self.quotaLabel.text = product.loanAmount;
+    self.quotaLabel.text = [NSString stringWithFormat:@"INR %@", product.loanAmount];
     self.feeRatioLabel.text = [NSString stringWithFormat:@"Fee %@ / day", product.loanRate];
     self.loanDateLabel.text = [NSString stringWithFormat:@"%@ days", product.loanDate];
     [self layoutIfNeeded];

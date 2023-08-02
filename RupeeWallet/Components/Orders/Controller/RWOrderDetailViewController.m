@@ -756,9 +756,9 @@
 - (void)loadData {
     
     [[RWNetworkService sharedInstance] fetchOrderDetailWithOrderNumber:self.auditOrderNo success:^(NSInteger frozenDays, RWOrderModel * _Nonnull order, NSArray * _Nonnull productList) {
-        self.orderDetail = order;
         self.frozenDays = frozenDays;
         self.recommendProducts = productList;
+        self.orderDetail = order;
         [self.tableView.pullToRefreshView stopAnimating];
     }];
 }

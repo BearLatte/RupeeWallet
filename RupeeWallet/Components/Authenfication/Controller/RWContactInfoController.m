@@ -122,15 +122,15 @@ typedef NS_ENUM(NSUInteger, RWContactType) {
         NSDictionary *contact = self.contacts[row];
         switch (self.contactType) {
             case RWContactTypeParents:
-                self.parentsContactInputView.contactName = contact[@"name"];
+                self.parentsContactInputView.contactName = contact[@"contactDisplayName"];
                 self.parentsContactInputView.contactNumber = contact[@"number"];
                 break;
             case RWContactTypeFamily:
-                self.familyContactInputView.contactName = contact[@"name"];
+                self.familyContactInputView.contactName = contact[@"contactDisplayName"];
                 self.familyContactInputView.contactNumber = contact[@"number"];
                 break;
             case RWContactTypeColleague:
-                self.colleagueContactInputView.contactName = contact[@"name"];
+                self.colleagueContactInputView.contactName = contact[@"contactDisplayName"];
                 self.colleagueContactInputView.contactNumber = contact[@"number"];
                 break;
             default:
@@ -194,7 +194,7 @@ typedef NS_ENUM(NSUInteger, RWContactType) {
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     NSDictionary *contact = self.contacts[row];
-    NSString *title = [NSString stringWithFormat:@"%@:%@", contact[@"name"], contact[@"number"]];
+    NSString *title = [NSString stringWithFormat:@"%@:%@", contact[@"contactDisplayName"], contact[@"number"]];
     return title;
 }
 @end

@@ -55,10 +55,12 @@
         name.layer.borderColor = [UIColor colorWithHexString:NORMAL_BORDER_COLOR].CGColor;
         name.layer.borderWidth = 1;
         UIView *rightView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 44)];
-        UIImageView *rightIcon = [[UIImageView alloc] initWithFrame:rightView.bounds];
-        rightIcon.image = [UIImage imageNamed:@"contact_icon"];
-        rightIcon.contentMode = UIViewContentModeCenter;
-        [rightView addSubview:rightIcon];
+        UIButton *rightIconBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [rightIconBtn setImage: [UIImage imageNamed:@"contact_icon"] forState:UIControlStateNormal];
+        rightIconBtn.frame = rightView.bounds;
+        rightIconBtn.contentMode = UIViewContentModeCenter;
+        [rightIconBtn addTarget:self action:@selector(rightViewBtnDidClicked) forControlEvents:UIControlEventTouchUpInside];
+        [rightView addSubview:rightIconBtn];
         name.rightView = rightView;
         name.rightViewMode = UITextFieldViewModeAlways;
         name.delegate = self;
@@ -115,12 +117,18 @@
     }];
 }
 
+- (void)rightViewBtnDidClicked {
+    self.tapAction();
+}
+
 // MARK: - UITextFieldDelegate
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     NSString *loginPhoneNumber = [[NSUserDefaults standardUserDefaults] valueForKey:LOGIN_PHONE_NUMBER_KEY];
     if([loginPhoneNumber isEqualToString:APP_STORE_TEST_ACCOUNT]) {
         return YES;
-    } else {
+    } else if (textField == self.nameField) {
+        return YES;
+    } else  {
         self.tapAction();
         return NO;
     }

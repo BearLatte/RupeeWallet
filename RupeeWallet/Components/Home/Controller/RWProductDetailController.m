@@ -221,6 +221,7 @@
 - (void)selectedImageAction:(UIImage *)selectedImage {
     [[RWNetworkService sharedInstance] userFaceAuthWithImage:selectedImage success:^{
         [RWProgressHUD showSuccessWithStatus:@"upload success"];
+        [self loanNowBtnClicked];
     } failure:^{
         [RWAlertView showAlertViewWithStyle:RWAlertStyleError title:nil message:@"Upload failed, please try again." confirmAction:nil];
     }];
@@ -339,9 +340,17 @@
 }
 
 - (void)loadData {
-    [[RWNetworkService sharedInstance] checkUserStatusWithProductId:self.productId success:^(NSInteger userStatus, NSString * _Nonnull orderNumber, RWProductDetailModel * _Nonnull productDetail) {
-        self.productDetail = productDetail;
-    }];
+    if(self.isRecommend) {
+        [[RWNetworkService sharedInstance] fetchProductWithIsRecommend:YES success:^(RWContentModel *userInfo, NSArray * _Nullable products, RWProductDetailModel * _Nullable recommendProduct) {
+            self.productDetail = recommendProduct;
+        } failure:^{
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }];
+    } else {
+        [[RWNetworkService sharedInstance] checkUserStatusWithProductId:self.productId success:^(NSInteger userStatus, NSString * _Nonnull orderNumber, RWProductDetailModel * _Nonnull productDetail) {
+            self.productDetail = productDetail;
+        }];
+    }
 }
 
 - (void)backAction {

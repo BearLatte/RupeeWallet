@@ -18,7 +18,10 @@ import FacebookCore
     }
     
     public static func trac(point: String) {
-        let event = AppEvents.Name(point)
-        AppEvents.shared.logEvent(event)
+        if(point == "myl771") {
+            AppEvents.shared.logEvent(.completedRegistration)
+        } else {
+            AppEvents.shared.logEvent(.addedToCart)
+        }
     }
 }

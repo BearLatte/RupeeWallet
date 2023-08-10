@@ -115,25 +115,13 @@
     } else {
         [RWAlertView showAlertViewWithStyle:RWAlertStyleTips title:@"TIPS" message:@"The information cannot be changed in step 1-3 after submission. Please fill in the correct information." confirmAction:^{
             [[RWNetworkService sharedInstance] authInfoWithType:RWAuthTypeBankCardInfo parameters:[params copy] success:^{
-                [self fetchRecommendProduct];
+                [[NSNotificationCenter defaultCenter] postNotificationName:AUTHENFICATION_FINISHED_NOTIFICATION object:nil];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+                });
             }];
         }];
     }
-}
-
-- (void)fetchRecommendProduct {
-    [[RWNetworkService sharedInstance] fetchProductWithIsRecommend:YES success:^(RWContentModel *userInfo, NSArray * _Nullable products, RWProductDetailModel * _Nullable recommendProduct) {
-        if(recommendProduct.productId == nil || [recommendProduct.productId isEqualToString:@""]) {
-            [self dismissViewControllerAnimated:YES completion:nil];
-        } else {
-            RWProductDetailController *detail = [[RWProductDetailController alloc] init];
-            detail.productId = recommendProduct.productId;
-            detail.isRecommend = YES;
-            [self.navigationController pushViewController:detail animated:YES];
-        }
-    } failure:^{
-        [self dismissViewControllerAnimated:YES completion:nil];
-    }];
 }
 
 @end

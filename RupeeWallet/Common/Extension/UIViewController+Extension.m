@@ -8,17 +8,17 @@
 #import "UIViewController+Extension.h"
 
 @implementation UIViewController (Extension)
-- (void)closeGesturePop {
-    if([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
-        for (UIGestureRecognizer *reco in self.navigationController.interactivePopGestureRecognizer.view.gestureRecognizers) {
++ (void)closeGesturePopWithController:(UIViewController *)viewController {
+    if([viewController.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        for (UIGestureRecognizer *reco in viewController.navigationController.interactivePopGestureRecognizer.view.gestureRecognizers) {
             reco.enabled = NO;
         }
     }
 }
 
-- (void)openGesturePop {
-    if([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
-        for (UIGestureRecognizer *reco in self.navigationController.interactivePopGestureRecognizer.view.gestureRecognizers) {
++ (void)openGesturePopWithController:(UIViewController *)viewController {
+    if([viewController.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        for (UIGestureRecognizer *reco in viewController.navigationController.interactivePopGestureRecognizer.view.gestureRecognizers) {
             reco.enabled = YES;
         }
     }

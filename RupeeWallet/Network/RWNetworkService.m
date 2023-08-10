@@ -285,6 +285,7 @@ static NSString * const baseURL = @"";
         }];
         
         dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+        [RWProgressHUD showWithStatus:@"loading..."];
         [self requestWithPath:@"/uzYONRY/Yuulyz/RlcfcSD" parameters:@{@"livenessImg" : imageUrl} success:^(RWBaseModel *response) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 success();
@@ -453,7 +454,9 @@ static NSString * const baseURL = @"";
 #else
     keyString = [NSString stringWithFormat:@"%@&rupeewallet=0MFJV2NGVKD8ＭBVKMFMB", [NSString sortedDictionary:body]];
 #endif
+    RWLog(@"加密前%@", keyString);
     NSString *signString = [[keyString MD5] uppercaseString];
+    RWLog(@"加密后%@", signString);
     body[@"sign"] = signString;
     return [body copy];
 }

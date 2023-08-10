@@ -10,6 +10,7 @@
 #import "RWPagingTitleView.h"
 #import "RWPagingListContainerView.h"
 #import "RWPagingIndicatorLineView.h"
+#import "UIViewController+Extension.h"
 
 @interface RWOrderPagingController ()<RWPagingViewDelegate, RWPagingListContainerViewDelegate>
 @property(nonatomic, strong) NSArray *listTitles;
@@ -91,21 +92,21 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     if(self.pagingView.selectedIndex == 0) {
-        [self openGesturePop];
+        [UIViewController openGesturePopWithController:self];
     }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self openGesturePop];
+    [UIViewController openGesturePopWithController:self];
 }
 
 // MARK: - RWPagingViewDelegate
 - (void)categoryView:(RWPagingBaseView *)categoryView didSelectedItemAtIndex:(NSInteger)index {
     if(index == 0) {
-        [self openGesturePop];
+        [UIViewController openGesturePopWithController:self];
     } else {
-        [self closeGesturePop];
+        [UIViewController closeGesturePopWithController:self];
     }
 }
 

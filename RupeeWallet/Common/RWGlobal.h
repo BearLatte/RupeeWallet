@@ -31,6 +31,8 @@ extern NSString * const PLACEHOLDER_IMAGE_COLOR;
 extern NSString * const APP_STORE_TEST_ACCOUNT;
 extern NSString * const ADJUST_APP_TOKEN;
 
+extern NSNotificationName _Nullable const AUTHENFICATION_FINISHED_NOTIFICATION;
+
 
 // MARK: - Enums
 typedef NS_ENUM(NSUInteger, RWOCRType) {

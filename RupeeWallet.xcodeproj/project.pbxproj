@@ -45,7 +45,6 @@
 		223177CE2A67BFD900067AD6 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 223177CD2A67BFD900067AD6 /* FacebookLogin */; settings = {ATTRIBUTES = (Weak, ); }; };
 		223177D02A67BFD900067AD6 /* FacebookShare in Frameworks */ = {isa = PBXBuildFile; productRef = 223177CF2A67BFD900067AD6 /* FacebookShare */; settings = {ATTRIBUTES = (Weak, ); }; };
 		223177D42A67C34600067AD6 /* RWFBTrackTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223177D32A67C34600067AD6 /* RWFBTrackTool.swift */; };
-		2240267F2A5EF40600BA9A02 /* UIViewController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2240267E2A5EF40600BA9A02 /* UIViewController+Extension.m */; };
 		2244DEDD2A53C3E40093F903 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2244DEDC2A53C3E40093F903 /* AppDelegate.m */; };
 		2244DEE82A53C3E60093F903 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2244DEE72A53C3E60093F903 /* Assets.xcassets */; };
 		2244DEEB2A53C3E60093F903 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2244DEE92A53C3E60093F903 /* LaunchScreen.storyboard */; };
@@ -69,7 +68,7 @@
 		224BE7202A678D2300D4A50C /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224BE71F2A678D2300D4A50C /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		224BE7222A678D2D00D4A50C /* AdServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224BE7212A678D2D00D4A50C /* AdServices.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		224BE7262A678D4000D4A50C /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224BE7252A678D4000D4A50C /* AppTrackingTransparency.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		224BE7282A678D4C00D4A50C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224BE7272A678D4C00D4A50C /* WebKit.framework */; };
+		224BE7282A678D4C00D4A50C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224BE7272A678D4C00D4A50C /* WebKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		224BE72F2A67B30D00D4A50C /* RWADJTrackTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 224BE72E2A67B30D00D4A50C /* RWADJTrackTool.m */; };
 		227FD5632A59C32C00AC718A /* RWOrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227FD5622A59C32C00AC718A /* RWOrderDetailViewController.m */; };
 		227FD5662A59C77A00AC718A /* RWOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 227FD5652A59C77A00AC718A /* RWOrderModel.m */; };
@@ -119,6 +118,8 @@
 		229773822A62BB4100B7DCE5 /* RWPagingVerticalTitleZoomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 229773812A62BB4100B7DCE5 /* RWPagingVerticalTitleZoomView.m */; };
 		229773852A62BB5C00B7DCE5 /* RWPagingVerticalTitleZoomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 229773842A62BB5C00B7DCE5 /* RWPagingVerticalTitleZoomCell.m */; };
 		229773882A62BB7300B7DCE5 /* RWPagingVerticalTitleZoomCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 229773872A62BB7300B7DCE5 /* RWPagingVerticalTitleZoomCellModel.m */; };
+		22996FFE2A7B46FC00ADF139 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22996FFD2A7B46FC00ADF139 /* StoreKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		229970012A7B56AA00ADF139 /* UIViewController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 229970002A7B56AA00ADF139 /* UIViewController+Extension.m */; };
 		22A0BEB22A53D88A00B8C360 /* RWMainTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A0BEB12A53D88A00B8C360 /* RWMainTabbarController.m */; };
 		22A0BEB52A53D8E900B8C360 /* RWBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A0BEB42A53D8E900B8C360 /* RWBaseViewController.m */; };
 		22A0BEB82A53D92A00B8C360 /* RWBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A0BEB72A53D92A00B8C360 /* RWBaseTableViewController.m */; };
@@ -198,8 +199,6 @@
 		223177D12A67C17900067AD6 /* RupeeWalletDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RupeeWalletDebug.entitlements; sourceTree = "<group>"; };
 		223177D22A67C34600067AD6 /* RupeeWallet-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RupeeWallet-Bridging-Header.h"; sourceTree = "<group>"; };
 		223177D32A67C34600067AD6 /* RWFBTrackTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RWFBTrackTool.swift; sourceTree = "<group>"; };
-		2240267D2A5EF40600BA9A02 /* UIViewController+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extension.h"; sourceTree = "<group>"; };
-		2240267E2A5EF40600BA9A02 /* UIViewController+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Extension.m"; sourceTree = "<group>"; };
 		2244DED82A53C3E40093F903 /* RupeeWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RupeeWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2244DEDB2A53C3E40093F903 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2244DEDC2A53C3E40093F903 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -343,6 +342,9 @@
 		229773842A62BB5C00B7DCE5 /* RWPagingVerticalTitleZoomCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPagingVerticalTitleZoomCell.m; sourceTree = "<group>"; };
 		229773862A62BB7300B7DCE5 /* RWPagingVerticalTitleZoomCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPagingVerticalTitleZoomCellModel.h; sourceTree = "<group>"; };
 		229773872A62BB7300B7DCE5 /* RWPagingVerticalTitleZoomCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPagingVerticalTitleZoomCellModel.m; sourceTree = "<group>"; };
+		22996FFD2A7B46FC00ADF139 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		22996FFF2A7B56AA00ADF139 /* UIViewController+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extension.h"; sourceTree = "<group>"; };
+		229970002A7B56AA00ADF139 /* UIViewController+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Extension.m"; sourceTree = "<group>"; };
 		22A0BEB02A53D88A00B8C360 /* RWMainTabbarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWMainTabbarController.h; sourceTree = "<group>"; };
 		22A0BEB12A53D88A00B8C360 /* RWMainTabbarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWMainTabbarController.m; sourceTree = "<group>"; };
 		22A0BEB32A53D8E900B8C360 /* RWBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWBaseViewController.h; sourceTree = "<group>"; };
@@ -374,6 +376,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22996FFE2A7B46FC00ADF139 /* StoreKit.framework in Frameworks */,
 				224BE7282A678D4C00D4A50C /* WebKit.framework in Frameworks */,
 				223177C62A67BFD900067AD6 /* FacebookAEM in Frameworks */,
 				223177D02A67BFD900067AD6 /* FacebookShare in Frameworks */,
@@ -421,12 +424,12 @@
 				2227179D2A61466800F865FD /* UIButton+Extension.m */,
 				229772E82A6254F700B7DCE5 /* NSBundle+Extension.h */,
 				229772E92A6254F700B7DCE5 /* NSBundle+Extension.m */,
-				2240267D2A5EF40600BA9A02 /* UIViewController+Extension.h */,
-				2240267E2A5EF40600BA9A02 /* UIViewController+Extension.m */,
 				224BE6EF2A6632F000D4A50C /* UIScrollView+EmptyDataSet.h */,
 				224BE6F02A6632F000D4A50C /* UIScrollView+EmptyDataSet.m */,
 				224BE7062A66664100D4A50C /* UITextView+Extension.h */,
 				224BE7072A66664100D4A50C /* UITextView+Extension.m */,
+				22996FFF2A7B56AA00ADF139 /* UIViewController+Extension.h */,
+				229970002A7B56AA00ADF139 /* UIViewController+Extension.m */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -981,6 +984,7 @@
 		5E8D96E3B39CC6CC20082A10 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				22996FFD2A7B46FC00ADF139 /* StoreKit.framework */,
 				224BE7272A678D4C00D4A50C /* WebKit.framework */,
 				224BE7252A678D4000D4A50C /* AppTrackingTransparency.framework */,
 				224BE7212A678D2D00D4A50C /* AdServices.framework */,
@@ -1183,12 +1187,12 @@
 				229773322A62A9A600B7DCE5 /* RWPagingIndicatorCell.m in Sources */,
 				227FD5632A59C32C00AC718A /* RWOrderDetailViewController.m in Sources */,
 				222717702A5C12DB00F865FD /* RWAddressInpuView.m in Sources */,
+				229970012A7B56AA00ADF139 /* UIViewController+Extension.m in Sources */,
 				2227178B2A5F96DA00F865FD /* RWAlertView.m in Sources */,
 				224BE7082A66664100D4A50C /* UITextView+Extension.m in Sources */,
 				220176B92A566C72002C718D /* RWContentModel.m in Sources */,
 				2297732E2A62A96800B7DCE5 /* RWPagingTitleCell.m in Sources */,
 				222717672A5BD2A800F865FD /* RWOCRCameraPanel.m in Sources */,
-				2240267F2A5EF40600BA9A02 /* UIViewController+Extension.m in Sources */,
 				220176BF2A56882E002C718D /* RWSectionHeaderView.m in Sources */,
 				229773882A62BB7300B7DCE5 /* RWPagingVerticalTitleZoomCellModel.m in Sources */,
 				22A0BEB22A53D88A00B8C360 /* RWMainTabbarController.m in Sources */,

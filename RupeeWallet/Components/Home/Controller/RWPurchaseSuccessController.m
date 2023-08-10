@@ -16,15 +16,6 @@
 @end
 
 @implementation RWPurchaseSuccessController
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self closeGesturePop];
-}
-
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-    [self openGesturePop];
-}
 
 - (void)setupUI {
     [super setupUI];
@@ -86,15 +77,20 @@
         make.bottom.mas_equalTo(0);
     }];
     self.tableView.layer.cornerRadius = 10;
-//    [self.tableView setCornerRadius:10 rectCorner:UIRectCornerTopLeft | UIRectCornerTopRight];
+    
+    // delete the detail controller
+    NSArray *vcs = self.navigationController.viewControllers;
+    NSMutableArray *newVCs = @[].mutableCopy;
+    [vcs enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (idx == 0 || [obj isKindOfClass:RWPurchaseSuccessController.class]) {
+            [newVCs addObject:obj];
+        }
+    }];
+    self.navigationController.viewControllers = newVCs;
 }
 
 - (void)backAction {
-    if(self.isRecommend) {
-        [self dismissViewControllerAnimated:YES completion:nil];
-    } else {
-        [self.navigationController popToRootViewControllerAnimated:YES];
-    }
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 // MARK: - UITableViewDataSource UITableViewDelegate

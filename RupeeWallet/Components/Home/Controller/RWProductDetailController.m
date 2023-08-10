@@ -32,17 +32,6 @@
 @end
 
 @implementation RWProductDetailController
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    if(self.isRecommend) {
-        [self closeGesturePop];
-    }
-}
-
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-    [self openGesturePop];
-}
 
 - (void)setProductDetail:(RWProductDetailModel *)productDetail {
     _productDetail = productDetail;
@@ -188,6 +177,9 @@
 }
 
 - (void)loanNowBtnClicked {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [RWProgressHUD showWithStatus:@"loading..."];
+    });
     if (self.isRecommend) {
         [RWADJTrackTool trackingWithPoint:@"2i9h7p"];
     }
@@ -208,8 +200,8 @@
     BOOL isPermission = [self checkCameraPermission];
     if (isPermission) {
         RWTakePhotoController *takePhotoVC = [[RWTakePhotoController alloc] init];
-        takePhotoVC.submitAction = ^(UIImage *selectedImage) {
-            [self selectedImageAction:selectedImage];
+        takePhotoVC.uploadedImageAction = ^{
+            [self loanNowBtnClicked];
         };
         [self.navigationController pushViewController:takePhotoVC animated:YES];
     } else {
@@ -218,14 +210,6 @@
     
 }
 
-- (void)selectedImageAction:(UIImage *)selectedImage {
-    [[RWNetworkService sharedInstance] userFaceAuthWithImage:selectedImage success:^{
-        [RWProgressHUD showSuccessWithStatus:@"upload success"];
-        [self loanNowBtnClicked];
-    } failure:^{
-        [RWAlertView showAlertViewWithStyle:RWAlertStyleError title:nil message:@"Upload failed, please try again." confirmAction:nil];
-    }];
-}
 
 - (BOOL)checkCameraPermission {
     __block BOOL isPermission = NO;
@@ -333,7 +317,6 @@
         }
         
         RWPurchaseSuccessController *successController = [[RWPurchaseSuccessController alloc] init];
-        successController.isRecommend = self.isRecommend;
         successController.recommendProductList = recommendProductList;
         [self.navigationController pushViewController:successController animated:YES];
     }];
@@ -344,7 +327,7 @@
         [[RWNetworkService sharedInstance] fetchProductWithIsRecommend:YES success:^(RWContentModel *userInfo, NSArray * _Nullable products, RWProductDetailModel * _Nullable recommendProduct) {
             self.productDetail = recommendProduct;
         } failure:^{
-            [self dismissViewControllerAnimated:YES completion:nil];
+            
         }];
     } else {
         [[RWNetworkService sharedInstance] checkUserStatusWithProductId:self.productId success:^(NSInteger userStatus, NSString * _Nonnull orderNumber, RWProductDetailModel * _Nonnull productDetail) {
@@ -356,9 +339,8 @@
 - (void)backAction {
     if(self.isRecommend) {
         [RWADJTrackTool trackingWithPoint:@"mx5wic"];
-        [self dismissViewControllerAnimated:YES completion:nil];
-    } else {
-        [self.navigationController popViewControllerAnimated:YES];
     }
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end

@@ -10,7 +10,6 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RWPurchaseSuccessController : RWBaseTableViewController
-@property(nonatomic, assign) BOOL isRecommend;
 @property(nonatomic, strong) NSArray *_Nullable recommendProductList;
 @end
 

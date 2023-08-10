@@ -14,6 +14,7 @@
 #import "RWProductDetailController.h"
 #import "RWPayFailToastView.h"
 #import "UIDevice+Extension.h"
+#import "RWBankCardController.h"
 
 @interface RWHomeController ()
 @property(nonatomic, strong) UIImageView *_Nullable headerImageView;
@@ -49,6 +50,23 @@
     }];
     self.tableView.layer.cornerRadius = 10;
     self.tableView.layer.masksToBounds = YES;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveAuthFinished:) name:AUTHENFICATION_FINISHED_NOTIFICATION object:nil];
+}
+
+
+- (void)didReceiveAuthFinished:(NSNotification *)noti {
+    [[RWNetworkService sharedInstance] fetchProductWithIsRecommend:YES success:^(RWContentModel *userInfo, NSArray * _Nullable products, RWProductDetailModel * _Nullable recommendProduct) {
+        if (recommendProduct.productId != nil) {
+            RWProductDetailController *detail = [[RWProductDetailController alloc] init];
+            detail.productId = recommendProduct.productId;
+            detail.modalPresentationStyle = UIModalPresentationFullScreen;
+            detail.isRecommend = YES;
+            [self .navigationController pushViewController:detail animated:YES];
+        }
+    } failure:^{
+        
+    }];
 }
 
 

@@ -10,8 +10,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIViewController (Extension)
-- (void)closeGesturePop;
-- (void)openGesturePop;
++ (void)closeGesturePopWithController:(UIViewController *)viewController;
++ (void)openGesturePopWithController:(UIViewController *)viewController;
 @end
 
 NS_ASSUME_NONNULL_END

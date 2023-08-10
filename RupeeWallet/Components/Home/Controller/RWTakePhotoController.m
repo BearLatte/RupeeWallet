@@ -7,6 +7,7 @@
 
 #import "RWTakePhotoController.h"
 #import <AVFoundation/AVFoundation.h>
+#import "RWAlertView.h"
 
 @interface RWTakePhotoController ()<AVCapturePhotoCaptureDelegate>
 @property(nonatomic, weak) UIButton *takePhotoButton;
@@ -170,10 +171,22 @@
 }
 
 - (void)submitButtonClicked {
-    if(self.submitAction) {
-        self.submitAction(self.selectedImage);
-    }
-    [self.navigationController popViewControllerAnimated:YES];
+    
+    [[RWNetworkService sharedInstance] userFaceAuthWithImage:self.selectedImage success:^{
+        [RWProgressHUD showSuccessWithStatus:@"upload success"];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if(self.uploadedImageAction) {
+                self.uploadedImageAction();
+                [self.navigationController popViewControllerAnimated:YES];
+            }
+        });
+    } failure:^{
+        [self updateTakeButtonLayout:YES];
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            [self.session startRunning];
+        });
+        [RWAlertView showAlertViewWithStyle:RWAlertStyleError title:nil message:@"Upload failed, please try again." confirmAction:nil];
+    }];
 }
 
 - (void)updateTakeButtonLayout:(BOOL)isTake {

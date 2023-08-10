@@ -8,9 +8,9 @@
 #import "RWBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
-typedef void(^SubmitImageAction)(UIImage *selectedImage);
+typedef void(^UploadedFaceImage)(void);
 @interface RWTakePhotoController : RWBaseViewController
-@property(nonatomic, copy) SubmitImageAction submitAction;
+@property(nonatomic, copy) UploadedFaceImage uploadedImageAction;
 @end
 
 NS_ASSUME_NONNULL_END

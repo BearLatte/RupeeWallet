@@ -26,6 +26,8 @@
 @property(nonatomic, weak) RWAttributedLabel *termsLabel;
 @property(nonatomic, weak) RWAttributedLabel *overdueChargeLabel;
 @property(nonatomic, weak) RWAttributedLabel *repaymentAmountLabel;
+@property(nonatomic, weak) RWAttributedLabel *aprLabel;
+
 @property(nonatomic, weak) UIButton *loanBtn;
 
 @property(nonatomic, strong) RWProductDetailModel *productDetail;
@@ -100,6 +102,11 @@
     [self.view addSubview:repaymentAmount];
     self.repaymentAmountLabel = repaymentAmount;
     
+    RWAttributedLabel *aprLabel = [RWAttributedLabel attributedLabelWithKey:@"APR :" keyColor:THEME_TEXT_COLOR keyFont:[UIFont systemFontOfSize:16] value:@"18.25%" valueColor:THEME_COLOR valueFont:[UIFont systemFontOfSize:16]];
+    [self.view addSubview:aprLabel];
+    aprLabel.hidden = ![RWGlobal sharedGlobal].isAppleTestAccount;
+    self.aprLabel = aprLabel;
+    
     UIButton *loanBtn = [[RWGlobal sharedGlobal] createThemeButtonWithTitle:@"Loan now" cornerRadius:30];
     [loanBtn addTarget:self action:@selector(loanNowBtnClicked) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:loanBtn];
@@ -165,6 +172,11 @@
     
     [self.repaymentAmountLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.overdueChargeLabel.mas_bottom).offset(8);
+        make.left.right.height.mas_equalTo(self.amountLable);
+    }];
+    
+    [self.aprLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.repaymentAmountLabel.mas_bottom).offset(8);
         make.left.right.height.mas_equalTo(self.amountLable);
     }];
     

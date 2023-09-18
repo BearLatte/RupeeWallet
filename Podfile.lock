@@ -1,7 +1,7 @@
 PODS:
-  - Adjust (4.33.4):
-    - Adjust/Core (= 4.33.4)
-  - Adjust/Core (4.33.4)
+  - Adjust (4.33.6):
+    - Adjust/Core (= 4.33.6)
+  - Adjust/Core (4.33.6)
   - AFNetworking (4.0.1):
     - AFNetworking/NSURLSession (= 4.0.1)
     - AFNetworking/Reachability (= 4.0.1)
@@ -23,9 +23,9 @@ PODS:
   - IQKeyboardManager (6.5.12)
   - Masonry (1.1.0)
   - MJExtension (3.4.1)
-  - SDWebImage (5.16.0):
-    - SDWebImage/Core (= 5.16.0)
-  - SDWebImage/Core (5.16.0)
+  - SDWebImage (5.17.0):
+    - SDWebImage/Core (= 5.17.0)
+  - SDWebImage/Core (5.17.0)
   - SVProgressHUD (2.2.5)
   - SVPullToRefresh (0.4.1)
 
@@ -55,14 +55,14 @@ SPEC REPOS:
     - SVPullToRefresh
 
 SPEC CHECKSUMS:
-  Adjust: 4690e07ea401ee56d4d3f4f5bdad86c94f51903f
+  Adjust: c3b6c3734928a617fefce81dc223fd5f104162be
   AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
   AliyunOSSiOS: e683c1b1faa0657b5cd02de733628cf996f4cd93
   CRBoxInputView: 2380c292aabbf786fe923776f111ba3053438fba
   IQKeyboardManager: b1fd66ccf7a79095bdcc4a2735231586f744216e
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 21c5f6f8c4d5d8844b7ae8fbae08fed0b501f961
-  SDWebImage: 2aea163b50bfcb569a2726b6a754c54a4506fcf6
+  SDWebImage: 750adf017a315a280c60fde706ab1e552a3ae4e9
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
 

@@ -17,6 +17,7 @@
 @property(nonatomic, weak) UILabel *feeRatioLabel;
 @property(nonatomic, weak) UIImageView *feeRatioIconView;
 @property(nonatomic, weak) UILabel *loanDateLabel;
+@property (nonatomic, weak) UILabel *aprLabel;
 @property(nonatomic, weak) UIImageView *bottomLineView;
 @end
 
@@ -29,6 +30,15 @@
     self.quotaLabel.text = [NSString stringWithFormat:@"INR %@", product.loanAmount];
     self.feeRatioLabel.text = [NSString stringWithFormat:@"Fee %@ / day", product.loanRate];
     self.loanDateLabel.text = [NSString stringWithFormat:@"%@ days", product.loanDate];
+    BOOL isHidden = YES;
+    if([RWGlobal sharedGlobal].isLogin) {
+        if([RWGlobal sharedGlobal].isAppleTestAccount) {
+            isHidden = NO;
+        }
+    } else {
+        isHidden = NO;
+    }
+    self.aprLabel.hidden = isHidden;
     [self layoutIfNeeded];
 }
 
@@ -104,6 +114,12 @@
         [self.contentView addSubview:loanDateLabel];
         self.loanDateLabel = loanDateLabel;
         
+        UILabel *aprLabel = [self createLabelWithColor:THEME_TEXT_COLOR font:[UIFont systemFontOfSize:14]];
+        [self.contentView addSubview:aprLabel];
+        aprLabel.text = @"APR: 18.25%";
+        self.aprLabel = aprLabel;
+        
+        
         UIImageView *bottomLine = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"dotted_line"]];
         bottomLine.contentMode = UIViewContentModeCenter;
         [self.contentView addSubview:bottomLine];
@@ -169,6 +185,11 @@
     [self.loanDateLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.feeRatioLabel.mas_bottom);
         make.right.mas_equalTo(self.feeRatioLabel);
+    }];
+    
+    [self.aprLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.loanDateLabel.mas_bottom).offset(5);
+        make.right.mas_equalTo(self.loanDateLabel);
     }];
 }
 

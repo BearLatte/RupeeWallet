@@ -38,12 +38,6 @@
 		2227179B2A5FE9E200F865FD /* RWTakePhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2227179A2A5FE9E200F865FD /* RWTakePhotoController.m */; };
 		2227179E2A61466800F865FD /* UIButton+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2227179D2A61466800F865FD /* UIButton+Extension.m */; };
 		222717A32A615E4D00F865FD /* RWFeedbackController.m in Sources */ = {isa = PBXBuildFile; fileRef = 222717A22A615E4D00F865FD /* RWFeedbackController.m */; };
-		223177C62A67BFD900067AD6 /* FacebookAEM in Frameworks */ = {isa = PBXBuildFile; productRef = 223177C52A67BFD900067AD6 /* FacebookAEM */; settings = {ATTRIBUTES = (Weak, ); }; };
-		223177C82A67BFD900067AD6 /* FacebookBasics in Frameworks */ = {isa = PBXBuildFile; productRef = 223177C72A67BFD900067AD6 /* FacebookBasics */; settings = {ATTRIBUTES = (Weak, ); }; };
-		223177CA2A67BFD900067AD6 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 223177C92A67BFD900067AD6 /* FacebookCore */; settings = {ATTRIBUTES = (Weak, ); }; };
-		223177CC2A67BFD900067AD6 /* FacebookGamingServices in Frameworks */ = {isa = PBXBuildFile; productRef = 223177CB2A67BFD900067AD6 /* FacebookGamingServices */; settings = {ATTRIBUTES = (Weak, ); }; };
-		223177CE2A67BFD900067AD6 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 223177CD2A67BFD900067AD6 /* FacebookLogin */; settings = {ATTRIBUTES = (Weak, ); }; };
-		223177D02A67BFD900067AD6 /* FacebookShare in Frameworks */ = {isa = PBXBuildFile; productRef = 223177CF2A67BFD900067AD6 /* FacebookShare */; settings = {ATTRIBUTES = (Weak, ); }; };
 		223177D42A67C34600067AD6 /* RWFBTrackTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223177D32A67C34600067AD6 /* RWFBTrackTool.swift */; };
 		2244DEDD2A53C3E40093F903 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2244DEDC2A53C3E40093F903 /* AppDelegate.m */; };
 		2244DEE82A53C3E60093F903 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2244DEE72A53C3E60093F903 /* Assets.xcassets */; };
@@ -70,6 +64,12 @@
 		224BE7262A678D4000D4A50C /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224BE7252A678D4000D4A50C /* AppTrackingTransparency.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		224BE7282A678D4C00D4A50C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224BE7272A678D4C00D4A50C /* WebKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		224BE72F2A67B30D00D4A50C /* RWADJTrackTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 224BE72E2A67B30D00D4A50C /* RWADJTrackTool.m */; };
+		225E62512A8611C2000A24B6 /* FacebookAEM in Frameworks */ = {isa = PBXBuildFile; productRef = 225E62502A8611C2000A24B6 /* FacebookAEM */; };
+		225E62532A8611C2000A24B6 /* FacebookBasics in Frameworks */ = {isa = PBXBuildFile; productRef = 225E62522A8611C2000A24B6 /* FacebookBasics */; };
+		225E62552A8611C2000A24B6 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 225E62542A8611C2000A24B6 /* FacebookCore */; };
+		225E62572A8611C2000A24B6 /* FacebookGamingServices in Frameworks */ = {isa = PBXBuildFile; productRef = 225E62562A8611C2000A24B6 /* FacebookGamingServices */; };
+		225E62592A8611C2000A24B6 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 225E62582A8611C2000A24B6 /* FacebookLogin */; };
+		225E625B2A8611C2000A24B6 /* FacebookShare in Frameworks */ = {isa = PBXBuildFile; productRef = 225E625A2A8611C2000A24B6 /* FacebookShare */; };
 		227FD5632A59C32C00AC718A /* RWOrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227FD5622A59C32C00AC718A /* RWOrderDetailViewController.m */; };
 		227FD5662A59C77A00AC718A /* RWOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 227FD5652A59C77A00AC718A /* RWOrderModel.m */; };
 		227FD5692A59C98E00AC718A /* RWProductDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 227FD5682A59C98E00AC718A /* RWProductDetailModel.m */; };
@@ -118,7 +118,6 @@
 		229773822A62BB4100B7DCE5 /* RWPagingVerticalTitleZoomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 229773812A62BB4100B7DCE5 /* RWPagingVerticalTitleZoomView.m */; };
 		229773852A62BB5C00B7DCE5 /* RWPagingVerticalTitleZoomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 229773842A62BB5C00B7DCE5 /* RWPagingVerticalTitleZoomCell.m */; };
 		229773882A62BB7300B7DCE5 /* RWPagingVerticalTitleZoomCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 229773872A62BB7300B7DCE5 /* RWPagingVerticalTitleZoomCellModel.m */; };
-		22996FFE2A7B46FC00ADF139 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22996FFD2A7B46FC00ADF139 /* StoreKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		229970012A7B56AA00ADF139 /* UIViewController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 229970002A7B56AA00ADF139 /* UIViewController+Extension.m */; };
 		22A0BEB22A53D88A00B8C360 /* RWMainTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A0BEB12A53D88A00B8C360 /* RWMainTabbarController.m */; };
 		22A0BEB52A53D8E900B8C360 /* RWBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A0BEB42A53D8E900B8C360 /* RWBaseViewController.m */; };
@@ -342,7 +341,6 @@
 		229773842A62BB5C00B7DCE5 /* RWPagingVerticalTitleZoomCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPagingVerticalTitleZoomCell.m; sourceTree = "<group>"; };
 		229773862A62BB7300B7DCE5 /* RWPagingVerticalTitleZoomCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWPagingVerticalTitleZoomCellModel.h; sourceTree = "<group>"; };
 		229773872A62BB7300B7DCE5 /* RWPagingVerticalTitleZoomCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPagingVerticalTitleZoomCellModel.m; sourceTree = "<group>"; };
-		22996FFD2A7B46FC00ADF139 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		22996FFF2A7B56AA00ADF139 /* UIViewController+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extension.h"; sourceTree = "<group>"; };
 		229970002A7B56AA00ADF139 /* UIViewController+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Extension.m"; sourceTree = "<group>"; };
 		22A0BEB02A53D88A00B8C360 /* RWMainTabbarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWMainTabbarController.h; sourceTree = "<group>"; };
@@ -376,17 +374,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22996FFE2A7B46FC00ADF139 /* StoreKit.framework in Frameworks */,
+				225E62512A8611C2000A24B6 /* FacebookAEM in Frameworks */,
+				225E625B2A8611C2000A24B6 /* FacebookShare in Frameworks */,
 				224BE7282A678D4C00D4A50C /* WebKit.framework in Frameworks */,
-				223177C62A67BFD900067AD6 /* FacebookAEM in Frameworks */,
-				223177D02A67BFD900067AD6 /* FacebookShare in Frameworks */,
+				225E62572A8611C2000A24B6 /* FacebookGamingServices in Frameworks */,
 				224BE7262A678D4000D4A50C /* AppTrackingTransparency.framework in Frameworks */,
-				223177CC2A67BFD900067AD6 /* FacebookGamingServices in Frameworks */,
-				223177CE2A67BFD900067AD6 /* FacebookLogin in Frameworks */,
+				225E62592A8611C2000A24B6 /* FacebookLogin in Frameworks */,
 				224BE7222A678D2D00D4A50C /* AdServices.framework in Frameworks */,
-				223177C82A67BFD900067AD6 /* FacebookBasics in Frameworks */,
+				225E62532A8611C2000A24B6 /* FacebookBasics in Frameworks */,
 				224BE7202A678D2300D4A50C /* AdSupport.framework in Frameworks */,
-				223177CA2A67BFD900067AD6 /* FacebookCore in Frameworks */,
+				225E62552A8611C2000A24B6 /* FacebookCore in Frameworks */,
 				F295F65F2B8FEAE85A790458 /* libPods-RupeeWallet.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -984,7 +981,6 @@
 		5E8D96E3B39CC6CC20082A10 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				22996FFD2A7B46FC00ADF139 /* StoreKit.framework */,
 				224BE7272A678D4C00D4A50C /* WebKit.framework */,
 				224BE7252A678D4000D4A50C /* AppTrackingTransparency.framework */,
 				224BE7212A678D2D00D4A50C /* AdServices.framework */,
@@ -1022,12 +1018,12 @@
 			);
 			name = RupeeWallet;
 			packageProductDependencies = (
-				223177C52A67BFD900067AD6 /* FacebookAEM */,
-				223177C72A67BFD900067AD6 /* FacebookBasics */,
-				223177C92A67BFD900067AD6 /* FacebookCore */,
-				223177CB2A67BFD900067AD6 /* FacebookGamingServices */,
-				223177CD2A67BFD900067AD6 /* FacebookLogin */,
-				223177CF2A67BFD900067AD6 /* FacebookShare */,
+				225E62502A8611C2000A24B6 /* FacebookAEM */,
+				225E62522A8611C2000A24B6 /* FacebookBasics */,
+				225E62542A8611C2000A24B6 /* FacebookCore */,
+				225E62562A8611C2000A24B6 /* FacebookGamingServices */,
+				225E62582A8611C2000A24B6 /* FacebookLogin */,
+				225E625A2A8611C2000A24B6 /* FacebookShare */,
 			);
 			productName = RupeeWallet;
 			productReference = 2244DED82A53C3E40093F903 /* RupeeWallet.app */;
@@ -1059,7 +1055,7 @@
 			);
 			mainGroup = 2244DECF2A53C3E30093F903;
 			packageReferences = (
-				223177C42A67BFD900067AD6 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+				225E624F2A8611C2000A24B6 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 			);
 			productRefGroup = 2244DED92A53C3E40093F903 /* Products */;
 			projectDirPath = "";
@@ -1378,7 +1374,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 7MC978XNU9;
+				DEVELOPMENT_TEAM = 7R9X78KKXW;
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/Common/RWPrefixHeader.pch";
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = RupeeWallet/App/Info.plist;
@@ -1419,7 +1415,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 7MC978XNU9;
+				DEVELOPMENT_TEAM = 7R9X78KKXW;
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/Common/RWPrefixHeader.pch";
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = RupeeWallet/App/Info.plist;
@@ -1472,45 +1468,45 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		223177C42A67BFD900067AD6 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+		225E624F2A8611C2000A24B6 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 14.0.0;
+				minimumVersion = 16.1.3;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		223177C52A67BFD900067AD6 /* FacebookAEM */ = {
+		225E62502A8611C2000A24B6 /* FacebookAEM */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 223177C42A67BFD900067AD6 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			package = 225E624F2A8611C2000A24B6 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
 			productName = FacebookAEM;
 		};
-		223177C72A67BFD900067AD6 /* FacebookBasics */ = {
+		225E62522A8611C2000A24B6 /* FacebookBasics */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 223177C42A67BFD900067AD6 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			package = 225E624F2A8611C2000A24B6 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
 			productName = FacebookBasics;
 		};
-		223177C92A67BFD900067AD6 /* FacebookCore */ = {
+		225E62542A8611C2000A24B6 /* FacebookCore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 223177C42A67BFD900067AD6 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			package = 225E624F2A8611C2000A24B6 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
 			productName = FacebookCore;
 		};
-		223177CB2A67BFD900067AD6 /* FacebookGamingServices */ = {
+		225E62562A8611C2000A24B6 /* FacebookGamingServices */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 223177C42A67BFD900067AD6 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			package = 225E624F2A8611C2000A24B6 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
 			productName = FacebookGamingServices;
 		};
-		223177CD2A67BFD900067AD6 /* FacebookLogin */ = {
+		225E62582A8611C2000A24B6 /* FacebookLogin */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 223177C42A67BFD900067AD6 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			package = 225E624F2A8611C2000A24B6 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
 			productName = FacebookLogin;
 		};
-		223177CF2A67BFD900067AD6 /* FacebookShare */ = {
+		225E625A2A8611C2000A24B6 /* FacebookShare */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 223177C42A67BFD900067AD6 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			package = 225E624F2A8611C2000A24B6 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
 			productName = FacebookShare;
 		};
 /* End XCSwiftPackageProductDependency section */

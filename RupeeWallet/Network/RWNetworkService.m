@@ -24,7 +24,7 @@
 #ifdef DEBUG
 static NSString * const baseURL = @"http://8.215.46.156:1060";
 #else
-static NSString * const baseURL = @"";
+static NSString * const baseURL = @"https://api.rupeewallet.net";
 #endif
 
 

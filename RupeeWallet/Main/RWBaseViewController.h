@@ -18,6 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, assign) RWModalStyle modalStyle;
 @property(nonatomic, assign) BOOL isHiddenBackButton;
 @property(nonatomic, assign) BOOL isDarkBackMode;
+
+@property(nonatomic, strong) UILabel *_Nullable titleLabel;
+
 /// ConfigUI
 - (void)setupUI;
 - (void)loadData;

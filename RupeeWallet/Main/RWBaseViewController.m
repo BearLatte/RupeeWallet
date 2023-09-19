@@ -9,7 +9,7 @@
 
 @interface RWBaseViewController ()
 @property(nonatomic, strong) UIButton *_Nullable backButton;
-@property(nonatomic, strong) UILabel *_Nullable titleLabel;
+
 @end
 
 @implementation RWBaseViewController

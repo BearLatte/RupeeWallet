@@ -27,8 +27,7 @@ NSString * const FORM_TITLE_TEXT_COLOR  = @"#5E6078";
 NSString * const TAB_BAR_NORMAL_FOREGROUND_COLOR = @"#BDBDBD";
 NSString * const PLACEHOLDER_IMAGE_COLOR = @"#D8D8D8";
 
-// TODO: 上线前需要添上
-NSString * const APP_STORE_TEST_ACCOUNT = @"";
+NSString * const APP_STORE_TEST_ACCOUNT = @"8800203373";
 NSString * const ADJUST_APP_TOKEN = @"sg346zqpiuio";
 
 @interface RWGlobal()

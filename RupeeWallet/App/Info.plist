@@ -6,6 +6,8 @@
 	<true/>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>zh</string>
+	<key>CFBundleDisplayName</key>
+	<string>Rupee Wallet</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -20,6 +22,12 @@
 	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>FacebookAppID</key>
+	<string>6880517725291722</string>
+	<key>FacebookClientToken</key>
+	<string>4c1fae218ce20628409eca1a31efbca7</string>
+	<key>FacebookDisplayName</key>
+	<string>Rupee Wallet</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -27,6 +35,18 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>You did not allow us to access the camera, which will help you obtain a loan. Would you like to set up authorization.</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Please allow us to use Contacts information, which will help you obtain a loan, otherwise you will not be able to apply for a loan.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Please allow us to use location information, which will help you obtain a loan, otherwise you will not be able to apply for a loan.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Please allow us to use location information, which will help you obtain a loan, otherwise you will not be able to apply for a loan.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>You did not allow us to access the Photo Library, which will help you obtain a loan. Would you like to set up authorization.</string>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>This identifier will be used to recommend personalized advertisements to you.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen.storyboard</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -39,25 +59,5 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
-	<key>CFBundleDisplayName</key>
-	<string>Rupee Wallet</string>
-	<key>NSUserTrackingUsageDescription</key>
-	<string>This identifier will be used to recommend personalized advertisements to you.</string>
-	<key>NSCameraUsageDescription</key>
-	<string>You did not allow us to access the camera, which will help you obtain a loan. Would you like to set up authorization.</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Please allow us to use location information, which will help you obtain a loan, otherwise you will not be able to apply for a loan.</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Please allow us to use location information, which will help you obtain a loan, otherwise you will not be able to apply for a loan.</string>
-	<key>NSContactsUsageDescription</key>
-	<string>Please allow us to use Contacts information, which will help you obtain a loan, otherwise you will not be able to apply for a loan.</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>You did not allow us to access the Photo Library, which will help you obtain a loan. Would you like to set up authorization.</string>
-    <key>FacebookAppID</key>
-    <string>6880517725291722</string>
-    <key>FacebookClientToken</key>
-    <string>4c1fae218ce20628409eca1a31efbca7</string>
-    <key>FacebookDisplayName</key>
-    <string>Rupee Wallet</string>
 </dict>
 </plist>

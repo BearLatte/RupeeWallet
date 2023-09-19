@@ -43,6 +43,7 @@
 		2244DEE82A53C3E60093F903 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2244DEE72A53C3E60093F903 /* Assets.xcassets */; };
 		2244DEEB2A53C3E60093F903 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2244DEE92A53C3E60093F903 /* LaunchScreen.storyboard */; };
 		2244DEEE2A53C3E60093F903 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2244DEED2A53C3E60093F903 /* main.m */; };
+		2246587F2AB9A702006BFDB8 /* RWWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2246587E2AB9A702006BFDB8 /* RWWebViewController.m */; };
 		224BE6EB2A64E82B00D4A50C /* RWOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 224BE6EA2A64E82B00D4A50C /* RWOrderCell.m */; };
 		224BE6EE2A6553D700D4A50C /* RWApplyExtensionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 224BE6ED2A6553D700D4A50C /* RWApplyExtensionController.m */; };
 		224BE6F12A6632F000D4A50C /* UIScrollView+EmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 224BE6F02A6632F000D4A50C /* UIScrollView+EmptyDataSet.m */; };
@@ -205,6 +206,8 @@
 		2244DEEA2A53C3E60093F903 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2244DEEC2A53C3E60093F903 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2244DEED2A53C3E60093F903 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2246587D2AB9A702006BFDB8 /* RWWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWWebViewController.h; sourceTree = "<group>"; };
+		2246587E2AB9A702006BFDB8 /* RWWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWWebViewController.m; sourceTree = "<group>"; };
 		224BE6E92A64E82B00D4A50C /* RWOrderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWOrderCell.h; sourceTree = "<group>"; };
 		224BE6EA2A64E82B00D4A50C /* RWOrderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWOrderCell.m; sourceTree = "<group>"; };
 		224BE6EC2A6553D700D4A50C /* RWApplyExtensionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWApplyExtensionController.h; sourceTree = "<group>"; };
@@ -950,6 +953,8 @@
 				22A0BECF2A53ED8B00B8C360 /* RWPersonalCenterController.m */,
 				229772E52A6252B100B7DCE5 /* RWAboutUsController.h */,
 				229772E62A6252B100B7DCE5 /* RWAboutUsController.m */,
+				2246587D2AB9A702006BFDB8 /* RWWebViewController.h */,
+				2246587E2AB9A702006BFDB8 /* RWWebViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1232,6 +1237,7 @@
 				229772F02A62568800B7DCE5 /* RWOrderPagingController.m in Sources */,
 				223177D42A67C34600067AD6 /* RWFBTrackTool.swift in Sources */,
 				229773072A62650500B7DCE5 /* RWPagingBaseCell.m in Sources */,
+				2246587F2AB9A702006BFDB8 /* RWWebViewController.m in Sources */,
 				220176B62A566AC6002C718D /* RWProductModel.m in Sources */,
 				224BE6F12A6632F000D4A50C /* UIScrollView+EmptyDataSet.m in Sources */,
 				222717762A5D272F00F865FD /* RWOSSCredentialModel.m in Sources */,
@@ -1390,7 +1396,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = org.cocoapods.RupeeWallet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.india.speak.memory.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1431,7 +1437,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = org.cocoapods.RupeeWallet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.india.speak.memory.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

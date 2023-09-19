@@ -7,6 +7,7 @@
 
 #import "RWLoginViewController.h"
 #import "RWLoginContentView.h"
+#import "RWWebViewController.h"
 
 @interface RWLoginViewController ()<RWLoginContentViewDelegate>
 @property(nonatomic, strong) RWLoginContentView *loginPhoneNumberContentView;
@@ -91,11 +92,15 @@
 
 // MARK: - RWLoginContentViewDelegate
 - (void)contentViewTermsConditionAction:(RWLoginContentView *)contentView {
-    RWLog(@"TermsCondition");
+    RWWebViewController *webControlelr = [[RWWebViewController alloc] init];
+    webControlelr.isHiddenBackButton = YES;
+    [self presentViewController:webControlelr animated:YES completion:nil];
 }
 
 - (void)contentViewPrivacyAction:(RWLoginContentView *)contentView {
-    RWLog(@"Privacy");
+    RWWebViewController *webControlelr = [[RWWebViewController alloc] init];
+    webControlelr.isHiddenBackButton = YES;
+    [self presentViewController:webControlelr animated:YES completion:nil];
 }
 
 - (void)contentViewActionButtonDidTapped:(RWLoginContentView *)contentView {

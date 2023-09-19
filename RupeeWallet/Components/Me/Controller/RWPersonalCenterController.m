@@ -11,6 +11,7 @@
 #import "RWFeedbackController.h"
 #import "RWAboutUsController.h"
 #import "RWOrderPagingController.h"
+#import "RWWebViewController.h"
 
 
 typedef void(^ItemViewTapAction)(void);
@@ -157,7 +158,8 @@ typedef void(^ItemViewTapAction)(void);
     [feedbackBtn topImageLayoutWithSpacing:4];
     
     RWItemView *privacyView = [RWItemView itemViewWithIcon:@"privacy_icon" title:@"Privacy Policy" tapAction:^{
-        RWLog(@"打开隐私协议");
+        RWWebViewController *webView = [[RWWebViewController alloc] init];
+        [self.navigationController pushViewController:webView animated:YES];
     }];
     [self.view addSubview:privacyView];
     [privacyView mas_makeConstraints:^(MASConstraintMaker *make) {

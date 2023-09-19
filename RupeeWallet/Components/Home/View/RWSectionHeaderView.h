@@ -9,8 +9,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RWSectionHeaderView : UITableViewHeaderFooterView
+typedef void(^refreshBlock)(void);
 
+@interface RWSectionHeaderView : UITableViewHeaderFooterView
+@property (nonatomic, assign) BOOL isHiddenRefreshBtn;
+@property (nonatomic, copy) refreshBlock action;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -101,23 +101,27 @@ typedef void(^ItemViewTapAction)(void);
     [super setupUI];
     self.isHiddenBackButton = YES;
     
+    [self.scrollView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.right.bottom.mas_equalTo(0);
+    }];
+
     UIImageView *topImg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"top_img"]];
     topImg.contentMode = UIViewContentModeScaleAspectFill;
-    [self.view addSubview:topImg];
+    [self.contentView addSubview:topImg];
     [topImg mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.mas_equalTo(0);
         make.height.mas_equalTo(topImg.mas_width).multipliedBy(0.77);
     }];
     
     UIImageView *logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_icon"]];
-    [self.view addSubview:logo];
+    [self.contentView addSubview:logo];
     [logo mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.mas_equalTo(topImg);
     }];
     self.logoView = logo;
     
     UILabel *phoneLabel = [[RWGlobal sharedGlobal] createLabelWithText:nil font:[UIFont systemFontOfSize:22 weight:UIFontWeightMedium] textColor:@"#ffffff"];
-    [self.view addSubview:phoneLabel];
+    [self.contentView addSubview:phoneLabel];
     [phoneLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(logo.mas_bottom).offset(6);
         make.centerX.mas_equalTo(logo);
@@ -125,7 +129,7 @@ typedef void(^ItemViewTapAction)(void);
     self.phoneLabel = phoneLabel;
     
     UIButton *orderBtn = [self buttonWithImage:@"orders_icon" title:@"My Orders"];
-    [self.view addSubview:orderBtn];
+    [self.contentView addSubview:orderBtn];
     [orderBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(topImg.mas_bottom).offset(-38);
         make.left.mas_equalTo(12);
@@ -135,7 +139,7 @@ typedef void(^ItemViewTapAction)(void);
     
     
     UIButton *bankCardBtn = [self buttonWithImage:@"bank_card_icon" title:@"Change Bank Info"];
-    [self.view addSubview:bankCardBtn];
+    [self.contentView addSubview:bankCardBtn];
     [bankCardBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.width.height.mas_equalTo(orderBtn);
         make.left.mas_equalTo(orderBtn.mas_right);
@@ -143,7 +147,7 @@ typedef void(^ItemViewTapAction)(void);
     [bankCardBtn addTarget:self action:@selector(bankCardBtnClicked) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton *feedbackBtn = [self buttonWithImage:@"feedback_icon" title:@"Feedback"];
-    [self.view addSubview:feedbackBtn];
+    [self.contentView addSubview:feedbackBtn];
     [feedbackBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.width.height.mas_equalTo(bankCardBtn);
         make.left.mas_equalTo(bankCardBtn.mas_right);
@@ -161,7 +165,7 @@ typedef void(^ItemViewTapAction)(void);
         RWWebViewController *webView = [[RWWebViewController alloc] init];
         [self.navigationController pushViewController:webView animated:YES];
     }];
-    [self.view addSubview:privacyView];
+    [self.contentView addSubview:privacyView];
     [privacyView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(orderBtn.mas_bottom).offset(10);
         make.left.mas_equalTo(12);
@@ -173,7 +177,7 @@ typedef void(^ItemViewTapAction)(void);
         RWAboutUsController *aboutUsController = [[RWAboutUsController alloc] init];
         [self.navigationController pushViewController:aboutUsController animated:YES];
     }];
-    [self.view addSubview:aboutUsView];
+    [self.contentView addSubview:aboutUsView];
     [aboutUsView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(privacyView.mas_bottom);
         make.left.right.mas_equalTo(privacyView);
@@ -190,7 +194,7 @@ typedef void(^ItemViewTapAction)(void);
             return;
         }
     }];
-    [self.view addSubview:deleteAccountView];
+    [self.contentView addSubview:deleteAccountView];
     [deleteAccountView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(aboutUsView.mas_bottom);
         make.left.right.mas_equalTo(privacyView);
@@ -202,7 +206,7 @@ typedef void(^ItemViewTapAction)(void);
     [logout setBackgroundImage:[UIImage createImageWithColor:[UIColor colorWithHexString:@"#A5D0CB"]] forState:UIControlStateNormal];
     [logout setTitleColor:[UIColor colorWithHexString:@"4BB7AC"] forState:UIControlStateNormal];
     [logout addTarget:self action:@selector(logoutAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:logout];
+    [self.contentView addSubview:logout];
     [logout mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(deleteAccountView.mas_bottom).offset(10);
         make.size.mas_equalTo(CGSizeMake(165, 40));
@@ -211,12 +215,13 @@ typedef void(^ItemViewTapAction)(void);
     self.logoutBtn = logout;
     
     UIImageView *bottomImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bottom_img"]];
-    [self.view addSubview:bottomImage];
+    [self.contentView addSubview:bottomImage];
     [bottomImage mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(logout.mas_bottom).offset(20);
         make.left.mas_equalTo(12);
         make.right.mas_equalTo(-12);
-        make.height.mas_equalTo(bottomImage.mas_width).multipliedBy(0.47);
-        make.bottom.mas_equalTo(-10);
+//        make.height.mas_equalTo(bottomImage.mas_width).multipliedBy(0.47);
+        make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-10);
     }];
 }
 

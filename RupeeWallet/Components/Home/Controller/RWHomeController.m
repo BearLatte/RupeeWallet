@@ -104,6 +104,10 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     RWSectionHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"SectionView"];
+    headerView.isHiddenRefreshBtn = NO;
+    headerView.action = ^{
+        [self loadData];
+    };
     [headerView layoutIfNeeded];
     return headerView;
 }

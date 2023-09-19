@@ -65,12 +65,12 @@
 		224BE7262A678D4000D4A50C /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224BE7252A678D4000D4A50C /* AppTrackingTransparency.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		224BE7282A678D4C00D4A50C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224BE7272A678D4C00D4A50C /* WebKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		224BE72F2A67B30D00D4A50C /* RWADJTrackTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 224BE72E2A67B30D00D4A50C /* RWADJTrackTool.m */; };
-		225E62512A8611C2000A24B6 /* FacebookAEM in Frameworks */ = {isa = PBXBuildFile; productRef = 225E62502A8611C2000A24B6 /* FacebookAEM */; };
-		225E62532A8611C2000A24B6 /* FacebookBasics in Frameworks */ = {isa = PBXBuildFile; productRef = 225E62522A8611C2000A24B6 /* FacebookBasics */; };
-		225E62552A8611C2000A24B6 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 225E62542A8611C2000A24B6 /* FacebookCore */; };
-		225E62572A8611C2000A24B6 /* FacebookGamingServices in Frameworks */ = {isa = PBXBuildFile; productRef = 225E62562A8611C2000A24B6 /* FacebookGamingServices */; };
-		225E62592A8611C2000A24B6 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 225E62582A8611C2000A24B6 /* FacebookLogin */; };
-		225E625B2A8611C2000A24B6 /* FacebookShare in Frameworks */ = {isa = PBXBuildFile; productRef = 225E625A2A8611C2000A24B6 /* FacebookShare */; };
+		225E62512A8611C2000A24B6 /* FacebookAEM in Frameworks */ = {isa = PBXBuildFile; productRef = 225E62502A8611C2000A24B6 /* FacebookAEM */; settings = {ATTRIBUTES = (Weak, ); }; };
+		225E62532A8611C2000A24B6 /* FacebookBasics in Frameworks */ = {isa = PBXBuildFile; productRef = 225E62522A8611C2000A24B6 /* FacebookBasics */; settings = {ATTRIBUTES = (Weak, ); }; };
+		225E62552A8611C2000A24B6 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 225E62542A8611C2000A24B6 /* FacebookCore */; settings = {ATTRIBUTES = (Weak, ); }; };
+		225E62572A8611C2000A24B6 /* FacebookGamingServices in Frameworks */ = {isa = PBXBuildFile; productRef = 225E62562A8611C2000A24B6 /* FacebookGamingServices */; settings = {ATTRIBUTES = (Weak, ); }; };
+		225E62592A8611C2000A24B6 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 225E62582A8611C2000A24B6 /* FacebookLogin */; settings = {ATTRIBUTES = (Weak, ); }; };
+		225E625B2A8611C2000A24B6 /* FacebookShare in Frameworks */ = {isa = PBXBuildFile; productRef = 225E625A2A8611C2000A24B6 /* FacebookShare */; settings = {ATTRIBUTES = (Weak, ); }; };
 		227FD5632A59C32C00AC718A /* RWOrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227FD5622A59C32C00AC718A /* RWOrderDetailViewController.m */; };
 		227FD5662A59C77A00AC718A /* RWOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 227FD5652A59C77A00AC718A /* RWOrderModel.m */; };
 		227FD5692A59C98E00AC718A /* RWProductDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 227FD5682A59C98E00AC718A /* RWProductDetailModel.m */; };
@@ -129,6 +129,7 @@
 		22A0BECD2A53ED7200B8C360 /* RWHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A0BECC2A53ED7200B8C360 /* RWHomeController.m */; };
 		22A0BED02A53ED8B00B8C360 /* RWPersonalCenterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A0BECF2A53ED8B00B8C360 /* RWPersonalCenterController.m */; };
 		22A0BED32A53F2BB00B8C360 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A0BED22A53F2BB00B8C360 /* UIImage+Extension.m */; };
+		22BF6CA42AB9C8D10038389B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BF6CA32AB9C8D10038389B /* SystemConfiguration.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		22C78A4B2A58AE6E00F4B563 /* RWKYCInfoContrroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C78A4A2A58AE6E00F4B563 /* RWKYCInfoContrroller.m */; };
 		F295F65F2B8FEAE85A790458 /* libPods-RupeeWallet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE5ACEB6E5765A1C3C71A808 /* libPods-RupeeWallet.a */; };
 /* End PBXBuildFile section */
@@ -365,6 +366,7 @@
 		22A0BECF2A53ED8B00B8C360 /* RWPersonalCenterController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWPersonalCenterController.m; sourceTree = "<group>"; };
 		22A0BED12A53F2BB00B8C360 /* UIImage+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
 		22A0BED22A53F2BB00B8C360 /* UIImage+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
+		22BF6CA32AB9C8D10038389B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		22C78A492A58AE6E00F4B563 /* RWKYCInfoContrroller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWKYCInfoContrroller.h; sourceTree = "<group>"; };
 		22C78A4A2A58AE6E00F4B563 /* RWKYCInfoContrroller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWKYCInfoContrroller.m; sourceTree = "<group>"; };
 		2A09065F25C66B610BF666CA /* Pods-RupeeWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RupeeWallet.release.xcconfig"; path = "Target Support Files/Pods-RupeeWallet/Pods-RupeeWallet.release.xcconfig"; sourceTree = "<group>"; };
@@ -377,6 +379,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22BF6CA42AB9C8D10038389B /* SystemConfiguration.framework in Frameworks */,
 				225E62512A8611C2000A24B6 /* FacebookAEM in Frameworks */,
 				225E625B2A8611C2000A24B6 /* FacebookShare in Frameworks */,
 				224BE7282A678D4C00D4A50C /* WebKit.framework in Frameworks */,
@@ -986,6 +989,7 @@
 		5E8D96E3B39CC6CC20082A10 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				22BF6CA32AB9C8D10038389B /* SystemConfiguration.framework */,
 				224BE7272A678D4C00D4A50C /* WebKit.framework */,
 				224BE7252A678D4000D4A50C /* AppTrackingTransparency.framework */,
 				224BE7212A678D2D00D4A50C /* AdServices.framework */,

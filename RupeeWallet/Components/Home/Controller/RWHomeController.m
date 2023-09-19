@@ -15,10 +15,12 @@
 #import "RWPayFailToastView.h"
 #import "UIDevice+Extension.h"
 #import "RWBankCardController.h"
+#import "Reachability.h"
 
 @interface RWHomeController ()
 @property(nonatomic, strong) UIImageView *_Nullable headerImageView;
 @property(nonatomic, strong) NSArray<RWProductModel *> *_Nullable products;
+@property (nonatomic, strong) Reachability *reachability;
 @end
 
 @implementation RWHomeController
@@ -52,6 +54,10 @@
     self.tableView.layer.masksToBounds = YES;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveAuthFinished:) name:AUTHENFICATION_FINISHED_NOTIFICATION object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(netWorkStatusChange) name:kReachabilityChangedNotification object:nil];
+    
+    self.reachability = [Reachability reachabilityForInternetConnection];
+    [self.reachability startNotifier];
 }
 
 
@@ -67,6 +73,10 @@
     } failure:^{
         
     }];
+}
+
+- (void)netWorkStatusChange {
+    [self loadData];
 }
 
 

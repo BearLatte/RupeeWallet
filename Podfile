@@ -9,6 +9,7 @@ target 'RupeeWallet' do
   pod 'MJExtension'
   pod 'AliyunOSSiOS'
   pod 'AFNetworking'
+  pod 'Reachability'
   pod 'SVProgressHUD'
   pod 'CRBoxInputView'
   pod 'SVPullToRefresh'

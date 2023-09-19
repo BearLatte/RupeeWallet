@@ -21,6 +21,7 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [self listenNetworkType];
     [[IQKeyboardManager sharedManager] setEnable:YES];
     [[UIDevice currentDevice] setOpenAppTimeStamp];
     
@@ -52,6 +53,9 @@
     return [RWFBTrackTool applicationWith:app open:url options:options];
 }
 
+- (void)listenNetworkType {
+    
+}
 
 
 // MARK: - idfa
